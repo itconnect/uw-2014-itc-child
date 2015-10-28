@@ -24,7 +24,7 @@
 .page-id-118 .box-outer .box { border-bottom: solid #ddd 1px; }
 .page-id-130 .box-outer .box { border-bottom: solid #ddd 1px; }
 
-/**** Header and Footer Styles ****/
+/* Header and Footer Styles */
 
 
 .uw-footer nav::before {
@@ -36,8 +36,9 @@
     background-color: #9184AA;
     left: 50%;
     margin-left: -40px;
+    }
 
-/**** Service Management Style
+/**** Service Management Style ****/
 
 .row { margin-left: -5px; margin-right: 1em; }
 
@@ -51,26 +52,20 @@
 
 .mailman-link {
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 20px; 
         border: 1px #eee;
-}
+} 
 
 .badge-label {
         font-size:80%;
         color:#666;
 }
 
-.label-student {
-  background-color: #4b2e83;
-}
+.label-student { background-color: #4b2e83; }
 
-.label-faculty {
-  background-color: #7a65a3;
-}
+.label-faculty { background-color: #7a65a3; }
 
-.label-staff {
-  background-color: #777;
-}
+.label-staff {  background-color: #777; }
 
 .logobox {
         padding-left: 0px;
