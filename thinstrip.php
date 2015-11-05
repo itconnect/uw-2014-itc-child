@@ -5,7 +5,6 @@
     <a href="http://uw.edu" title="University of Washington Home" class="uw-wordmark" tabindex='-1' aria-hidden='true'>University of Washington</a>
   </div>
   <div class='align-right'>
-      <!--
       <nav class="uw-thin-strip-nav" role='navigation' aria-label='audience based'>
           <ul class="uw-thin-links">
             <li><a href="http://uw.edu/studentlife" title="Students">Students</a></li>
@@ -14,6 +13,7 @@
             <li><a href="http://uw.edu/alumni" title="Alumni">Alumni</a></li>
           </ul>
       </nav>
+      <!--
       <nav id='search-quicklinks' role='navigation' aria-label='search and quick links'>
       <button class='uw-search' aria-owns='uwsearcharea' aria-controls='uwsearcharea' aria-expanded='false' aria-label='open search area' aria-haspopup='true'>
       -->
