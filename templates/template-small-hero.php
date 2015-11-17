@@ -16,6 +16,7 @@
       <div class="container">
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
         <span class="udub-slant"><span></span></span>      
+        <h3 style="color:white; position: relative; z-index: 4; margin-top: -8px;" >Information technology tools and resources at the UW</h3>
       </div>
 
 </div>
