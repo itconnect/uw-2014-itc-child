@@ -132,3 +132,37 @@ iframe { margin: 0; }
   -webkit-font-smoothing: antialiased;
 }
 
+/* Widget Title style for outside of sidebar */
+
+.uw-body-copy .widgettitle {
+  clear: left;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+}
+.uw-body-copy .widgettitle:after,
+.uw-body-copy .widgettitle:before {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  content: "";
+  height: 4px;
+}
+.uw-body-copy .widgettitle:before {
+  width: 100px;
+  background-color: #b7a57a;
+}
+.uw-body-copy .widgettitle:after {
+  width: 40px;
+  -webkit-transform: skewX(-25deg) skewY(0);
+  -o-transform: skewX(-25deg) skewY(0);
+  transform: skewX(-25deg) skewY(0);
+  -webkit-transform: skew(-25deg, 0);
+  -ms-transform: skewX(-25deg) skewY(0);
+  transform: skew(-25deg, 0);
+  left: 80px;
+  background-color: white;
+}
+
