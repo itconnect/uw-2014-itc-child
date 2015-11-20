@@ -25,7 +25,7 @@
   <div class="row">
 
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
-
+    <p>&nbsp;</p>
     <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
