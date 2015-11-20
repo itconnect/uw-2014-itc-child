@@ -183,8 +183,8 @@ iframe { margin: 0; }
   -ms-transform: skewX(-25deg) skewY(0);
   transform: skew(-25deg, 0);
   display: block;
+  background-color: #e8e3d3;
   height: 10px;
   width: 210px;
-  background-color: white;
   margin: 0 0 0 -5px;
 }
