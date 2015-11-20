@@ -9,7 +9,7 @@
 
     <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
-      <?php uw_site_title(); ?><h3 class="uw-site-tagline" >Information technology tools and resources at the UW</h3>  
+      <?php uw_site_title(); ?><span class="udub-slant"><span></span></span><h3 class="uw-site-tagline" >Information technology tools and resources at the UW</h3>  
 
       <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
 
