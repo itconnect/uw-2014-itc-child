@@ -1,6 +1,6 @@
         <div role="contentinfo" class="uw-footer">
             <p style="margin: 40px 0 40px 0;"><a href="http://uw.edu/uwit/">
-              <img src="http://localhost:8080/itconnect/wp-content/uploads/2015/12/InfoTech_UW_sml375_reversed.png"></a></p>
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/img/InfoTech_UW_sml375_reversed.png' class="footer-logo-link"></a></p>
         <nav role="navigation" aria-label="IT Resources" style="margin-bottom: 0;">
             <ul class="footer-links" style="margin-top: 10px;">
               <li><a href="http://www.washington.edu/itconnect/myrequests/">MyRequests</a></li>
