@@ -351,3 +351,37 @@ div.uw-body-copy  blockquote  {
      margin-bottom: .6em;
 }
 
+/* High Performance Computing Styles */
+
+div#main_content .resboxes {
+    border: 2px solid #8AC007;
+    padding: 0 20px 20px 20px;
+    margin-bottom: 6em; 
+    width: 150px;
+    height: 125px;
+}
+div#main_content .righttext {
+    text-align: right;
+    color: white;
+}
+div#main_content .lefttext {
+    text-align: left;
+    color: white;
+}
+div#main_content .textlook {
+    font-size: 800%;
+    margin-top:.01em;
+    font-weight: 600;
+}
+
+div#main_content .hpc.blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+div#main_content .hpc.blockquote p {
+  display: inline;
+}
