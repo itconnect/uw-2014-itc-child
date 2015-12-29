@@ -3,13 +3,13 @@
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/img/InfoTech_UW_sml375_reversed.png' class="footer-logo-link"></a></p>
         <nav role="navigation" aria-label="IT Resources" style="margin-bottom: 0;">
             <ul class="footer-links" style="margin-top: 10px;">
-              <li><a href="http://www.washington.edu/itconnect/myrequests/">MyRequests</a></li>
-              <li><a href="http://www.washington.edu/itconnect/servicestatus/" >Service Status</a></li>
-              <li><a href="http://www.washington.edu/itconnect/it-connect-home/tools/">IT Tools for You</a></li>
+              <li><a href="https://itconnect.uw.edu/myrequests/">MyRequests</a></li>
+              <li><a href="https://itconnect.uw.edu/servicestatus/" >Service Status</a></li>
+              <li><a href="https://itconnect.uw.edu/resources/tools/">IT Tools for You</a></li>
               <li><a href="https://itconnect.uw.edu/it-connect-sitemap/">IT Connect Sitemap</a></li>
             </ul>
             <ul class="footer-links" style="margin-top: .5em">
-              <li><a href="http://www.washington.edu/itconnect/help/" >Help</a></li>
+              <li><a href="https://itconnect.uw.edu/help/" >Help</a></li>
               <li><a href="mailto:help@uw.edu">help@uw.edu</a></li>
               <li><a href="tel:+2062215000" >206-221-5000</a></li>
               <li><a href="http://www.washington.edu/maps/#!/uwtc">In Person: UW Tower, C3000, M-F 8-5</a></li>
