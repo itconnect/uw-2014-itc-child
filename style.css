@@ -405,6 +405,7 @@ div#main_content .textlook {
   z-index: 10;
   margin: 0;
   background: white;
+  outline: none;
   }
 
   .hero-content nav.uw-breadcrumbs {
