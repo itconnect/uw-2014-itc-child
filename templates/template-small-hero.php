@@ -9,24 +9,35 @@
       if(!$url){
         $url = get_site_url() . "/wp-content/themes/uw-2014/assets/headers/suzzallo.jpg";
       }
-      $sidebar = get_post_meta($post->ID, "sidebar");   ?>
+      $sidebar = get_post_meta($post->ID, "sidebar");
+      $banner = get_post_meta($post->ID, "banner");
+      $buttontext = get_post_meta($post->ID, "buttontext");
+      $buttonlink = get_post_meta($post->ID, "buttonlink");   ?>
 
 
 <div class="uw-hero-image hero-height2" style="background-image: url(<?php echo $url ?>);">
       <div class="container">
+        <div id="hashtag" class="mask"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
+        <?php if(!empty($banner) && $banner[0]){ ?>
+        <div id="hashtag"><span><span><?php echo $banner[0] ? $banner[0] : ''; ?></span></span></div>
+        <?php } ?>
         <h1 class="uw-site-title2"><?php the_title(); ?></h1>
-        <span class="udub-slant"><span></span></span>      
-        <h3 style="color:white; position: relative; z-index: 4; margin-top: -8px;" >Information technology tools and resources at the UW</h3>
+        <span class="udub-slant"><span></span></span>
+        <?php if(!empty($buttontext) && $buttontext[0]){ ?>
+        <a class="uw-btn btn-sm btn-none" href="<?php echo $buttonlink[0] ? $buttonlink[0] : ''; ?>"><?php echo $buttontext[0] ? $buttontext[0] : ''; ?></a> 
+        <?php } ?>     
       </div>
-
 </div>
 <div class="container uw-body">
-  <?php if (!is_front_page()) { get_template_part( 'breadcrumbs' ); }?>
   <div class="row">
-
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
-    <p>&nbsp;</p>
-    <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
+
+      <?php uw_site_title(); 
+        echo "<h3 class='uw-site-tagline' style='margin-top: 0' >Information technology tools and resources at the UW</h3>";
+        ?>
+
+      <?php get_template_part( 'menu', 'mobile' ); ?>
+      <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 

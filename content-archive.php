@@ -1,6 +1,6 @@
-<?php the_date('F j, Y', '<p class="date">', '</p>'); ?>
+<?php the_date('F j, Y', '<p class="date">', '</p>'); ?> 
 <h3>
-  <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a>
+  <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> Hello</a>
 </h3>
 <?php
 if (get_option('show_byline_on_posts')) :
@@ -18,4 +18,4 @@ endif;
  	the_post_thumbnail();
  endif;
 ?>
-<?php the_excerpt(); ?>
+<?php the_content(); ?>
