@@ -435,7 +435,7 @@ div#main_content .textlook {
   }
 
   div.hero-content {
-  padding-top: 55px;
+  padding-top: 35px;
   }
 
   .box-outer .box.two .tile,
@@ -452,5 +452,7 @@ div#main_content .textlook {
     padding: 0 10px 10px;
   }
 
-}
+  body.home h3.uw-site-tagline {
+    display: none;
+  }
 
