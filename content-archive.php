@@ -18,4 +18,4 @@ endif;
  	the_post_thumbnail();
  endif;
 ?>
-<?php the_content(); ?>
+<?php the_excerpt(); ?>
