@@ -1,3 +1,5 @@
+<?php echo "<!-- Using content.php template -->" ?>
+
 <?php
 if (is_single() || is_home()){
     the_date('F j, Y', '<p class="date">', '</p>');
@@ -22,7 +24,7 @@ endif;
 <?php
   
 
-  if ( is_archive() || is_home() ) {
+  if ( is_archive() || is_home() || is_single() ) {
     the_post_thumbnail( array(130, 130), array( 'class' => 'attachment-post-thumbnail blogroll-img' ) );
     the_content();
     echo "<hr>";
