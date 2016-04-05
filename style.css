@@ -60,6 +60,7 @@
 
 
 
+
 /*** Header and Footer Styles ***/
 
 
@@ -382,6 +383,19 @@ div#main_content .textlook {
   width: 150px;
 }
 
+/* Breadcrumb positioning on home page */
+
+div.hero-content {
+  padding-top: 0;
+  margin-top: 0;
+  }
+
+div.hero-content nav.uw-breadcrumbs {
+  margin: -20px 0 15px 0px; 
+  padding: 10px 20px 0 30px;
+  }
+
+
 /* Showing site title and menu on home page using small-hero template */
 
 @media only screen and (max-width: 767px) {
@@ -430,12 +444,13 @@ div#main_content .textlook {
   margin-top: 12px;
   }
 
-  .hero-content nav.uw-breadcrumbs {
-  margin-top: 0px;
+  nav.uw-breadcrumbs {
+  margin-top: 0px;    
   }
 
   div.hero-content {
-  padding-top: 35px;
+  padding-top: 30px; 
+  margin-top: 10px;
   }
 
   .box-outer .box.two .tile,
@@ -455,4 +470,4 @@ div#main_content .textlook {
   body.home h3.uw-site-tagline {
     display: none;
   }
-
+}
