@@ -168,6 +168,18 @@ iframe { margin: 0; }
   -webkit-font-smoothing: antialiased;
 }
 
+.uw-body .hero-content .uw-site-tagline {
+  position: absolute;
+  top: -85px;
+  left: 11px;
+  color: #fff;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+}
+
 
 /* Widget Title style for outside of sidebar */
 
@@ -210,8 +222,18 @@ iframe { margin: 0; }
   top: -120px;
   overflow: hidden;
   display: block;
-  margin: 30px 0 25px 0;
-}
+  margin: 30px 0 25px -5px;
+} 
+
+.uw-content .hero-height2 .udub-slant span {
+  position: absolute;
+  top: -170px;
+  left: 15px;
+  overflow: hidden;
+  display: block;
+  margin: 30px 0 25px 0px;
+} 
+
 .uw-content .udub-slant span {
   -webkit-transform: skewX(-25deg) skewY(0);
   -o-transform: skewX(-25deg) skewY(0);
@@ -220,10 +242,10 @@ iframe { margin: 0; }
   -ms-transform: skewX(-25deg) skewY(0);
   transform: skew(-25deg, 0);
   display: block;
-  background-color: #e8e3d3;
+  background-color: #b7a57a;
   height: 10px;
   width: 210px;
-  margin: 0 0 0 -5px;
+  margin: 0 0 0 0;
 }
 
 /* Procedures */
