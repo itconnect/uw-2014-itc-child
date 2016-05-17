@@ -1,6 +1,6 @@
 <?php
 /** 
-* Enqueus child theme stylesheet and javascript, loading first the parent theme stylesheet
+* Enqueues child theme stylesheet and javascript, loading first the parent theme stylesheet
 */
 
 function itc_child_enqueue() {
