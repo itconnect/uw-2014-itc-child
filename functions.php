@@ -1,5 +1,5 @@
 <?php
-/** 
+/**
 * Enqueues child theme stylesheet and javascript, loading first the parent theme stylesheet
 */
 
