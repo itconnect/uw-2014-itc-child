@@ -494,3 +494,29 @@ div.hero-content nav.uw-breadcrumbs {
     display: none;
   }
 }
+
+/*  Editor Formatting Options
+ ------------------------------------------------------------------------*/
+
+ /*  Emphasize box
+ --------------------------------------*/
+.uw-body div.emphasize {
+  border: solid #ccc 1px;
+  border-left: solid #4b2e83 7px;
+  margin: 20px 5px 20px 35px;
+  padding: 15px;
+  position: relative;
+}
+.uw-body div.emphasize:after {
+  color: #4b2e83;
+  content: "\f05a";
+  display: inline-block;
+  opacity: 0.15;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font: normal normal 14px/1 FontAwesome;
+  font-size: 55px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
