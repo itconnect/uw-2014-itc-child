@@ -13,9 +13,6 @@ add_action( 'wp_enqueue_scripts', 'itc_child_enqueue' );
 /**
 * Adds editor style functionality for TinyMCE
 */
-function tinymce_enhancements_editor_style() {
-	add_editor_style();
-}
+add_editor_style();
 
-add_action( 'admin_init', 'tinymce_enhancements_editor_style' );
 ?>
