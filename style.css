@@ -249,111 +249,6 @@ iframe { margin: 0; }
   margin: 0 0 0 0;
 }
 
-/* Procedures */
-
-div.uw-body-copy  ol.procedure {
-    border:solid #ccc 1px;
-    margin-left:0;
-    margin-top: 1.5em;
-    padding:1em 1em 1em 3em;
-}
-
-div.uw-body-copy ol.procedure img { margin: 1em 0; }
-
-div.uw-body-copy ol.procedure li {
-    padding-left:2em;
-    padding-bottom:1em;
-    margin-left:1em;
-}
-
-div.uw-body-copy ol.procedure li.colheads {
-    list-style-type:none;
-    font-weight:700;
-    margin-left:-1.5em;
-    padding-left:0;
-    padding-bottom:1em;
-    border-bottom:solid #000 1px;
-    margin-bottom:1em;
-}
-
-div.uw-body-copy ol.procedure li ul,
-div.uw-body-copy ol.procedure li ol,
-div.uw-body-copy ol.procedure li li { margin: .3em; padding: 0 0 0 1em; }
-
-.prc {
-    margin-left:1.5em;
-}
-
-div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure li ol li { 
-    margin: 0 0 0 2em; 
-
-}	
-
-/** Page table of contents **/
-
-div.uw-body-copy ul.ptoc {
-    margin:1em 0 1.5em 2em;
-    padding-left: 4em; 
-    list-style-type: disc;
-}
-
-div.uw-body-copy  ul.ptoc li.onthispage {
-    list-style-type: none;
-    margin-left:-1em;
-    font-style:italic;
-}
-
-/* Feature box, text float right, graphic on left */
-
-div.uw-body-copy  div.button { 
-    padding-top: .6em; 
-    padding-bottom: .6em;
-    text-align: center;
-    border: solid gray 1px; 
-    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
-    -khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
-    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
-}
-
-div.uw-body-copy  div.fbox {
-    position: relative ;
-    padding: 1em; 
-    clear: right;
-    min-height: 4em;
-}
-
-div.uw-body-copy  div.fbox.lastfbox {
-    margin-bottom: 3em;
-}
-
-div.uw-body-copy   div.ftext { 
-    padding-left: 8em;
-    min-height: 6em;
-}
-
-div.uw-body-copy  div.ftext span {
-    border-right: solid black 1px;
-	padding-right: .5em;
-	margin-right: .5em;
-}
-
-div.uw-body-copy  div.ftext span.last {
-    border-right: none;
-}
-
-div.uw-body-copy  div.fbox div.button {
-    width: 6em; 
-    float: left;
-}
-
-div.uw-body-copy  div.fbox div.button a {
-    text-decoration: none;
-}
-
-div.uw-body-copy  div.fbox div.button a img {
-    width: 4em; height: 4em;
-}
-
 /* DL with float left dt */
 
 div.uw-body-copy  dl.left dt {
@@ -519,4 +414,176 @@ div.hero-content nav.uw-breadcrumbs {
   font-size: 55px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+}
+
+ /*  Page Table of Contents
+ --------------------------------------*/
+.uw-body ul.ptoc {
+    margin:1em 0 1.5em 2em;
+    padding-left: 4em; 
+    list-style-type: disc;
+}
+
+.uw-body ul.ptoc.injected:before {
+    content: 'On This Page';
+    display: block;
+    font-style:italic;
+    margin-left:-1em;
+}
+
+/* backwards compatability */
+.uw-body  ul.ptoc li.onthispage {
+    font-style:italic;
+    margin-left:-1em;
+    list-style-type: none;
+}
+
+ /*  Procedures
+ --------------------------------------*/
+.uw-body ol.procedure {
+    border:solid #ccc 1px;
+    margin-left:0;
+    margin-top: 1.5em;
+    padding:1em 1em 1em 3em;
+}
+
+.uw-body ol.procedure.injected:before {
+    content: 'Steps Actions';
+    border-bottom:solid #000 1px;
+    display: block;
+    font-weight: 700;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    margin-left: -1.5em;
+    word-spacing: 25px;
+}
+
+.uw-body ol.procedure img {
+  margin: 1em 0;
+}
+
+.uw-body ol.procedure li {
+    padding-left:2em;
+    padding-bottom:1em;
+    margin-left:1em;
+}
+
+.uw-body ol.procedure li ul,
+.uw-body ol.procedure li ol,
+.uw-body ol.procedure li li {
+  margin: .3em; padding: 0 0 0 1em;
+}
+
+.prc {
+    margin-left:1.5em;
+}
+
+div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure li ol li {
+    margin: 0 0 0 2em; 
+}
+
+/* backwards compatability */
+.uw-body ol.procedure li.colheads {
+    list-style-type:none;
+    font-weight:700;
+    margin-left:-1.5em;
+    padding-left:0;
+    padding-bottom:1em;
+    border-bottom:solid #000 1px;
+    margin-bottom:1em;
+}
+
+
+
+
+ /*  Action Block
+ (Feature box, text float right, graphic on left)
+ --------------------------------------*/
+
+
+.uw-body-copy  div.fbox {
+    clear: right;
+    min-height: 4em;
+    padding: 1em;
+    position: relative ;
+}
+
+.uw-body-copy div.fbox.injected img:first-child {
+    border: solid gray 1px;
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    -khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    float: left;
+    height: 5.5em;
+    margin: 0 30px 0 0;
+    padding: 0.6em;
+    width: 5.5em;
+}
+
+.uw-body-copy div.fbox.injected a img:first-child {
+    text-decoration: none;
+}
+
+.uw-body-copy  div.fbox.lastfbox {
+    margin-bottom: 3em;
+}
+
+.uw-body-copy div.fbox.injected p {
+    min-height: 6em;
+}
+
+.uw-body-copy  div.fbox.injected p span {
+  border-right: solid black 1px;
+  padding-right: .5em;
+  margin-right: .5em;
+}
+
+.uw-body-copy  div.fbox.injected p span.last {
+    border-right: none;
+}
+
+/* backwards compatability */
+
+.uw-body-copy  div.button { 
+    padding-top: .6em;
+    padding-bottom: .6em;
+    text-align: center;
+    border: solid gray 1px;
+    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    -khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.8);
+}
+
+.uw-body-copy  div.fbox div.button {
+    width: 6em;
+    float: left;
+}
+
+.uw-body-copy  div.fbox div.button a {
+    text-decoration: none;
+}
+
+.uw-body-copy  div.fbox div.button a img {
+    width: 4em; height: 4em;
+}
+
+
+.uw-body-copy  div.fbox.lastfbox {
+    margin-bottom: 3em;
+}
+
+.uw-body-copy   div.ftext {
+    padding-left: 8em;
+    min-height: 6em;
+}
+
+.uw-body-copy  div.ftext span {
+  border-right: solid black 1px;
+  padding-right: .5em;
+  margin-right: .5em;
+}
+
+.uw-body-copy  div.ftext span.last {
+    border-right: none;
 }
