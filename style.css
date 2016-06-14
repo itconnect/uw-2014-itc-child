@@ -172,7 +172,7 @@ iframe { margin: 0; }
 .uw-body .hero-content .uw-site-tagline {
   position: absolute;
   top: -85px;
-  left: 11px;
+  left: 8px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 22px;
@@ -217,6 +217,10 @@ iframe { margin: 0; }
 }
 
 /* Bar in header */
+
+.itconnect .hero-height2 .udub-slant {
+  margin: 20px 0 25px 3px;
+}
 
 .uw-content .udub-slant {
   position: absolute;
