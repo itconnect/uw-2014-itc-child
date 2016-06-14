@@ -15,4 +15,15 @@ add_action( 'wp_enqueue_scripts', 'itc_child_enqueue' );
 */
 add_editor_style();
 
+/**
+* Adds classes to body tag for CSS specificity over parent theme
+*/
+
+add_filter('body_class', 'itconnect_body_classes');
+
+function itconnect_body_classes($classes) {
+    $classes[] = 'itconnect';
+    return $classes;
+}
+
 ?>
