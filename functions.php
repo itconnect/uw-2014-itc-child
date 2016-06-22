@@ -39,7 +39,7 @@ function custom_field_weights($match) {
 	$top_level = get_post_meta($match->doc, 'top_level', true);
 
 	if ('1' == $featured && '1' == $top_level) {
-		$match->weight = $match->weight * 5;
+		$match->weight = $match->weight * 6;
 	} else if ('1' == $featured) {
 		$match->weight = $match->weight * 2;
 	} else {
