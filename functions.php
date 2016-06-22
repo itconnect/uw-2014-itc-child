@@ -30,15 +30,20 @@ function itconnect_body_classes($classes) {
 * Enhancements for the Relevanassi search plugin
 */
 add_filter('relevanssi_match', 'custom_field_weights');
- 
+
 function custom_field_weights($match) {
+
 	$featured = get_post_meta($match->doc, 'featured', true);
-	if ('1' == $featured) {
- 		$match->weight = $match->weight * 2;
-	}
-	else {
+	$top_level = get_post_meta($match->doc, 'top_level', true);
+
+	if ('1' == $featured && '1' == $top_level) {
+		$match->weight = $match->weight * 5;
+	} else if ('1' == $featured) {
+		$match->weight = $match->weight * 2;
+	} else {
 		$match->weight = $match->weight / 2;
 	}
+	
 	return $match;
 }
 
