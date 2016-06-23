@@ -42,13 +42,31 @@ function custom_field_weights($match) {
 		$match->weight = $match->weight * 6;
 	} else if ('1' == $featured) {
 		$match->weight = $match->weight * 2;
-	} else {
+	} /*else {
 		$match->weight = $match->weight / 2;
-	}
+	}*/
 	
 	return $match;
 }
 add_filter('relevanssi_match', 'custom_field_weights');
+ 
+// Decreases the weight of old news, removes news older than 1 year
+function news_date_weights($match) {
+	if ($match->post_type == 'post') {
+		$post_date = strtotime(get_the_time("Y-m-d", $match->doc));
+		// Older than a year, remove weight
+		if ($post_date <= time() - (60*60*24*7*52)) {
+			$match->weight = $match->weight * 0;
+		} 
+        // 24 weeks to a year old, halve the weight
+		else if ($post_date <= time() - (60*60*24*7*24)) {
+	 		$match->weight = $match->weight * 0.5;
+		}
+	}
+	return $match;
+}
+
+add_filter('relevanssi_match', 'news_date_weights');
 
 
 /**
