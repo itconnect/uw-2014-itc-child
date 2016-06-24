@@ -9,11 +9,24 @@ if ($post->post_type == 'post'){
 </h3>
 
 <?php
-$parents = get_post_ancestors($post->ID);
-$parents = array_reverse($parents);
+/* *************************************************
+* TODO LIST:
+* Service catalog entries?
+* Move out of template file
+*/
+
+
 $html = '<div class="search-breadcrumbs"><span class="crumb">IT Connect</span>';
-foreach ($parents as $parent) {
-	$html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
+
+if ($post->post_type == 'post') {
+	$html .= '<span class="crumb">News</span>';
+} else if ($post->post_type == 'page') {
+	$parents = get_post_ancestors($post->ID);
+	$parents = array_reverse($parents);
+	
+	foreach ($parents as $parent) {
+		$html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
+	}
 }
 $html .= '</div>';
 echo $html;
