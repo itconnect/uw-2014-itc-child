@@ -92,4 +92,48 @@ if (!is_admin()) {
 	add_action('pre_get_posts', array($this, 'tags_archives'));
 } 
 
+
+
+
+
+
+function searcbreadcrumbs() {
+    global $post;
+    echo "<ul id='search-breadcrumbs'>";
+    if (!is_home()) {
+        echo '<li><a href="' . get_option('home') . '">Home</a></li>';
+        if (is_category() || is_single()) {
+            echo "<li>" . the_category(' </li><li> ');
+            if (is_single()) {
+                echo "</li><li>" . the_title() . "</li>";
+            }
+        } elseif (is_page()) {
+            if($post->post_parent){
+                foreach ( get_post_ancestors( $post->ID ) as $ancestor ) {
+                    echo '<li><a href="' . get_permalink($ancestor) . '" title="' . get_the_title($ancestor) . '">' . get_the_title($ancestor) . '</a></li>' .  get_the_title();
+                }
+            } else {
+                echo "<li>" . get_the_title() . "</li>";
+            }
+        }
+    } elseif (is_tag()) {
+        single_tag_title();
+    } elseif (is_day()) {
+        echo "<li>Archive for " . the_time('F jS, Y') . "</li>";
+    } elseif (is_month()) {
+        echo "<li>Archive for " . the_time('F, Y') . "</li>";
+    } elseif (is_year()) {
+        echo "<li>Archive for " . the_time('Y') . "</li>";
+    } elseif (is_author()) {
+        echo "<li>Author Archive</li>";
+    } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+        echo "<li>Blog Archives</li>";
+    } elseif (is_search()) {
+        echo "<li>Search Results for" . the_search_query() . "</li>";
+    }
+    echo "</ul>";
+}
+
+
+
 ?>
