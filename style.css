@@ -613,3 +613,6 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
     top: 4px;
     background: url('assets/images/breadcrumb-gradient.png') right top repeat-y transparent;
 }
+.itconnect div.search-breadcrumbs span:first-child:before {
+  display: none;
+}
