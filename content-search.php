@@ -17,6 +17,7 @@ foreach ($parents as $parent) {
 	$html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
 }
 $html .= '</div>'
+echo $html;
 ?>
 
 <?php
