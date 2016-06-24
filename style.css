@@ -594,25 +594,28 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 
 /*  Search
  ------------------------------------------------------------------------*/
+.itconnect .search.results_wrap:after {
+    width: 30px;
+    height:1px;
+    display: block;
+    border-bottom: 1px solid #d9d9d9;
+}
 
 /*  Breadcrumbs
 --------------------------------------*/
 .itconnect div.search-breadcrumbs {
-    font-size: 0.8em;
     color: #85754d;
-    margin: -10px 0 10px 0;
+    font-size: 0.8em;
     font-weight: 600;
+    margin: -10px 0 10px 0;    
 }
 .itconnect div.search-breadcrumbs span:before {
     content: "\f105";
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
-    height: 29px;
-    width: 25px;
-    right: 0;
-    top: 4px;
-    background: url('assets/images/breadcrumb-gradient.png') right top repeat-y transparent;
+    text-align: center;
+    width: 20px;
 }
 .itconnect div.search-breadcrumbs span:first-child:before {
-  display: none;
+    display: none;
 }
