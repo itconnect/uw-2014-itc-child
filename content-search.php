@@ -8,7 +8,7 @@ if ($post->post_type == 'post'){
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> </a>
 </h3>
 
-<?php searchbreadcrumbs(); ?>
+<?php get_template_part( 'search-breadcrumbs' ); ?>
 
 <?php
 if (get_option('show_byline_on_posts')) :
