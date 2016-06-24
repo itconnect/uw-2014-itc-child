@@ -591,3 +591,24 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 .uw-body-copy  div.ftext span.last {
     border-right: none;
 }
+
+/*  Search
+ ------------------------------------------------------------------------*/
+
+/*  Breadcrumbs
+--------------------------------------*/
+.itconnect div.search-breadcrumbs {
+    font-size: 0.8em;
+    color: #85754d;
+    margin: -10px 0 10px 0;
+    font-weight: 600;
+}
+.itconnect div.search-breadcrumbs span:before {
+    content: "";
+    display: block;
+    height: 29px;
+    width: 25px;
+    right: 0;
+    top: 4px;
+    background: url('assets/images/breadcrumb-gradient.png') right top repeat-y transparent;
+}
