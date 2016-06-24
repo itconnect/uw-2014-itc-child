@@ -604,8 +604,9 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
     font-weight: 600;
 }
 .itconnect div.search-breadcrumbs span:before {
-    content: "";
-    display: block;
+    content: "\f105";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
     height: 29px;
     width: 25px;
     right: 0;
