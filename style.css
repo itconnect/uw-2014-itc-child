@@ -595,6 +595,7 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 /*  Search
  ------------------------------------------------------------------------*/
 .itconnect div.results_wrap:after {
+    content: "";
     width: 30px;
     height:1px;
     display: block;
