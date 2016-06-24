@@ -8,7 +8,16 @@ if ($post->post_type == 'post'){
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> </a>
 </h3>
 
-<?php get_template_part( 'search-breadcrumbs' ); ?>
+<?php 
+
+$parents = get_post_ancestors($post->ID);
+$parents = array_reverse($parents);
+$html = '<div class="search-breadcrumbs">';
+foreach ($parents as $parent) {
+	$html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
+}
+$html .= '</div>'
+?>
 
 <?php
 if (get_option('show_byline_on_posts')) :
