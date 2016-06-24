@@ -61,7 +61,7 @@ function news_date_weights($match) {
 		if ($post_date < $one_year_ago) {
 		    $match->weight = $match->weight * 0;
 		} 
-		// 24 weeks to a year old, halve the weight
+		// 26 weeks to a year old, halve the weight
 		else if ($post_date < $six_months_ago) {
 		    $match->weight = $match->weight * 0.5;
 		}
