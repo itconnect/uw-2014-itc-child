@@ -8,15 +8,14 @@ if ($post->post_type == 'post'){
   <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> </a>
 </h3>
 
-<?php 
-
+<?php
 $parents = get_post_ancestors($post->ID);
 $parents = array_reverse($parents);
-$html = '<div class="search-breadcrumbs">';
+$html = '<div class="search-breadcrumbs"><span class="crumb">IT Connect</span>';
 foreach ($parents as $parent) {
 	$html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
 }
-$html .= '</div>'
+$html .= '</div>';
 echo $html;
 ?>
 
