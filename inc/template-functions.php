@@ -300,6 +300,39 @@ endif;
 
 endif;
 
+if ( ! function_exists('get_search_breadcrumbs') ) :
+
+  function get_search_breadcrumbs()
+  {
+    $html = '<div class="search-breadcrumbs"><span class="crumb">IT Connect</span>';
+
+    if ($post->post_type == 'page') {
+      $parents = get_post_ancestors($post->ID);
+      $parents = array_reverse($parents);
+
+      foreach ($parents as $parent) {
+        $html .= '<span class="crumb">' . get_the_title($parent) . '</span>';
+      }
+    } else if ($post->post_type == 'post') {
+      $html .= '<span class="crumb">News</span>';
+    } else if ($post->post_type == 'service') {
+        $html .= '<span class="crumb">Serivce Catalog</span>';
+    }
+    $html .= '</div>';
+    return $html;
+  }
+
+endif;
+
+if ( ! function_exists('search_breadcrumbs') ) :
+
+  function search_breadcrumbs()
+  {
+    echo get_search_breadcrumbs();
+  }
+
+endif;
+
 if ( ! function_exists( 'uw_thumbnail_url' ) ) :
   function uw_thumbnail_url( $size = 'original' )
   {
