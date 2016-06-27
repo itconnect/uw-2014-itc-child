@@ -10,7 +10,7 @@ if ($post->post_type == 'post'){
 
 <?php
 
-include( locate_template( 'searchbreadcrumbs.php' ) );
+include( locate_template( 'search-breadcrumbs.php' ) );
 
 if (get_option('show_byline_on_posts')) :
 ?>
