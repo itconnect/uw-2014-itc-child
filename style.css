@@ -611,11 +611,15 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
     margin-top: 19px;
 }
 
+.itconnect div.search.results_wrap:last-child:after {
+    border-bottom: none;
+}
+
 /*  Breadcrumbs
 --------------------------------------*/
 .itconnect div.search-breadcrumbs {
     color: #85754d;
-    font-size: 0.8em;
+    font-size: 0.75em;
     font-weight: 600;
     margin-bottom: 10px;    
 }
