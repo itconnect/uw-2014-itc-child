@@ -71,6 +71,18 @@ function news_date_weights($match) {
 }
 add_filter('relevanssi_match', 'news_date_weights');
 
+// Adds search blurb to the top of the content.
+function search_content_filter( $content ) {
+    global $post;
+    if( $meta = get_post_meta($post->ID, 'search_blurb', true) ) {
+		$combined = $meta . $content;
+		$content = $combined;
+		return $content .;
+    }
+    return $content;
+}
+add_filter('the_content', 'search_content_filter', 10);
+
 // Adds custom field Search Description to the excerpt
 /*function custom_fields_to_excerpts($content, $post, $query) {
     $custom_field = get_post_meta($post->ID, 'search_blurb', true);
