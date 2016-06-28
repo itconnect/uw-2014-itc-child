@@ -72,13 +72,13 @@ function news_date_weights($match) {
 add_filter('relevanssi_match', 'news_date_weights');
 
 // Adds custom field Search Description to the excerpt
-function custom_fields_to_excerpts($content, $post, $query) {
+/*function custom_fields_to_excerpts($content, $post, $query) {
     $custom_field = get_post_meta($post->ID, 'search_blurb', true);
-    $content = $custom_field . $content;
+    $content = $custom_field;
 
     return $content;
 }
-add_filter('relevanssi_excerpt_content', 'custom_fields_to_excerpts', 10, 3);
+add_filter('relevanssi_excerpt_content', 'custom_fields_to_excerpts', 10, 3);*/
 
 /**
 * Adds support for tags to pages (in addition to posts)

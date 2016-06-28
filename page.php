@@ -1,5 +1,7 @@
 <?php get_header(); 
-   $sidebar = get_post_meta($post->ID, "sidebar"); ?>
+   $sidebar = get_post_meta($post->ID, "sidebar");
+   $search_blurb = get_post_meta($post->ID, "search_blurb"); ?>
+?>
 
 <?php get_template_part( 'header', 'image' ); ?>
 
@@ -18,6 +20,12 @@
       <?php get_template_part( 'breadcrumbs' ); ?>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
+
+        <?php 
+          if (!empty($search_blurb)) {
+            echo '<div class="search-blurb">' . $search_blurb . '</div>';
+          }
+        ?>
 
         <?php
           // Start the Loop.
