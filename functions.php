@@ -73,7 +73,7 @@ add_filter('relevanssi_match', 'news_date_weights');
 
 
 function excerpt_function($content, $post, $query) {
-    $search_blurb = get_post_meta($post->ID, 'search blurb', true);
+    $search_blurb = get_post_meta($post->ID, 'search_blurb', true);
     $content = $search_blurb;
 	return $content;
 }
