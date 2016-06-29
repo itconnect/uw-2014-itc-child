@@ -71,26 +71,14 @@ function news_date_weights($match) {
 }
 add_filter('relevanssi_match', 'news_date_weights');
 
-// Adds search blurb to the top of the content.
-function search_content_filter( $content ) {
-    global $post;
-    if( $meta = get_post_meta($post->ID, 'search_blurb', true) ) {
-		$combined = $meta . $content;
-		$content = $combined;
-		return $content .;
-    }
-    return $content;
-}
-add_filter('the_content', 'search_content_filter', 10);
 
-// Adds custom field Search Description to the excerpt
-/*function custom_fields_to_excerpts($content, $post, $query) {
-    $custom_field = get_post_meta($post->ID, 'search_blurb', true);
-    $content = $custom_field;
-
-    return $content;
+function excerpt_function($content, $post, $query) {
+    $search_blurb = get_post_meta($post->ID, 'search blurb', true);
+    $content = $search_blurb;
+	return $content;
 }
-add_filter('relevanssi_excerpt_content', 'custom_fields_to_excerpts', 10, 3);*/
+
+add_filter('relevanssi_excerpt_content', 'excerpt_function', 10, 3);
 
 /**
 * Adds support for tags to pages (in addition to posts)
