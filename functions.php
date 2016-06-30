@@ -92,13 +92,10 @@ function add_taxonomies_to_pages() {
 }
 
 function tags_archives( $wp_query ) {
-	if ($wp_query->get('tag'))
-		$wp_query->set('post_type', 'any');
+	if ($wp_query->get('tag')) $wp_query->set('post_type', 'any');
 } 
 
 add_action('init', 'add_taxonomies_to_pages');
-if (!is_admin()) {
-	add_action('pre_get_posts', array($this, 'tags_archives'));
-} 
+add_action('pre_get_posts', array($this, 'tags_archives'));
 
 ?>
