@@ -71,7 +71,7 @@ function news_date_weights($match) {
 }
 add_filter('relevanssi_match', 'news_date_weights');
 
-
+// Customize the search result excerpts with a custom filed.
 function excerpt_function($content, $post, $query) {
     $search_blurb = get_post_meta($post->ID, 'search_blurb', true);
     $content = $search_blurb;
@@ -79,6 +79,8 @@ function excerpt_function($content, $post, $query) {
 }
 
 add_filter('relevanssi_excerpt_content', 'excerpt_function', 10, 3);
+// Removes ellipsis
+add_filter('relevanssi_ellipsis', '');
 
 /**
 * Adds support for tags to pages (in addition to posts)
