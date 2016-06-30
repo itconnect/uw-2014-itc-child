@@ -634,15 +634,16 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 }
 .itconnect div.tags a {
   background-color: #4b2e83;
-  display: inline;
-  padding: .2em .6em .3em;
+  border-radius: .25em;
+  color: #fff;
+  display: inline-block;
   font-family: "Open Sans", sans-serif;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 700;
   line-height: 13px;
-  color: #fff;
+  margin: 0 5px;
+  padding: .2em .6em .3em;
   text-align: center;
-  white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25em;
+  white-space: nowrap;
 }
