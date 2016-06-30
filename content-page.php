@@ -1,5 +1,9 @@
 <h1><?php the_title() ?></h1>
 
-<?php the_content(); ?>
+<?php 
 
-<div class="tags"><?php the_tags(); ?></div>
+the_content();
+
+the_tags('<div class="tags"><span>Tags: </span>',', ','</div>'); 
+
+?>
