@@ -91,11 +91,11 @@ function add_taxonomies_to_pages() {
 	register_taxonomy_for_object_type('post_tag', 'page');
 }
 
-function tags_archives( $wp_query ) {
+function tags_support_query($wp_query) {
 	if ($wp_query->get('tag')) $wp_query->set('post_type', 'any');
 } 
 
 add_action('init', 'add_taxonomies_to_pages');
-add_action('pre_get_posts', array($this, 'tags_archives'));
+add_action('pre_get_posts', 'tags_support_query');
 
 ?>
