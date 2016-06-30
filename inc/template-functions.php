@@ -219,7 +219,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
     }
 
     // If the current view is a post type other than page or attachment then the breadcrumbs will be taxonomies.
-    if( is_category() || is_tag() || is_single() || is_post_type_archive() )
+    if( is_category() || is_single() || is_post_type_archive() )
     {
 
       if ( is_post_type_archive() )
@@ -234,12 +234,6 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
         $category = get_category( get_query_var( 'cat' ) );
         //$html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
         $html .=  '<li class="current"><span>'. get_cat_name($category->term_id ) . '</span>';
-      }
-
-      if ( is_tag() )
-      {
-        $tag = get_tag( get_query_var( 'tag' ) );
-        $html .=  '<li class="current"><span>'. print_r($tag) . '</span>';
       }
 
       if ( is_single() )
