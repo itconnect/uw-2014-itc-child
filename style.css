@@ -640,9 +640,9 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
   font-family: "Open Sans", sans-serif;
   font-size: 10px;
   font-weight: 700;
-  line-height: 13px;
-  margin: 0 5px;
-  padding: .2em .6em .3em;
+  line-height: 10px;
+  margin: 0 7px 0 0;
+  padding: .3em .6em;
   text-align: center;
   vertical-align: baseline;
   white-space: nowrap;
