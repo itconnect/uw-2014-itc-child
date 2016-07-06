@@ -1,6 +1,6 @@
         <div role="contentinfo" class="uw-footer">
             <p style="margin: 40px 0 40px 0;"><a href="http://uw.edu/uwit/">
-              <img src='<?php echo get_stylesheet_directory_uri(); ?>/img/InfoTech_UW_sml375_reversed.png' class="footer-logo-link"></a></p>
+              <img src='<?php echo get_stylesheet_directory_uri(); ?>/img/InfoTech_UW_sml375_reversed.png' class="footer-logo-link" alt="UW Information Technology logo"></a></p>
         <nav role="navigation" aria-label="IT Resources" style="margin-bottom: 0;">
             <ul class="footer-links" style="margin-top: 10px;">
               <li><a href="https://uw.service-now.com/uwc.do?sysparm_direct=true#/myrequests">MyRequests</a></li>
