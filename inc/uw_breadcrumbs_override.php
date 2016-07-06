@@ -1,3 +1,4 @@
+<?php
 /*
 *
 * Modifies the UW Breadcrumbs to:
