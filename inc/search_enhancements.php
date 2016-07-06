@@ -1,4 +1,4 @@
-/**
+/*
 *
 * Enhancements for the Relevanassi search plugin and related taxonomy changes
 *
