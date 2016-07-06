@@ -50,13 +50,13 @@ function get_uw_breadcrumbs()
     {
       $category = get_category( get_query_var( 'cat' ) );
       //$html .=  '<li class="current"><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
-      $html .=  '<li class="current"><span>'. get_cat_name($category->term_id ) . '</span>';
+      $html .=  '<li class="current"><span>Category: '. get_cat_name($category->term_id ) . '</span>';
     }
 
     if ( is_tag() )
     {
       $tag = single_tag_title( '' , false );
-      $html .=  '<li class="current"><span>'. $tag . '</span>';
+      $html .=  '<li class="current"><span>Tag: '. $tag . '</span>';
     }
 
     if ( is_single() )
