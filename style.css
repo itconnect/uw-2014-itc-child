@@ -589,7 +589,6 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 }
 
 .uw-body-copy  div.ftext span.last {
-<<<<<<< HEAD
   border-right: none;
 }
 
@@ -663,7 +662,3 @@ body.itconnect.tag ul.uw-sidebar-menu {
   vertical-align: baseline;
   white-space: nowrap;
 }
-=======
-    border-right: none;
-}
->>>>>>> master
