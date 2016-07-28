@@ -6,7 +6,7 @@
 #tinymce div.emphasize {
   border: solid #ccc 1px;
   border-left: solid #4b2e83 7px;
-  margin: 20px 35px 20px 35px;
+  margin: 20px 35px 20px 0;
   padding: 15px;
   position: relative;
 }
