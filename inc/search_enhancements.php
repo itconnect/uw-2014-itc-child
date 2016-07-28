@@ -29,14 +29,14 @@ function news_date_weights($match) {
 	$post_type = relevanssi_get_post_type($match->doc);
 	if ($post_type == 'post') {
 		$post_date = strtotime(get_the_time("Y-m-d", $match->doc));
-		$one_year_ago = time() - (60*60*24*7*52);
-		$six_months_ago = time() - (60*60*24*7*26);
-		// Older than a year, remove weight
-		if ($post_date < $one_year_ago) {
+		$nine_months_ago = time() - (60*60*24*7*38);
+		$eighteen_months_ago = time() - (60*60*24*7*78);
+		// Older than a year and a half, remove weight
+		if ($post_date < $eighteen_months_ago) {
 		    $match->weight = $match->weight * 0;
 		} 
-		// 26 weeks to a year old, halve the weight
-		else if ($post_date < $six_months_ago) {
+		// 38 weeks to a 1 1/2 years old, halve the weight
+		else if ($post_date < $nine_months_ago) {
 		    $match->weight = $match->weight * 0.5;
 		}
 
