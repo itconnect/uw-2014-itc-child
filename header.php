@@ -7,6 +7,10 @@
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <?php if (is_search()) { ?>
+        <meta name="robots" content="noindex,follow"/>
+        <?php } ?>
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <?php wp_head(); ?>
