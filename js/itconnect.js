@@ -2,7 +2,6 @@
 	ITConnect = {
 		behaviors: {
 			slideScroll: function() {
-				console.log('what what2');
 				$('a[href*="#"]:not([href="#"])').click(function() {
 				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 						var target = $(this.hash),
@@ -39,6 +38,7 @@
 		},
 		init: function(){
 			this.search.switchDefault();
+			this.behaviors.slideScroll();
 		}
 	}
 
