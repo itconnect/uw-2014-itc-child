@@ -662,3 +662,68 @@ body.itconnect.tag ul.uw-sidebar-menu {
   vertical-align: baseline;
   white-space: nowrap;
 }
+
+/*  Sitemap
+ ------------------------------------------------------------------------*/
+.itconnect .page-list.interactive {
+  padding-left: 0;
+  overflow: visible;
+}
+.itconnect .page-list.interactive .page_item {
+  border-left: 1px dotted #eee;
+}
+.itconnect .page-list.interactive,
+.itconnect .page-list.interactive .children {
+  list-style-type: none;
+}
+.itconnect .page-list span.toggle {
+  background: #fff;
+  display: inline-block;
+  margin-left: -6px;
+  width: 15px;
+}
+.itconnect .page-list span.toggle:before {
+  color: #c4c4c4;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+}
+.itconnect .page-list .page_item.page_item_has_children > span.toggle:before {
+  content: '\f147';
+  cursor: pointer;
+}
+.itconnect .page-list .page_item.page_item_has_children.collapsed > span.toggle:before {
+  content: '\f196';
+}
+
+.itconnect .page-list .page_item.page_item_has_children.collapsed li {
+  display: none;
+}
+
+.itconnect .sitemap-controls {
+  text-align: right;
+  margin-top: -20px;
+  border-bottom: 1px dotted #eee;
+}
+.itconnect .sitemap-controls a.control {
+  color: #333;
+  cursor: pointer;
+  font-size: 12px;
+}
+.itconnect .sitemap-controls a.control.col:after,
+.itconnect .sitemap-controls a.control.exp:after {
+  font: normal normal normal 12px/1 FontAwesome;
+  display: inline-block;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.itconnect .sitemap-controls a.control.col:after {
+  content: '\f066';
+  margin-left: 2px;
+}
+.itconnect .sitemap-controls a.control.exp:after {
+  content: '\f065';
+  margin: 0 10px 0 2px
+}
