@@ -727,3 +727,6 @@ body.itconnect.tag ul.uw-sidebar-menu {
   content: '\f065';
   margin: 0 10px 0 2px
 }
+.itconnect .uw-sidebar-menu span.toggle {
+  display: none;
+}
