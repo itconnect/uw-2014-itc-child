@@ -6,7 +6,7 @@
               <li><a href="https://uw.service-now.com/uwc.do?sysparm_direct=true#/myrequests">MyRequests</a></li>
               <li><a href="https://itconnect.uw.edu/servicestatus/" >Service Status</a></li>
               <li><a href="https://itconnect.uw.edu/resources/tools/">IT Tools for You</a></li>
-              <li><a href="https://itconnect.uw.edu/resources/it-connect-sitemap/">IT Connect Sitemap</a></li>
+              <li><a href="https://itconnect.uw.edu/resources/sitemap/">Sitemap</a></li>
             </ul>
             <ul class="footer-links" style="margin-top: .5em">
               <li><a href="https://itconnect.uw.edu/help/" >Help</a></li>
