@@ -297,7 +297,20 @@ div#main_content .textlook {
     font-weight: 600;
 }
 
-/* Blogroll shortcode featured image */
+/* Blogroll shortcode spacing and featured image */
+
+.itconnect .homepage-news .shortcode-blogroll {
+  margin-top: 10px;
+}
+
+.itconnect .homepage-news {
+  margin: -40px 50px 0 0;
+}
+
+.shortcode-blogroll li h4 p.date {
+    font-weight: normal;
+    margin: 3px 0 0;
+}
 
 .shortcode-blogroll>li .wp-post-image {
   margin: 10px 30px 0 0 ;
