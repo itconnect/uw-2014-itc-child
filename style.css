@@ -743,3 +743,67 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .uw-sidebar-menu span.toggle {
   display: none;
 }
+
+
+/*  A-Z Index
+ ------------------------------------------------------------------------*/
+
+#letters:after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 1px;
+}
+
+.itconnect .az-letters .az-links {
+  font-size: 1.5em;
+  font-weight: 600;
+  list-style-type: none;
+  padding: 0;
+}
+.itconnect .az-letters .az-links li {
+  float: left;
+  display: inline-block;
+  padding: 5px 15px 5px 0;
+}
+
+.itconnect #az-slider .letter-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.itconnect #az-slider .letter-section h2 {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.itconnect #az-slider .letter-section h2 span {
+  font-size: 1.5em;
+}
+
+.itconnect #az-slider .letter-section h2:before {
+  background-color: #b7a57a;
+  width: 80px;
+}
+
+.itconnect #az-slider .letter-section h2:before,
+.itconnect #az-slider .letter-section h2:after {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    content: "";
+    height: 6px;
+}
+
+.itconnect #az-slider .letter-section h2:after {
+  width: 50px;
+    -webkit-transform: skewX(-25deg) skewY(0);
+    -o-transform: skewX(-25deg) skewY(0);
+    transform: skewX(-25deg) skewY(0);
+    -webkit-transform: skew(-25deg, 0);
+    -ms-transform: skewX(-25deg) skewY(0);
+    transform: skew(-25deg, 0);
+    left: 75px;
+    background-color: white;
+}
