@@ -274,6 +274,15 @@ div.uw-body-copy  blockquote  {
      margin-bottom: .6em;
 }
 
+div.uw-body-copy  blockquote.simple,
+div.uw-body-copy  blockquote.simple p  {
+     font-size: 1em; 
+     font-weight: inherit; 
+     line-height: inherit;
+     margin-bottom: .6em;
+     font-family: "Open Sans",sans-serif;
+}
+
 /* High Performance Computing Styles */
 
 div#main_content .resboxes {
