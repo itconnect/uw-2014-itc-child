@@ -766,7 +766,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
 }
 
 .itconnect .az-letters .az-links {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
   list-style-type: none;
   padding: 0;
@@ -774,7 +774,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .az-letters .az-links li {
   float: left;
   display: inline-block;
-  padding: 5px 15px 5px 0;
+  padding: 5px 12px 5px 0;
 }
 
 .itconnect #az-slider .letter-section ul {
