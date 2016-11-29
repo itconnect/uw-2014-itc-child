@@ -45,4 +45,10 @@ require_once('inc/search_enhancements.php');
 */
 require_once('inc/uw_breadcrumbs_override.php');
 
+
+/**
+* Creates shortcode for listing out pages by last edit
+*/
+require_once('inc/review_audit.php');
+
 ?>

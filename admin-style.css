@@ -1,0 +1,31 @@
+#acf_after_title-sortables.meta-box-sortables .field {
+	float: left;
+	margin-right: 10px;
+}
+
+#acf_after_title-sortables.meta-box-sortables:after {
+	content: "."; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
+}
+
+#acf_after_title-sortables.meta-box-sortables .field input {
+	height: 32px;
+}
+
+#acf_after_title-sortables.meta-box-sortables #acf-reviewed_on.field,
+#acf_after_title-sortables.meta-box-sortables #acf-reviewed_by.field {
+	width: 18%;
+	min-width: 125px;
+}
+
+#acf_after_title-sortables.meta-box-sortables #acf-contact.field {
+	width: 50%;
+	min-width: 300px
+}
+
+.wp-admin #edit-slug-box {
+	padding: 0;
+}
