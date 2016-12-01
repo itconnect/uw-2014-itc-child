@@ -823,5 +823,22 @@ body.itconnect.tag ul.uw-sidebar-menu {
 
 .tablesorter .needs_review {
   color: red;
+}
+
+.tablesorter .never_reviewed {
   font-size: 0.8em;
+}
+
+.tablesorter .headerSortUp:after {
+  content: "\f078";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  padding: 0 3px;
+}
+
+.tablesorter .headerSortDown:after {
+  content: "\f077";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  padding: 0 3px;
 }
