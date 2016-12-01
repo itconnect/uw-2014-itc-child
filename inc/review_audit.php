@@ -24,7 +24,6 @@ function reviewedOnAudit() {
 		$wp_query->the_post();
 
 		if (get_field('reviewed_on')) {
-			//$date = date_create(get_field('reviewed_on'));
 			$date = '<span class="review_date">' . date_format(date_create(get_field('reviewed_on')), 'Y/m/d') . '</span>';
 		} else {
 			$date = '<span class="needs_review never_reviewed">Needs review</span>';
