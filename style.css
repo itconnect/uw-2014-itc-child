@@ -327,6 +327,15 @@ div#main_content .textlook {
   width: 150px;
 }
 
+@media (max-width: 667px) {
+  .itconnect .shortcode-blogroll > li span {
+    width: 100%;
+  }
+  .itconnect .shortcode-blogroll>li .wp-post-image {
+    width: 100%;
+  }
+}
+
 /* Breadcrumb positioning on home page */
 
 div.hero-content {
