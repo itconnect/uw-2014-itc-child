@@ -837,4 +837,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
       padding: 0;
       margin: 0px -32px 0 -10px;
     }
+    #sidebar .uw-sidebar ul.children li a {
+      padding: 18px 25px;
+    }
 }
