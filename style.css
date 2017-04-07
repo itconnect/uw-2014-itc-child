@@ -839,6 +839,9 @@ body.itconnect.tag ul.uw-sidebar-menu {
     #sidebar .uw-sidebar .uw-sidebar-menu {
       margin: 25px -32px 0 -10px;
     }
+    #sidebar .uw-sidebar .uw-sidebar-menu .current_page_parent a {
+      padding: 18px 19px;
+    }
     #sidebar .uw-sidebar ul.children li a,
     #sidebar .uw-sidebar ul.children span {
       padding: 18px 25px;
