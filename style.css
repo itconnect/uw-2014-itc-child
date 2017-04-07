@@ -826,3 +826,24 @@ body.itconnect.tag ul.uw-sidebar-menu {
     background-color: white;
 }
 
+
+/*  Sidebar navigation on mobile devices
+ --------------------------------------*/
+@media only screen and (max-width: 768px) {
+    #sidebar #desktop-relative {
+        display: block;
+    }
+    #sidebar .uw-sidebar {
+      padding: 0;
+    }
+    #sidebar .uw-sidebar .uw-sidebar-menu {
+      margin: 25px -32px 0 -10px;
+    }
+    #sidebar .uw-sidebar .uw-sidebar-menu .current_page_parent a {
+      padding: 18px 19px;
+    }
+    #sidebar .uw-sidebar ul.children li a,
+    #sidebar .uw-sidebar ul.children span {
+      padding: 18px 25px;
+    }
+}
