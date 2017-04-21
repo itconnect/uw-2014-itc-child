@@ -1,5 +1,25 @@
 (function(){
 	ITConnect = {
+		popup: {
+			create: function(){
+				$('.itc-popup').each(function(){
+					$(this).click(function(event){
+						var href = $(this).attr('data-href') || 'http://www.uw.edu',
+						    title = $(this).attr('data-title') || 'IT Connect Popup',
+						    width = $(this).attr('data-width') || '500',
+						    height = $(this).attr('data-height') || '300',
+						    menubar = $(this).attr('data-menubar') || 'no',
+						    location = $(this).attr('data-location') || 'no',
+						    resizable = $(this).attr('data-resizable') || 'yes',
+						    scrollbars = $(this).attr('data-scrollbar') || 'no',
+						    status = $(this).attr('data-status') || 'yes';
+
+						var popupVariables = 'width=' + width + ',height=' + height + ',menubar=' + menubar + ',location=' + location + ',resizable=' + resizable + ',scrollbars=' + scrollbars + ',status=' + status;
+						window.open(href, title, popupVariables);
+					})
+				});
+			}
+		},
 		search: {
 			switchDefault: function(){
 				// Swaps UW to Current Site as the default for searches
@@ -69,6 +89,7 @@
 			}
 		},
 		init: function(){
+			this.popup.create();
 			this.search.switchDefault();
 			this.sitemap.makeInteractive();
 		}

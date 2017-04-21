@@ -847,3 +847,14 @@ body.itconnect.tag ul.uw-sidebar-menu {
       padding: 18px 25px;
     }
 }
+
+/*  ITC Popups
+ --------------------------------------*/
+span.itc-popup {
+  color: #0088dd;
+  cursor: pointer;
+}
+
+span.itc-popup:hover {
+  text-decoration: underline;
+}
