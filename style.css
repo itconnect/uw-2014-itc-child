@@ -783,7 +783,8 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .az-letters .az-links li {
   float: left;
   display: inline-block;
-  padding: 5px 12px 5px 0;
+  padding: 2px;
+  text-align: center;
 }
 
 .itconnect #az-slider .letter-section ul {
@@ -792,6 +793,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
 }
 
 .itconnect #az-slider .letter-section h2 {
+  border-bottom: none;
   margin-bottom: 30px;
   position: relative;
 }
