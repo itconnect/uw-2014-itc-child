@@ -89,6 +89,7 @@
 			}
 		},
 		init: function(){
+			this.popup.create();
 			this.search.switchDefault();
 			this.sitemap.makeInteractive();
 		}
