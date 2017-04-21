@@ -2,7 +2,7 @@
 	ITConnect = {
 		popup: {
 			create: function(){
-				$('.popup').each(function(){
+				$('.itc-popup').each(function(){
 					$(this).click(function(event){
 						var href = $(this).attr('data-href') || 'http://www.uw.edu',
 						    title = $(this).attr('data-title') || 'IT Connect Popup',
