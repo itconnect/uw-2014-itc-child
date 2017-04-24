@@ -14,7 +14,7 @@
         echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
         ?> 
 
-      <?php if (is_front_page()) { get_template_part( 'menu', 'mobile' ); }?>
+      <?php get_template_part( 'menu', 'mobile' ); ?>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
