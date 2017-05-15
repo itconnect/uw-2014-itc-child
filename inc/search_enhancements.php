@@ -79,7 +79,7 @@ function auth_reqd_search_filter($post_ok, $post_id) {
     
 	$current_user = wp_get_current_user();
 
-	if (is_user_logged_in() && in_array('uwit',$current_user->roles)) {
+	if (is_user_logged_in() && (in_array('uwit',$current_user->roles) || in_array('administrator',$current_user->roles))) {
 		$post_ok = true;
 	} else {
 		$isProtected = get_post_meta($post_id,'_srl-yesno');
