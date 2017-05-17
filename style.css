@@ -215,6 +215,9 @@ iframe { margin: 0; }
   left: 80px;
   background-color: white;
 }
+.uw-body-copy .spotlight-box .widgettitle:after {
+  width: 25px
+}
 
 /* Bar in header */
 
