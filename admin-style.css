@@ -31,3 +31,7 @@
 .wp-admin #edit-slug-box {
   padding: 0;
 }
+
+.wp-admin .acf_postbox > .inside > .field {
+  padding: 0 10px;
+}
