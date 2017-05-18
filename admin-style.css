@@ -32,6 +32,6 @@
   padding: 0;
 }
 
-.wp-admin .acf_postbox > .inside > .field {
+.wp-admin .acf_postbox .inside .field {
   padding: 0 10px;
 }
