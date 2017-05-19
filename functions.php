@@ -9,6 +9,12 @@ function itc_child_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'itc_child_enqueue' );
 
+// Update CSS within the Admin interface
+function admin_style() {
+  wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() .'/admin-style.css');
+}
+add_action('admin_enqueue_scripts', 'admin_style');
+
 
 /**
 * Adds editor style functionality for TinyMCE
@@ -38,5 +44,11 @@ require_once('inc/search_enhancements.php');
 * Overrides the uw_breadcrumbs to add additional functionality
 */
 require_once('inc/uw_breadcrumbs_override.php');
+
+
+/**
+* Creates shortcode for listing out pages by last edit
+*/
+require_once('inc/review_audit.php');
 
 ?>
