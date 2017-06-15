@@ -877,7 +877,9 @@ span.itc-popup:hover {
 }
 
 .homepage_icons a.hp_icon svg {
-  height: 45px;
+  display: block;
+  max-height: 45px;
+  max-width: 45px;
 }
 
 .homepage_icons a.hp_icon .cls-1,
