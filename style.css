@@ -879,9 +879,9 @@ span.itc-popup:hover {
 .homepage_icons a.hp_icon:before {
   cursor: pointer;
   display: block;
-  height: 30px;
-  width: 30px;
-  margin: 25px auto 5px auto;
+  height: 45px;
+  width: 45px;
+  margin: 40px auto 2px auto;
 }
 
 .homepage_icons a.hp_icon.icon_email:before {
