@@ -890,13 +890,14 @@ span.itc-popup:hover {
 }
 
 .homepage_icons a.hp_icon:hover {
+  border-bottom: none;
   text-decoration: none;
 }
 
 .homepage_icons a.hp_icon .cls-1,
 .homepage_icons a.hp_icon .cls-2,
 .homepage_icons a.hp_icon .cls-3 {
-  stroke: #c9c9c9;
+  stroke: #a3a2a3;
 }
 
 .homepage_icons a.hp_icon:hover .cls-1,
