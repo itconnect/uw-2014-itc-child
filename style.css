@@ -883,7 +883,7 @@ span.itc-popup:hover {
   margin: 45px auto 12px auto;
   max-height: 52px;
   max-width: 52px;
-  transition: all .2s ease-in-out;
+  transition: all .1s ease-in-out;
 }
 
 .homepage_icons a.hp_icon.icon_email svg,
