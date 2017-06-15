@@ -902,6 +902,9 @@ span.itc-popup:hover {
 .homepage_icons a.hp_icon .cls-1b{
   stroke-width:3;
 }
+ .homepage_icons a.hp_icon .cls-smaller {
+  stroke-width: 2;
+ }
 
 .homepage_icons a.hp_icon:hover .cls-1,
 .homepage_icons a.hp_icon:hover .cls-2,
