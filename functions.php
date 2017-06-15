@@ -35,31 +35,6 @@ function itconnect_body_classes($classes) {
 
 
 /**
-* Adds support for SVG via TinyMCE editor
-*/
-
-add_filter( 'tiny_mce_before_init', 'fb_tinymce_add_type' );
-
-function fb_tinymce_add_type( $initArray ) {
-
-    // Comma separated string od extendes tags
-    // Command separated string of extended elements
-    $ext = 'svg[preserveAspectRatio|style|version|viewbox|xmlns],defs,linearGradient[id|x1|y1|z1]';
-
-    if ( isset( $initArray['extended_valid_elements'] ) ) {
-        $initArray['extended_valid_elements'] .= ',' . $ext;
-    } else {
-        $initArray['extended_valid_elements'] = $ext;
-    }
-    // maybe; set tiny paramter verify_html
-    //$initArray['verify_html'] = false;
-
-    return $initArray;
-}
-
-
-
-/**
 * Enhancements for the Relevanassi search plugin
 */
 require_once('inc/search_enhancements.php');
