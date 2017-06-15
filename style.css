@@ -884,10 +884,10 @@ span.itc-popup:hover {
   margin: 40px auto 2px auto;
 }
 
-.homepage_icons a.hp_icon .cls-1,
-.homepage_icons a.hp_icon .cls-2,
-.homepage_icons a.hp_icon .cls-3 {
-  stroke: #e8e3d3;
+.homepage_icons a.hp_icon:before .cls-1,
+.homepage_icons a.hp_icon:before .cls-2,
+.homepage_icons a.hp_icon:before .cls-3 {
+  stroke: #666666 !important;
 }
 
 .homepage_icons a.hp_icon.icon_email:before {
