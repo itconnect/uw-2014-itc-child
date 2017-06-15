@@ -876,8 +876,10 @@ span.itc-popup:hover {
   text-align: center;
 }
 
-.homepage_icons a.hp_icon svg {
+.homepage_icons a.hp_icon svg,
+.homepage_icons a.hp_icon img.svg {
   display: block;
+  margin: 25px auto 10px auto;
   max-height: 45px;
   max-width: 45px;
 }
