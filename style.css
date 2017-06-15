@@ -873,13 +873,14 @@ span.itc-popup:hover {
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 22px;
   font-weight: 700;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 .homepage_icons a.hp_icon svg,
 .homepage_icons a.hp_icon img.svg {
   display: block;
-  margin: 25px auto 10px auto;
+  margin: 45px auto 12px auto;
   max-height: 55px;
   max-width: 55px;
   transition: all .2s ease-in-out;
@@ -887,7 +888,7 @@ span.itc-popup:hover {
 
 .homepage_icons a.hp_icon.icon_email svg,
 .homepage_icons a.hp_icon.icon_email img.svg {
-  margin: 37px auto 14px auto;
+  margin: 57px auto 16px auto;
 }
 
 .homepage_icons a.hp_icon:hover {
