@@ -868,17 +868,19 @@ span.itc-popup:hover {
 /*  Homepage Icons
  ---------------------------------------*/
 .homepage_icons a.hp_icon {
-
-}
-.homepage_icons a.hp_icon.icon_email {
+  color: #4b2e83;
+  display: block;
   font-size: 22px;
+  font-weight: 600;
+  text-align: center;
 }
+
 .homepage_icons a.hp_icon.icon_email:before {
   content:url(/wp-content/themes/uw-2014-itc-child/img/email_svg.svg);
   display: block;
   height: 30px;
   width: 30px;
-  margin: 10px auto 5px auto;
+  margin: 25px auto 5px auto;
 }
 
 .homepage_icons a.hp_icon.icon_software {
