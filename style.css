@@ -871,8 +871,8 @@ span.itc-popup:hover {
   color: #4b2e83;
   display: block;
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -881,8 +881,8 @@ span.itc-popup:hover {
 .homepage_icons a.hp_icon img.svg {
   display: block;
   margin: 45px auto 12px auto;
-  max-height: 55px;
-  max-width: 55px;
+  max-height: 52px;
+  max-width: 52px;
   transition: all .2s ease-in-out;
 }
 
