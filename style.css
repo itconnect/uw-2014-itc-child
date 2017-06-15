@@ -870,29 +870,34 @@ span.itc-popup:hover {
 .homepage_icons a.hp_icon {
   color: #4b2e83;
   display: block;
+  font-family: "Encode Sans Compressed", sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
 }
 
-.homepage_icons a.hp_icon.icon_email:before {
-  content:url(/wp-content/themes/uw-2014-itc-child/img/email_svg.svg);
+.homepage_icons a.hp_icon:before {
+  cursor: pointer;
   display: block;
   height: 30px;
   width: 30px;
   margin: 25px auto 5px auto;
 }
 
-.homepage_icons a.hp_icon.icon_software {
+.homepage_icons a.hp_icon.icon_email:before {
+  content:url(/wp-content/themes/uw-2014-itc-child/img/email_svg.svg);
+}
 
+.homepage_icons a.hp_icon.icon_software {
+  content:url(/wp-content/themes/uw-2014-itc-child/img/software_svg.svg);
 }
 
 .homepage_icons a.hp_icon.icon_netid {
-
+  content:url(/wp-content/themes/uw-2014-itc-child/img/netid_svg.svg);
 }
 
 .homepage_icons a.hp_icon.icon_networks {
-
+  content:url(/wp-content/themes/uw-2014-itc-child/img/networks_svg.svg);
 }
 
 
