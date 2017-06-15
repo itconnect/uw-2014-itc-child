@@ -38,110 +38,23 @@ function itconnect_body_classes($classes) {
 * Adds support for SVG via TinyMCE editor
 */
 
-add_filter('tiny_mce_before_init', 'allow_svg_in_tinymce');
+add_filter( 'tiny_mce_before_init', 'fb_tinymce_add_type' );
 
-function allow_svg_in_tinymce( $init ) {
+function fb_tinymce_add_type( $initArray ) {
 
-	// NOTE: This doesn't take into account any security concerns regarding SVG.
-	//       It doesn't remove potential vulnerable elements, etc. It just allows
-	//       SVG, as is, assuming that the uploader is trusted. However, it would
-	//       be easy to remove elements such as script if desired. Just remove from
-	//       the array.
+    // Comma separated string od extendes tags
+    // Command separated string of extended elements
+    $ext = 'svg[preserveAspectRatio|style|version|viewbox|xmlns],defs,linearGradient[id|x1|y1|z1]';
 
-	$svgElemList = array(
-		'a',
-		'altGlyph',
-		'altGlyphDef',
-		'altGlyphItem',
-		'animate',
-		'animateColor',
-		'animateMotion',
-		'animateTransform',
-		'circle',
-		'clipPath',
-		'color-profile',
-		'cursor',
-		'defs',
-		'desc',
-		'ellipse',
-		'feBlend',
-		'feColorMatrix',
-		'feComponentTransfer',
-		'feComposite',
-		'feConvolveMatrix',
-		'feDiffuseLighting',
-		'feDisplacementMap',
-		'deDistantLight',
-		'feFlood',
-		'feFuncA',
-		'feFuncB',
-		'feFuncG',
-		'feFuncR',
-		'feGaussianBlur',
-		'feImage',
-		'feMerge',
-		'feMergeNode',
-		'feMorphology',
-		'feOffset',
-		'fePointLight',
-		'feSpecularLighting',
-		'feSpotLight',
-		'feTile',
-		'feTurbulance',
-		'filter',
-		'font',
-		'font-face',
-		'font-face-format',
-		'font-face-name',
-		'font-face-src',
-		'font-face-url',
-		'foreignObject',
-		'g',
-		'glyph',
-		'glyphRef',
-		'hkern',
-		'image',
-		'line',
-		'lineGradient',
-		'marker',
-		'mask',
-		'metadata',
-		'missing-glyph',
-		'pmath',
-		'path',
-		'pattern',
-		'polygon',
-		'polyline',
-		'radialGradient',
-		'rect',
-		'script',
-		'set',
-		'stop',
-		'style',
-		'svg',
-		'switch',
-		'symbol',
-		'text',
-		'textPath',
-		'title',
-		'tref',
-		'tspan',
-		'use',
-		'view',
-		'vkern'
-	);
+    if ( isset( $initArray['extended_valid_elements'] ) ) {
+        $initArray['extended_valid_elements'] .= ',' . $ext;
+    } else {
+        $initArray['extended_valid_elements'] = $ext;
+    }
+    // maybe; set tiny paramter verify_html
+    //$initArray['verify_html'] = false;
 
-	// extended_valid_elements is the list of elements that TinyMCE allows. This checks
-	// to make sure it exists, and then implodes the SVG element list and adds it. The
-	// format of each element is 'element[attributes]'. The array is imploded, and turns
-	// into something like '...svg[*],path[*]...'
-	
-	if ( isset( $init['extended_valid_elements'] ) ) {
-		$init['extended_valid_elements'] .= ','.implode('[*],',$svgElemList).'[*]';
-	}
-
-	// return value
-	return $init;
+    return $initArray;
 }
 
 
