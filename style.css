@@ -912,6 +912,10 @@ span.itc-popup:hover {
   stroke: #4b2e83;
 }
 
+.homepage_icons a.hp_icon:hover svg {
+  transform: scale(1.25);
+}
+
 /*  Content Audit
  ---------------------------------------*/
 
