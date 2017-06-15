@@ -885,7 +885,8 @@ span.itc-popup:hover {
 }
 
 .homepage_icons a.hp_icon.icon_email:before {
-  content:url(/wp-content/themes/uw-2014-itc-child/img/email_svg.svg);
+  /*content:url(/wp-content/themes/uw-2014-itc-child/img/email_svg.svg);*/
+  content: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22Layer_1%22%20data-name%3D%22Layer%201%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2067.7%2043.02%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23fff%3B%7D.cls-1%2C.cls-2%7Bstroke%3A%234c2e82%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bstroke-width%3A2px%3B%7D.cls-2%7Bfill%3Anone%3B%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Euw_icons_pt-1_cs6_envelope%3C/title%3E%3Crect%20class%3D%22cls-1%22%20x%3D%221%22%20y%3D%221%22%20width%3D%2265.7%22%20height%3D%2241.02%22%20rx%3D%224.25%22%20ry%3D%224.25%22/%3E%3Cpolyline%20class%3D%22cls-1%22%20points%3D%221.4%207.68%2033.85%2023.27%2066.3%207.68%22/%3E%3Cline%20class%3D%22cls-2%22%20x1%3D%2243.66%22%20y1%3D%2218.67%22%20x2%3D%2258.64%22%20y2%3D%2242.02%22/%3E%3Cline%20class%3D%22cls-2%22%20x1%3D%2224.04%22%20y1%3D%2218.67%22%20x2%3D%229.05%22%20y2%3D%2242.02%22/%3E%3C/svg%3E);
 }
 
 .homepage_icons a.hp_icon.icon_software {
