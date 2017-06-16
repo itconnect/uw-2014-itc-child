@@ -892,6 +892,14 @@ ul.homepage_icons li.homepage_icon_section {
   width:25%;
 }
 
+ul.homepage_icons li.homepage_icon_section:after {
+  content: '';
+  width:1px;
+  height:200px;
+  background-color:#666;
+  display:block;
+}
+
 .homepage_icons p {
   display: none;
 }
