@@ -171,7 +171,7 @@ iframe { margin: 0; }
 
 .uw-body .hero-content .uw-site-tagline {
   position: absolute;
-  top: -85px;
+  top: -100px;
   left: 8px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
@@ -996,6 +996,11 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 
 .homepage_icons a.hp_icon:hover svg {
   transform: scale(1.1);
+}
+
+/* changinge site title and hero for icon placement */ 
+.hero-height2 .container #hashtag.mask {
+  min-height: 55px;
 }
 
 /*  Content Audit
