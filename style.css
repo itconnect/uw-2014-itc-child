@@ -867,6 +867,48 @@ span.itc-popup:hover {
 
 /*  Homepage Icons
  ---------------------------------------*/
+
+.icons-box {
+  background: #fff; 
+  margin-top: -45px; 
+  margin-bottom: 50px; 
+  -webkit-box-shadow: 0 0 4px rgba(164, 164, 164, 0.5); 
+  box-shadow: 0 0 4px rgba(164, 164, 164, 0.5);
+}
+
+.home.itconnect .uw-breadcrumbs {
+  display: none;
+}
+
+ul.homepage_icons {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.homepage_icons li.homepage_icon_section {
+  float:left;
+  height: 287px;
+  padding: 0 20px 16px 20px;
+  width:25%;
+}
+
+.homepage_icons p {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .itconnect .icons-box ul.homepage_icons li.homepage_icon_section {
+    width:100%;
+  }
+}
+
+@media (max-width: 990px) {
+  .icons-box ul.homepage_icons li.homepage_icon_section {
+    width:50%;
+  }
+}
+
+
 .homepage_icons a.hp_icon {
   color: #4b2e83;
   display: block;
