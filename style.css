@@ -904,7 +904,7 @@ ul.homepage_icons li.homepage_icon_section:after {
   right: 5px;
 }
 
-ul.homepage_icons li.homepage_icon_section:last-child:after {
+ul.homepage_icons li#icon4.homepage_icon_section:after {
   display: none;
 }
 
@@ -924,6 +924,9 @@ ul.homepage_icons li.homepage_icon_section:last-child:after {
 @media (max-width: 990px) {
   .icons-box ul.homepage_icons li.homepage_icon_section {
     width:50%;
+  }
+  ul.homepage_icons li#icon2.homepage_icon_section:after {
+  display: none;
   }
 }
 
