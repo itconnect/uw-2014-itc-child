@@ -896,11 +896,11 @@ ul.homepage_icons li.homepage_icon_section {
 ul.homepage_icons li.homepage_icon_section:after {
   content: '';
   width: 1px;
-  height: 210px;
+  height: 74%;
   background-color: #f5f5f5;
   display: block;
   position: absolute;
-  top: 40px;
+  top: 13%;
   right: 5px;
 }
 
