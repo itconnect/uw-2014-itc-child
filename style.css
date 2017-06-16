@@ -929,8 +929,8 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     display: none;
   }
 
-  ul.homepage_icons li#icon2.h3mepage_icon_section:before,
-  ul.homepage_icons li#icon4.h3mepage_icon_section:before {
+  ul.homepage_icons li#icon3.homepage_icon_section:before,
+  ul.homepage_icons li#icon4.homepage_icon_section:before {
     content: '';
     width: 74%;
     height: 1px;
