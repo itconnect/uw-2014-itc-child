@@ -926,7 +926,19 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     width:50%;
   }
   ul.homepage_icons li#icon2.homepage_icon_section:after {
-  display: none;
+    display: none;
+  }
+
+  ul.homepage_icons li#icon2.h3mepage_icon_section:before,
+  ul.homepage_icons li#icon4.h3mepage_icon_section:before {
+    content: '';
+    width: 74%;
+    height: 1px;
+    background-color: #e9e6f0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 13%;
   }
 }
 
