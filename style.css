@@ -920,9 +920,9 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     display: none;
   }
 
-  ul.homepage_icons li#icon3.homepage_icon_section:before,
-  ul.homepage_icons li#icon4.homepage_icon_section:before {
-    display: none;
+  ul.homepage_icons li.homepage_icon_section:before,
+  ul.homepage_icons li.homepage_icon_section:before {
+    visibility: hidden;
   }
 }
 
