@@ -889,15 +889,19 @@ ul.homepage_icons li.homepage_icon_section {
   float:left;
   min-height: 287px;
   padding: 0 20px 16px 20px;
+  position: relative;
   width:25%;
 }
 
 ul.homepage_icons li.homepage_icon_section:after {
   content: '';
-  width:1px;
-  height:200px;
-  background-color:#666;
-  display:block;
+  width: 1px;
+  height: 200px;
+  background-color: #666;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .homepage_icons p {
