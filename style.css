@@ -919,6 +919,11 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   ul.homepage_icons li.homepage_icon_section:after {
     display: none;
   }
+
+  ul.homepage_icons li#icon3.homepage_icon_section:before,
+  ul.homepage_icons li#icon4.homepage_icon_section:before {
+    display: none;
+  }
 }
 
 @media (max-width: 990px) {
@@ -932,13 +937,18 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   ul.homepage_icons li#icon3.homepage_icon_section:before,
   ul.homepage_icons li#icon4.homepage_icon_section:before {
     content: '';
-    width: 74%;
+    width: 100%;
     height: 1px;
     background-color: #e9e6f0;
     display: block;
     position: absolute;
     top: 0;
-    left: 13%;
+    left: 0;
+  }
+
+  ul.homepage_icons li.homepage_icon_section:after {
+    height: 100%;
+    top: 0;
   }
 }
 
