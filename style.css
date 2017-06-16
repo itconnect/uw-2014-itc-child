@@ -880,7 +880,6 @@ span.itc-popup:hover {
 .homepage_icons a.hp_icon svg,
 .homepage_icons a.hp_icon img.svg {
   display: block;
-  margin: 45px auto 12px auto;
   max-height: 52px;
   max-width: 52px;
   transition: all .1s ease-in-out;
@@ -888,7 +887,22 @@ span.itc-popup:hover {
 
 .homepage_icons a.hp_icon.icon_email svg,
 .homepage_icons a.hp_icon.icon_email img.svg {
-  margin: 57px auto 16px auto;
+  margin: 61px auto 16px auto
+}
+
+.homepage_icons a.hp_icon.icon_software svg,
+.homepage_icons a.hp_icon.icon_software img.svg {
+  margin: 47px auto 15px auto
+}
+
+.homepage_icons a.hp_icon.icon_netid svg,
+.homepage_icons a.hp_icon.icon_netid img.svg {
+  margin: 45px auto 12px auto;
+}
+
+.homepage_icons a.hp_icon.icon_networks svg,
+.homepage_icons a.hp_icon.icon_networks img.svg {
+  margin: 56px auto 16px auto
 }
 
 .homepage_icons a.hp_icon:hover {
@@ -898,7 +912,8 @@ span.itc-popup:hover {
 
 .homepage_icons a.hp_icon .cls-1,
 .homepage_icons a.hp_icon .cls-2,
-.homepage_icons a.hp_icon .cls-3 {
+.homepage_icons a.hp_icon .cls-3,
+.homepage_icons a.hp_icon .cls-4 {
   stroke: #a3a2a3;
 }
 .homepage_icons a.hp_icon .cls-1b{
@@ -910,7 +925,8 @@ span.itc-popup:hover {
 
 .homepage_icons a.hp_icon:hover .cls-1,
 .homepage_icons a.hp_icon:hover .cls-2,
-.homepage_icons a.hp_icon:hover .cls-3 {
+.homepage_icons a.hp_icon:hover .cls-3,
+.homepage_icons a.hp_icon:hover .cls-4 {
   stroke: #4b2e83;
 }
 
