@@ -94,7 +94,6 @@
 			     * Replace all SVG images with inline SVG
 			     */
 		        $('img.svg').each(function(){
-		        	console.log($(this));
 		            var $img = jQuery(this);
 		            var imgID = $img.attr('id');
 		            var imgClass = $img.attr('class');
@@ -122,7 +121,6 @@
 		            }, 'xml');
 
 		        });
-				console.log('hey');
 			}
 		},
 		init: function(){
