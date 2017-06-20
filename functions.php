@@ -35,6 +35,17 @@ function itconnect_body_classes($classes) {
 
 
 /**
+* Adds additional file tyles allowed for media
+*/
+
+add_filter('upload_mimes', 'itconnect_allowed_mimetypes', 1, 1);
+
+function itconnect_allowed_mimetypes($mime_types) {
+    $mime_types['dwg'] = 'image/vnd.dwg'; // Adding DWG 
+    return $mime_types;
+}
+
+/**
 * Enhancements for the Relevanassi search plugin
 */
 require_once('inc/search_enhancements.php');
