@@ -171,7 +171,7 @@ iframe { margin: 0; }
 
 .uw-body .hero-content .uw-site-tagline {
   position: absolute;
-  top: -85px;
+  top: -96px;
   left: 8px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
@@ -865,6 +865,165 @@ span.itc-popup:hover {
   text-decoration: underline;
 }
 
+/*  Homepage Icons
+ ---------------------------------------*/
+
+.icons-box {
+  background: #fff; 
+  margin-top: -35px; 
+  margin-bottom: 50px; 
+  -webkit-box-shadow: 0 0 4px rgba(164, 164, 164, 0.5); 
+  box-shadow: 0 0 4px rgba(164, 164, 164, 0.5);
+}
+
+.home.itconnect .uw-breadcrumbs {
+  display: none;
+}
+
+ul.homepage_icons {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.homepage_icons li.homepage_icon_section {
+  float:left;
+  min-height: 287px;
+  padding: 0 20px 16px 20px;
+  position: relative;
+  width:25%;
+}
+
+ul.homepage_icons li.homepage_icon_section:after {
+  content: '';
+  width: 1px;
+  height: 74%;
+  background-color: #e9e6f0;
+  display: block;
+  position: absolute;
+  top: 13%;
+  right: 5px;
+}
+
+ul.homepage_icons li#icon4.homepage_icon_section:after {
+  display: none;
+}
+
+.homepage_icons p {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .itconnect .icons-box ul.homepage_icons li.homepage_icon_section {
+    width:100%;
+  }
+  ul.homepage_icons li.homepage_icon_section:after {
+    display: none;
+  }
+
+  ul.homepage_icons li.homepage_icon_section:before,
+  ul.homepage_icons li.homepage_icon_section:before {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 990px) {
+  .icons-box ul.homepage_icons li.homepage_icon_section {
+    width:50%;
+  }
+  ul.homepage_icons li#icon2.homepage_icon_section:after {
+    display: none;
+  }
+
+  ul.homepage_icons li#icon3.homepage_icon_section:before,
+  ul.homepage_icons li#icon4.homepage_icon_section:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #e9e6f0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  ul.homepage_icons li.homepage_icon_section:after {
+    height: 100%;
+    top: 0;
+  }
+}
+
+
+.homepage_icons a.hp_icon {
+  color: #4b2e83;
+  display: block;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.homepage_icons a.hp_icon svg,
+.homepage_icons a.hp_icon img.svg {
+  display: block;
+  max-height: 52px;
+  max-width: 52px;
+  transition: all .1s ease-in-out;
+}
+
+.homepage_icons a.hp_icon.icon_email svg,
+.homepage_icons a.hp_icon.icon_email img.svg {
+  margin: 61px auto 16px auto
+}
+
+.homepage_icons a.hp_icon.icon_software svg,
+.homepage_icons a.hp_icon.icon_software img.svg {
+  margin: 47px auto 15px auto
+}
+
+.homepage_icons a.hp_icon.icon_netid svg,
+.homepage_icons a.hp_icon.icon_netid img.svg {
+  margin: 45px auto 12px auto;
+}
+
+.homepage_icons a.hp_icon.icon_networks svg,
+.homepage_icons a.hp_icon.icon_networks img.svg {
+  margin: 56px auto 16px auto
+}
+
+.homepage_icons a.hp_icon:hover {
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.homepage_icons a.hp_icon .cls-1,
+.homepage_icons a.hp_icon .cls-2,
+.homepage_icons a.hp_icon .cls-3,
+.homepage_icons a.hp_icon .cls-4 {
+  stroke: #a3a2a3;
+}
+.homepage_icons a.hp_icon .cls-1b{
+  stroke-width:3;
+}
+ .homepage_icons a.hp_icon .cls-smaller {
+  stroke-width: 2;
+ }
+
+.homepage_icons a.hp_icon:hover .cls-1,
+.homepage_icons a.hp_icon:hover .cls-2,
+.homepage_icons a.hp_icon:hover .cls-3,
+.homepage_icons a.hp_icon:hover .cls-4 {
+  stroke: #4b2e83;
+}
+
+.homepage_icons a.hp_icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* changinge site title and hero for icon placement */ 
+.hero-height2 .container #hashtag.mask {
+  min-height: 55px;
+}
 
 /*  Content Audit
  ---------------------------------------*/
