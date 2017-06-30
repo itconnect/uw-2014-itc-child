@@ -893,10 +893,6 @@ ul.homepage_icons li.homepage_icon_section {
   width:25%;
 }
 
-ul.homepage_icons:after {
-  clear:both;
-}
-
 ul.homepage_icons li.homepage_icon_section:after {
   content: '';
   width: 1px;
@@ -920,6 +916,11 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   .itconnect .icons-box ul.homepage_icons li.homepage_icon_section {
     width:100%;
   }
+
+  .itconnect .icons-box ul.homepage_icons li.#icon4 {
+    margin-bottom: 30px;
+  }
+  
   ul.homepage_icons li.homepage_icon_section:after {
     display: none;
   }
