@@ -893,6 +893,10 @@ ul.homepage_icons li.homepage_icon_section {
   width:25%;
 }
 
+.homepage_icons:after {
+  clear:both;
+}
+
 ul.homepage_icons li.homepage_icon_section:after {
   content: '';
   width: 1px;
