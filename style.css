@@ -917,10 +917,10 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     width:100%;
   }
 
-  .itconnect .icons-box ul.homepage_icons li.#icon4 {
+  .itconnect .icons-box ul.homepage_icons li#icon4 {
     margin-bottom: 30px;
   }
-  
+
   ul.homepage_icons li.homepage_icon_section:after {
     display: none;
   }
