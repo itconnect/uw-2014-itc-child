@@ -1030,6 +1030,53 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   min-height: 55px;
 }
 
+/*  Homepage Alert
+ ---------------------------------------*/
+.itc_alert {
+  background: url(/wp-content/themes/uw-2014/assets/images/stripes-dark-tile.svg) 0 -58px repeat-x #e8e3d3;
+  padding: 10px 35px 35px 35px;
+  margin: -35px 0 65px 0;
+  position: relative;
+}
+
+.itc_alert h2 {
+  clear: left;
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.itc_alert h2:before, 
+.itc_alert h2:after {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  content: "";
+  height: 4px;
+} 
+
+.itc_alert h2:before {
+  width: 100px; 
+  background-color: #b7a57a;
+} 
+
+.itc_alert h2:after {
+  width: 40px; 
+  -webkit-transform: skewX(-25deg) skewY(0); 
+  -o-transform: skewX(-25deg) skewY(0); 
+  transform: skewX(-25deg) skewY(0); 
+  -webkit-transform: skew(-25deg,0); 
+  -ms-transform: skewX(-25deg) skewY(0); 
+  transform: skew(-25deg,0);
+  left: 80px;
+  background-color: #e8e3d3;
+  bottom: 3px;
+  height: 8px;
+}
+
+
 /*  Content Audit
  ---------------------------------------*/
 
