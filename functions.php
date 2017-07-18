@@ -46,6 +46,13 @@ function itconnect_allowed_mimetypes($mime_types) {
 }
 
 /**
+* Increases upload size limit
+*/
+@ini_set('upload_max_size', '25M');
+@ini_set('post_max_size', '25M');
+@ini_set('max_execution_time', '180');
+
+/**
 * Enhancements for the Relevanassi search plugin
 */
 require_once('inc/search_enhancements.php');
