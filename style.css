@@ -1101,3 +1101,55 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   font: normal normal normal 14px/1 FontAwesome;
   padding: 0 3px;
 }
+
+
+/*  Page-level hero image with title
+ ---------------------------------------*/
+.hero-headline-wrap {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 248px;
+    right: -20px;
+    padding: 2px 15px;
+    width: 550px;
+    height: 65px;
+    -webkit-transform: skewX(-25deg) skewY(0);
+    -o-transform: skewX(-25deg) skewY(0);
+    transform: skewX(-25deg) skewY(0);
+    -webkit-transform: skew(-25deg, 0);
+    -ms-transform: skewX(-25deg) skewY(0);
+    transform: skew(-25deg, 0);
+}
+
+.hero-headline {
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+    margin: 0 5px 0 0;
+    position: absolute;
+    top: 259px;
+    right: 20px;
+    width: 540px;
+    text-align: right;
+}
+
+.headline-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+@media(max-width:767px) {
+  .hero-headline {
+    position: relative;
+    color: #4b2e83;
+    top: 0;
+    text-align: left;
+    font-size: 1.3em;
+    left: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .hero-headline-wrap {
+    display: none;
+  }
+}
