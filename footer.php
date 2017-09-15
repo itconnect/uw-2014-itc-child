@@ -14,7 +14,7 @@
               <li><a href="https://itconnect.uw.edu/help/" >Help</a></li>
               <li><a href="mailto:help@uw.edu">help@uw.edu</a></li>
               <li><a href="tel:+2062215000" >206-221-5000</a></li>
-              <li><a href="http://www.washington.edu/maps/#!/uwtc">In Person: UW Tower, C3000, M-F 8-5</a></li>
+              <li><a href="http://www.washington.edu/maps/#!/uwtc">In Person: UW Tower, C Building, M-F 8-5</a></li>
             </ul>
             <ul class="footer-social" style="margin-bottom: 0;">
               <li><a class="twitter" href="http://twitter.com/UWITNews">Twitter</a></li>
