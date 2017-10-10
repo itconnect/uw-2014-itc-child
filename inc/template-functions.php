@@ -37,15 +37,13 @@ if ( ! function_exists( 'uw_has_sidebar' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'uw_dropdowns') )
-{
+if ( ! function_exists( 'uw_dropdowns') ) :
   function uw_dropdowns()
   {
 
-    echo
-        '<nav id="dawgdrops" aria-label="Main menu" role="navigation"><div class="dawgdrops-inner container" role="application">';
+    echo '<nav id="dawgdrops" aria-label="Main menu"><div class="dawgdrops-inner container" role="application">';
 
-          wp_nav_menu( array(
+    echo  wp_nav_menu( array(
             'theme_location'  => UW_Dropdowns::LOCATION,
             'container'       => false,
             //'container_class' => 'dawgdrops-inner container',
@@ -56,14 +54,13 @@ if ( ! function_exists( 'uw_dropdowns') )
 
     echo '</div></nav>';
   }
-
-}
+endif;
 
 if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav id="desktop-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" aria-describedby="mobile menu that is not visible in the desktop version">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;
@@ -72,7 +69,7 @@ if ( ! function_exists( 'uw_mobile_menu' ) ) :
 
   function uw_mobile_menu()
   {
-    echo sprintf( '<nav id="mobile-relative" role="navigation" aria-label="relative">%s</nav>', uw_list_mobile_pages() ) ;
+    echo sprintf( '<nav id="mobile-relative" aria-describedby="mobile menu">%s</nav>', uw_list_mobile_pages() ) ;
   }
 
 endif;
@@ -87,7 +84,7 @@ if ( ! function_exists( 'uw_mobile_front_page_menu' ) ) :
         $spacer = '<div id="spacer"></div>';
 
     }
-    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" role="navigation" aria-label="relative">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
+    echo sprintf( '<nav id="mobile-relative" class="frontpage%s" aria-label="mobile menu">%s%s</nav>', $class, $spacer, uw_list_front_page_menu_items() ) ;
   }
 
 endif;
@@ -112,7 +109,7 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'exclude'   => $parent->ID
     ) );
 
-    $ids = ! is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
+    $ids = !is_front_page() ? array_map( function($sibling) { return $sibling->ID; }, $siblings ) : array();
 
     $pages = wp_list_pages(array(
       'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
@@ -123,7 +120,9 @@ if ( ! function_exists( 'uw_list_pages') ) :
       'walker'       => $UW->SidebarMenuWalker
     ));
 
-    return $pages ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
+    $bool = strpos($pages , 'child-page-existance-tester');
+
+    return  $bool && !is_search() ? sprintf( '%s<ul class="%s first-level">%s</ul>', $toggle, $class, $pages ) : '';
 
   }
 
@@ -133,7 +132,14 @@ if ( ! function_exists( 'uw_list_mobile_pages' ) ) :
 
   function uw_list_mobile_pages()
   {
-    if ( ! is_front_page() ) return uw_list_pages( $mobile = true );
+    if ( ! is_front_page() ) {
+      $isMenuEmpty = uw_list_pages( $mobile = true );
+      $alwaysMobile = get_option('use_main_menu_on_mobile');
+      if(empty($isMenuEmpty) && $alwaysMobile){
+        return uw_list_front_page_menu_items();
+      }
+      return $isMenuEmpty;
+    }
 
     $locations = get_nav_menu_locations();
 
@@ -175,7 +181,7 @@ function uw_list_front_page_menu_items()
       $items = wp_nav_menu( array(
               'title_li'     => '<a href="'.get_bloginfo('url').'" title="Home" class="homelink">Home</a>',
               'theme_location'  => UW_Dropdowns::LOCATION,
-              'depth' => 1,
+              'depth' => 2,
               'container_class' => '',
               'menu_class'      => '',
               'fallback_cb'     => '',
@@ -240,7 +246,8 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
       {
         if ( has_category() )
         {
-          $category = array_shift( get_the_category( $post->ID  ) ) ;
+          $thecat = get_the_category( $post->ID  );
+          $category = array_shift( $thecat ) ;
           $html .=  '<li><a href="'  . get_category_link( $category->term_id ) .'" title="'. get_cat_name( $category->term_id ).'">'. get_cat_name($category->term_id ) . '</a>';
         }
         if ( uw_is_custom_post_type() )
@@ -284,7 +291,7 @@ if ( ! function_exists('get_uw_breadcrumbs') ) :
 
     }
 
-    return "<nav class='uw-breadcrumbs' role='navigation' aria-label='breadcrumbs'><ul>$html</ul></nav>";
+    return "<nav class='uw-breadcrumbs' aria-label='breadcrumbs'><ul>$html</ul></nav>";
   }
 
 endif;
@@ -340,7 +347,7 @@ if ( ! function_exists('uw_is_custom_post_type') ) :
 
   function uw_is_custom_post_type()
   {
-    return array_key_exists(  get_post_type(),  get_post_types( array( '_builtin'=>false) ) );
+    return get_post_type() ? array_key_exists(  get_post_type(),  get_post_types( array( '_builtin'=>false) ) ) : true;
   }
 
 endif;
@@ -353,7 +360,7 @@ if ( !function_exists('uw_site_title')):
         if (get_option('overly_long_title')){
             $classes .= ' long-title';
         }
-       echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><h2 class="' . $classes . '">' . get_bloginfo() . '</h2></a>'; 
+        echo '<a href="' . home_url('/') . '" title="' . esc_attr( get_bloginfo() ) . '"><div class="' . $classes . '">' . get_bloginfo() . '</div></a>';
     }
 
 endif;
