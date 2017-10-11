@@ -1,6 +1,5 @@
 <?php get_header(); 
-   $sidebar = get_post_meta($post->ID, "sidebar");
-?>
+   $sidebar = get_post_meta($post->ID, "sidebar"); ?>
 
 <?php get_template_part( 'header', 'image' ); ?>
 
@@ -8,17 +7,20 @@
 
   <div class="row">
 
-    <div class="col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); 
         echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
-        ?> 
+      ?> 
 
       <?php get_template_part( 'menu', 'mobile' ); ?>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
+
       <div id='main_content' class="uw-body-copy" tabindex="-1">
+
+      
 
         <?php
           // Start the Loop.
@@ -31,6 +33,9 @@
              */
             get_template_part( 'content', 'page' );
 
+
+
+
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
               comments_template();
@@ -39,15 +44,19 @@
           endwhile;
         ?>
 
+
+
       </div>
 
     </div>
 
-    <div id="sidebar"><?php 
-      if($sidebar[0]!="on"){
+  
+          <div id="sidebar"><?php 
+      if(!isset($sidebar[0]) || $sidebar[0]!="on"){
         get_sidebar();
       }
     ?></div>
+
 
   </div>
 
