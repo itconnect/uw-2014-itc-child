@@ -1153,3 +1153,17 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     display: none;
   }
 }
+
+/*  404 page
+ --------------------------------------*/
+body.error404.itconnect .woof { 
+  height: 300px;
+}
+
+.itconnect.error404 div.search.results_wrap h3 {
+  font-size: 18px;
+}
+
+.itconnect.error404 div.search.results_wrap .more {
+  display: none;
+}
