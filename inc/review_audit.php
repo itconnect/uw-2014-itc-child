@@ -8,6 +8,7 @@
 */
 
 function reviewedOnAudit() {
+	ob_start();
 	echo '<script src="' . get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js"></script>';
 	echo '<table id="reviewed" class="tablesorter"><thead><tr><th style="width:75%;">Page</th><th style="width:25%;">Last Reviewed</th></tr></thead><tbody>';
 	// args
@@ -28,11 +29,11 @@ function reviewedOnAudit() {
 		} else {
 			$date = '<span class="needs_review never_reviewed">Needs review</span>';
 		};
-
+		
 		echo '<tr><td><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></td><td>' . $date . '</td></tr>';
-
 	}
 	echo '</tbody></table>';
 	echo '<script>$(document).ready(function(){$("#reviewed").tablesorter({sortList: [[1,0]]});}); </script>';
+	return ob_get_clean();
 }
 add_shortcode('reviewedOn', 'reviewedOnAudit');
