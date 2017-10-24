@@ -23,6 +23,22 @@ function custom_field_weights($match) {
 	return $match;
 }
 add_filter('relevanssi_match', 'custom_field_weights');
+
+// For exact title or content matches, vastly increase weight
+function rlv_exact_boost($results) {
+	$query = strtolower(get_search_query());
+	foreach ($results as $post_id => $weight) {
+		$post = relevanssi_get_post($post_id);
+
+		 // Boost exact title matches
+		if (stristr($post->post_title, $query) != false) $results[$post_id] = $weight * 100;
+
+		// Boost exact matches in post content
+		if (stristr($post->post_content, $query) != false) $results[$post_id] = $weight * 100;
+	}
+	return $results;
+}
+add_filter('relevanssi_results', 'rlv_exact_boost');
  
 // Decreases the weight of old news, removes news older than 1 year
 function news_date_weights($match) {
