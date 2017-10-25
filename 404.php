@@ -34,6 +34,14 @@
                   $url = parse_url($_SERVER['REQUEST_URI']);
                   $query = $url["path"];
                   $query = str_replace(['/', '-'], ' ', $query);
+
+                  $toplevel = array('connect', 'wares', 'learn', 'research', 'work', 'security');
+
+                  foreach ($toplevel as &$word) {
+                      $word = '/\b' . preg_quote($word, '/') . '\b/';
+                  }   
+
+                  $query = preg_replace($toplevel, '', $query);
       
                   $args = array(
                       'post_type' => 'page',
