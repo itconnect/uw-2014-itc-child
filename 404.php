@@ -52,10 +52,10 @@
 
                     while ( $search->have_posts() ) {
                        $search->the_post();
-                           get_template_part( 'content', 'search' );
+                           get_template_part( 'content', 'alternatives' );
                     }
                   }else{
-                    echo "<p>We were unable to find any alternative pages. Please try searching below or using the navigation above.</p>";
+                    echo "<p><b>We were unable to find any alternative pages. Please try searching below or using the navigation above.</b></p>";
                   }
 
                 ?>
