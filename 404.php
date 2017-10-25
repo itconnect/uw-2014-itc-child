@@ -42,11 +42,13 @@
                   );
                   $search = new WP_Query( $args );
                   
-                  //ob_start();
-                  
+                  if(function_exists('relevanssi_do_query')) {
+                    relevanssi_do_query($search);
+                  }
+
                   if ( $search->have_posts() ) {
 
-                    echo "<h4>Are any of these what you are looking for?</h4>";
+                    echo "<h4>Are any of these what you were looking for?</h4>";
 
                     while ( $search->have_posts() ) {
                        $search->the_post();
