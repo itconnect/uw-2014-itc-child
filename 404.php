@@ -15,9 +15,8 @@
       <?php get_template_part( 'breadcrumbs' ); ?>
 
         <div class="row show-grid">
+          
           <div class="col-md-12">
-
-            
 
             <div class="row show-grid">
 
@@ -27,53 +26,20 @@
                 
                 <h1>Sorry, we can't find that page.</h1>
                 <p>Dubs tells us this page might not be what you had in mind when you set out on your journey through the UW Web.  Don&#146;t worry, we've created a list of pages that might be what you were looking for.</p>
+              
               </div>
 
               <div class="col-md-5 col-md-offset-1">
-                <?php
-                  $url = parse_url($_SERVER['REQUEST_URI']);
-                  $query = $url["path"];
-                  $query = str_replace(['/', '-'], ' ', $query);
 
-                  $toplevel = array('connect', 'wares', 'learn', 'research', 'work', 'security');
+                <?php 
 
-                  foreach ($toplevel as &$word) {
-                      $word = '/\b' . preg_quote($word, '/') . '\b/';
-                  }   
+                get_template_part( 'content', 'alternatives' );
 
-                  $query = preg_replace($toplevel, '', $query);
-      
-                  $args = array(
-                      'post_type' => 'page',
-                      'posts_per_page' => '5',
-                      's' => $query
-                  );
-                  $search = new WP_Query( $args );
-                  
-                  if(function_exists('relevanssi_do_query')) {
-                    relevanssi_do_query($search);
-                  }
-
-                  if ( $search->have_posts() ) {
-
-                    echo "<h4>Are any of these what you were looking for?</h4>";
-
-                    while ( $search->have_posts() ) {
-                       $search->the_post();
-                           get_template_part( 'content', 'alternatives' );
-                    }
-                  }else{
-                    echo "<p><b>We were unable to find any alternative pages. Please try searching below or using the navigation above.</b></p>";
-                  }
+                get_search_form(); 
 
                 ?>
                 
-
-                <?php get_search_form(); ?>
-                
               </div>
-
-              
 
             </div>
 
