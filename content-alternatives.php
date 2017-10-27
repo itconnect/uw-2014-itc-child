@@ -36,12 +36,12 @@
           the_date('F j, Y', '<p class="date">', '</p>');
         }
 
-        echo '<h3><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> </a></h3>';
+        echo '<h3><a href="' . the_permalink() . '" title="' . the_title_attribute() . '">' . the_title() . '</a></h3>';
 
         include( locate_template( 'search-breadcrumbs.php' ) );
 
         echo '</div>';
-                   
+
     }
   }else{
     echo "<p><b>We were unable to find any alternative pages. Please try searching below or using the navigation above.</b></p>";
