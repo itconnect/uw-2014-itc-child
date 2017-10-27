@@ -36,8 +36,10 @@
           the_date('F j, Y', '<p class="date">', '</p>');
         }
 
-        echo '<h3><a href="' . the_permalink() . '" title="' . the_title_attribute() . '">' . the_title() . '</a></h3>';
-
+        ?>
+        <h3><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?> </a></h3>
+        <?php 
+        
         include( locate_template( 'search-breadcrumbs.php' ) );
 
         echo '</div>';
