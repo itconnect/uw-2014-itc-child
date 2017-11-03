@@ -1180,3 +1180,18 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 #searchbox span.icons {
   display: none;
 }
+
+fieldset.filters {
+  font-size: 12px;
+}
+
+fieldset.filters legend {
+  font-size: 14px;
+  border: none;
+  margin: 0;
+}
+
+fieldset.filters label {
+  margin: 0;
+  font-weight: 400;
+}

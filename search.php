@@ -22,7 +22,7 @@
             <input type="text" value="" name="s" id="s" placeholder="Search IT Connect for:" autocomplete="off">
             <input type="submit" id="searchsubmit" value="Search">
             <fieldset class="filters">
-              <legend>Filter search:</legend>
+              <legend>Include the following types of content:</legend>
               <input type="checkbox" id="pages" name="pages" value="true" checked>
               <label for="pages">Documentation</label>
               <input type="checkbox" id="news" name="news" value="true" checked>
