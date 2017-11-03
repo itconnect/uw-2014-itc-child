@@ -103,3 +103,23 @@ function auth_reqd_search_filter($post_ok, $post_id) {
 	}
 	return $post_ok;
 }
+
+// Allows users to filter results by post type on the search results page
+add_filter('relevanssi_hits_filter', 'filter_results_by_type');
+function filter_results_by_type($hits) {
+
+	$filtered = array();
+
+    // Split the post types in array $types
+    if (!empty($hits)) {
+        foreach ($hits[0] as $hit) {
+            if ($hit->post_type == 'page') {
+				array_push($filtered, $hit)
+            }
+        }
+    }
+
+    // Merge back to $hits in the desired order
+    $hits[0] = $filtered;
+    return $hits;
+}
