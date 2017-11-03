@@ -1153,3 +1153,20 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
     display: none;
   }
 }
+
+
+/*  Search results page search box
+ ---------------------------------------*/
+
+#searchbox {
+  position: relative;
+}
+
+#searchbox label.screen-reader-text {
+  position: absolute;
+  opacity: 0;
+}
+
+#searchbox span.icons {
+  display: none;
+}
