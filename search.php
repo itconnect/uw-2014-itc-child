@@ -21,14 +21,15 @@
             <label class="screen-reader-text" for="s">Search for:</label>
             <input type="text" value="" name="s" id="s" placeholder="Search IT Connect for:" autocomplete="off">
             <input type="submit" id="searchsubmit" value="Search">
-            <div class="filters">
+            <fieldset class="filters">
+              <legend>Filter search:</legend>
               <input type="checkbox" id="pages" name="pages" value="true" checked>
               <label for="pages">Documentation</label>
               <input type="checkbox" id="news" name="news" value="true" checked>
               <label for="news">News and communications</label>
               <input type="checkbox" id="services" name="services" value="true" checked>
               <label for="services">Service Catalog</label>
-            </div>
+            </fieldset>
           </div>
         </form>
 

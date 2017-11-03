@@ -1160,14 +1160,16 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 
 #searchbox {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 #searchbox:after {
-  content:" ";
-  display: block;
-  border-bottom: 1px solid #666;
-  width: 50px;
+    content: "";
+    width: 180px;
+    height: 1px;
+    display: block;
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 19px;
 }
 
 #searchbox label.screen-reader-text {
