@@ -19,7 +19,7 @@
         <form role="search" method="get" id="searchresultsform" class="searchresultsform" action="<?php echo set_url_scheme( home_url('/') ) ?>">
           <div id="searchbox"> 
             <label class="screen-reader-text" for="s">Search for:</label>
-            <input type="text" value="" name="s" id="s" placeholder="Search IT Connect for:" autocomplete="off">
+            <input type="text" value="<?php the_search_query(); ?>" name="s" id="s" placeholder="Search IT Connect for:" autocomplete="off">
             <input type="submit" id="searchsubmit" value="Search">
             <fieldset class="filters">
               <legend>Include the following types of content:</legend>
