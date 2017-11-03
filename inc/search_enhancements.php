@@ -114,7 +114,7 @@ function filter_results_by_type($hits) {
     if (!empty($hits)) {
         foreach ($hits[0] as $hit) {
             if ($hit->post_type == 'page') {
-				array_push($filtered, $hit)
+				array_push($filtered, $hit);
             }
         }
     }
