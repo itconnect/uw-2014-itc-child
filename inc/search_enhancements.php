@@ -110,11 +110,22 @@ function filter_results_by_type($hits) {
 	if(empty($_GET)) {
 		return $hits;
 	} else {
+		$valid = array();
 		$filtered = array();
+
+		// Check terms in $_GET and create an array of valid post types for this query
+		if (array_key_exists('pages', $_GET)){
+			array_push($valid, 'page');
+		} else if (array_key_exists('news', $_GET)){
+			array_push($valid, 'post');
+		} else if (array_key_exists('news', $_GET)){
+			array_push($valid, 'service');
+		}
+
 		// Split the post types in array $types
 		if (!empty($hits)) {
 			foreach ($hits[0] as $hit) {
-				if (array_key_exists($hit->post_type, $_GET)) {
+				if (array_key_exists($hit->post_type, $valid)) {
 					array_push($filtered, $hit);
 				}
 				/*
