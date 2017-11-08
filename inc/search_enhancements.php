@@ -114,12 +114,18 @@ function filter_results_by_type($hits) {
 		$filtered = array();
 
 		// Check terms in $_GET and create an array of valid post types for this query
-		if (array_key_exists('pages', $_GET)){
-			array_push($valid, 'page');
-		} else if (array_key_exists('news', $_GET)){
-			array_push($valid, 'post');
-		} else if (array_key_exists('news', $_GET)){
-			array_push($valid, 'service');
+		if (isset($_GET['pages'])){
+			$valid['page']=TRUE;
+		} else if (isset($_GET['news'])){
+			$valid['post']=TRUE;
+		} else if (isset($_GET['news'])){
+			$valid['service']=TRUE;
+		}
+
+		if(empty($valid)) {
+			$valid['page']=TRUE;
+			$valid['post']=TRUE;
+			$valid['service']=TRUE;
 		}
 
 		// Split the post types in array $types
@@ -128,10 +134,6 @@ function filter_results_by_type($hits) {
 				if (array_key_exists($hit->post_type, $valid)) {
 					array_push($filtered, $hit);
 				}
-				/*
-				if ($hit->post_type == 'page') {
-					array_push($filtered, $hit);
-				}*/
 			}
 		}
 		// Merge back to $hits in the desired order
