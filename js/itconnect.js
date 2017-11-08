@@ -38,17 +38,24 @@
 			},
 			checkboxes: function(){
 				// Retains the state of the checkboxes when the page is reloaded
-				var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
-				var $checkboxes = $("#searchbox :checkbox");
+				var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
+					$checkboxes = $('#searchbox :checkbox'),
+					time_now  = (new Date()).getTime();
 
-				$checkboxes.on("change", function(){
+				// Delete checkbox state if it was set more than an hour ago
+				if (localStorage.getItem('checkboxTime') && time_now > (localStorage.getItem('checkboxTime') + 3600000)) {
+					localStorage.removeItem('checkboxValues');
+				}
+
+				// Set local storage  item when checkboxes are changed, and load storage on back load
+				$checkboxes.on('change', function(){
 					$checkboxes.each(function(){
 						checkboxValues[this.id] = this.checked;
 					});
-					localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+					localStorage.setItem('checkboxValues', JSON.stringify(checkboxValues));
 				});
 				$.each(checkboxValues, function(key, value) {
-					$("#" + key).prop('checked', value);
+					$('#' + key).prop('checked', value);
 				});
 			}
 		},
