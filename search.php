@@ -24,11 +24,11 @@
             <fieldset class="filters">
               <legend>Include the following types of content:</legend>
               <input type="checkbox" id="pages" name="pages" value="true" checked>
-              <label for="pages">Documentation</label>
+              <label for="pages">Guides, tools, and resources</label>
               <input type="checkbox" id="news" name="news" value="true" checked>
-              <label for="news">News and communications</label>
+              <label for="news">News</label>
               <input type="checkbox" id="services" name="services" value="true" checked>
-              <label for="services">Service Catalog</label>
+              <label for="services">UW-IT Service Catalog</label>
             </fieldset>
           </div>
         </form>
