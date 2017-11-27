@@ -45,6 +45,18 @@ function itconnect_allowed_mimetypes($mime_types) {
     return $mime_types;
 }
 
+
+/**
+ * Show all parents, regardless of post status.
+ */
+function itconnect_show_all_parents( $args ) {
+	$args['post_status'] = array( 'publish', 'pending', 'draft', 'private' );
+	return $args;
+}
+add_filter( 'page_attributes_dropdown_pages_args', 'itconnect_show_all_parents' );
+add_filter( 'quick_edit_dropdown_pages_args', 'itconnect_show_all_parents' );
+
+
 /**
 * Enhancements for the Relevanassi search plugin
 */
