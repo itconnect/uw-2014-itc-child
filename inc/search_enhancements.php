@@ -103,3 +103,41 @@ function auth_reqd_search_filter($post_ok, $post_id) {
 	}
 	return $post_ok;
 }
+
+// Allows users to filter results by post type on the search results page
+add_filter('relevanssi_hits_filter', 'filter_results_by_type');
+function filter_results_by_type($hits) {
+	if(empty($_GET)) {
+		return $hits;
+	} else {
+		$valid = array();
+		$filtered = array();
+
+		// Check terms in $_GET and create an array of valid post types for this query
+		if (isset($_GET['pages'])){
+			$valid['page']=TRUE;
+		} else if (isset($_GET['news'])){
+			$valid['post']=TRUE;
+		} else if (isset($_GET['services'])){
+			$valid['service']=TRUE;
+		}
+
+		if(empty($valid)) {
+			$valid['page']=TRUE;
+			$valid['post']=TRUE;
+			$valid['service']=TRUE;
+		}
+
+		// Split the post types in array $types
+		if (!empty($hits)) {
+			foreach ($hits[0] as $hit) {
+				if (array_key_exists($hit->post_type, $valid)) {
+					array_push($filtered, $hit);
+				}
+			}
+		}
+		// Merge back to $hits in the desired order
+		$hits[0] = $filtered;
+		return $hits;
+	}
+}
