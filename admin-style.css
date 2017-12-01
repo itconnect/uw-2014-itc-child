@@ -19,13 +19,14 @@
 
 #acf_after_title-sortables.meta-box-sortables #acf-reviewed_on.field,
 #acf_after_title-sortables.meta-box-sortables #acf-reviewed_by.field {
-  width: 18%;
-  min-width: 125px;
+  width: 12%;
+  min-width: 100px;
 }
 
-#acf_after_title-sortables.meta-box-sortables #acf-contact.field {
-  width: 50%;
-  min-width: 300px
+#acf_after_title-sortables.meta-box-sortables #acf-contact.field,
+#acf_after_title-sortables.meta-box-sortables #acf-service_offering.field {
+  width: 30%;
+  min-width: 215px
 }
 
 .wp-admin #edit-slug-box {
