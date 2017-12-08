@@ -52,7 +52,7 @@ function reviewedOnAudit() {
 		echo '<tr><td><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
-	echo '<script>$(document).ready(function() { $("#reviewed").DataTable({"pageLength": 100, "processing":true});} );</script>';
+	echo '<script>$(document).ready(function() { $("#reviewed").DataTable({"pageLength": 2000, "processing":true});} );</script>';
 	return ob_get_clean();
 }
 add_shortcode('reviewedOn', 'reviewedOnAudit');
