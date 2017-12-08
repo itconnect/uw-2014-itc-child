@@ -3,14 +3,15 @@
 *
 * Adds a shortcode to list all pages, ordered by the last date they were reviewed:
 *  
-* Dependancies: plugin Advanced Custom Fields
+* Dependancies: plugin Advanced Custom Fields, DataTables jQuery plugin (https://datatables.net/download/index)
 *
 */
 
 function reviewedOnAudit() {
 	ob_start();
-	echo '<script src="' . get_stylesheet_directory_uri() . '/js/jquery.tablesorter.min.js"></script>';
-	echo '<table id="reviewed" class="tablesorter"><thead><tr><th style="width:75%;">Page</th><th style="width:25%;">Last Reviewed</th></tr></thead><tbody>';
+	echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.css"/>';
+    echo '<script type="text/javascript" src="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.js"></script>';
+	echo '<table id="reviewed"><thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></thead><tbody>';
 	// args
 	$args = array(
 		'post_type' => 'page',
@@ -29,11 +30,29 @@ function reviewedOnAudit() {
 		} else {
 			$date = '<span class="needs_review never_reviewed">Needs review</span>';
 		};
+
+		if (get_field('reviewed_by')) {
+			$reviewer =  get_field('reviewed_by');
+		} else {
+			$reviewer = 'Not set';
+		};
+
+		if (get_field('contact')) {
+			$contacts =  get_field('contact');
+		} else {
+			$contacts = 'None';
+		};
+
+		if (get_field('service_offering')) {
+			$serviceoffering =  get_field('service_offering');
+		} else {
+			$serviceoffering = 'Not set';
+		};
 		
-		echo '<tr><td><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></td><td>' . $date . '</td></tr>';
+		echo '<tr><td><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
-	echo '<script>$(document).ready(function(){$("#reviewed").tablesorter({sortList: [[1,0]]});}); </script>';
+	echo '<script>$(document).ready(function() { $(#reviewed").DataTable();} );</script>';
 	return ob_get_clean();
 }
 add_shortcode('reviewedOn', 'reviewedOnAudit');
