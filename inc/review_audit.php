@@ -47,7 +47,7 @@ function reviewedOnAudit() {
 			$serviceoffering = 'Not set';
 		};
 		
-		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->page_title . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
+		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->post_title . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
 	echo '<script>$(document).ready(function() { $("#reviewed").DataTable({"pageLength": 100});} );</script>';
