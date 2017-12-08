@@ -15,36 +15,34 @@ function reviewedOnAudit() {
 	// args
 	$args = array(
 		'post_type' => 'page',
-		'posts_per_page'  => -1,
 	);
 
 	// query
-	$wp_query = new WP_Query( $args );
+	$pagelist = get_pages( $args );
 
 	// loop
-	while($wp_query->have_posts()) {
-		$wp_query->the_post();
+	foreach ($pagelist as $listitem) {
 
-		if (get_field('reviewed_on')) {
-			$date = '<span class="review_date">' . date_format(date_create(get_field('reviewed_on')), 'Y/m/d') . '</span>';
+		if (get_field('reviewed_on', $listitem->ID)) {
+			$date = '<span class="review_date">' . date_format(date_create(get_field('reviewed_on', $listitem->ID)), 'Y/m/d') . '</span>';
 		} else {
 			$date = '<span class="needs_review never_reviewed">Needs review</span>';
 		};
 
-		if (get_field('reviewed_by')) {
-			$reviewer =  get_field('reviewed_by');
+		if (get_field('reviewed_by', $listitem->ID)) {
+			$reviewer =  get_field('reviewed_by', $listitem->ID);
 		} else {
 			$reviewer = 'Not set';
 		};
 
-		if (get_field('contact')) {
-			$contacts =  get_field('contact');
+		if (get_field('contact', $listitem->ID)) {
+			$contacts =  get_field('contact', $listitem->ID);
 		} else {
 			$contacts = 'None';
 		};
 
-		if (get_field('service_offering')) {
-			$serviceoffering =  get_field('service_offering');
+		if (get_field('service_offering', $listitem->ID)) {
+			$serviceoffering =  get_field('service_offering', $listitem->ID);
 		} else {
 			$serviceoffering = 'Not set';
 		};
