@@ -14,8 +14,8 @@ function reviewedOnAudit() {
 	echo '<table id="reviewed"><thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></thead><tbody>';
 	// args
 	$args = array(
-		'post_type' => 'page',
-		'posts_per_page'  => -1,
+		'post_type' => 'page'//,
+		//'posts_per_page'  => -1,
 	);
 
 	// query
