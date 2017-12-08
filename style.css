@@ -1080,11 +1080,11 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 /*  Content Audit
  ---------------------------------------*/
 
-table.reviewed {
+table#reviewed {
   font-size: 14px;
 }
 
-table.reviewed .needs_review {
+table#reviewed .needs_review {
   color: red;
 }
 
