@@ -54,7 +54,7 @@ function reviewedOnAudit() {
 		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->post_title . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
-	echo '<script>$("#reviewed tfoot th").each(function(){var e=$(this).text();$(this).html(\'<input type="text" placeholder="Search \'+e+\'" />\')});var table=$("#reviewed").DataTable({"pageLength": 50});table.columns().every(function(){var e=this;$("input",this.footer()).on("keyup change",function(){e.search()!==this.value&&e.search(this.value).draw()})});</script>';
+	echo '<script>$("#reviewed tfoot th").each(function(){var e=$(this).text();$(this).html(\'<input type="text" placeholder="Search \'+e+\'" />\')});var table=$("#reviewed").DataTable({"pageLength": 50, "order": [1, \'asc\']});table.columns().every(function(){var e=this;$("input",this.footer()).on("keyup change",function(){e.search()!==this.value&&e.search(this.value).draw()})});</script>';
 	return ob_get_clean();
 }
 add_shortcode('reviewedOn', 'reviewedOnAudit');
