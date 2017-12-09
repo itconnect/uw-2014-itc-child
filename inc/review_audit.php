@@ -50,17 +50,8 @@ function reviewedOnAudit() {
 		} else {
 			$serviceoffering = 'Not set';
 		};
-
-		// Making breadcrumbs
-		$breadcrumbs = '<span class="crumbs">';
-		$parents = get_post_ancestors($listitem->ID);
-		$parents = array_reverse($parents);
-		foreach ($parents as $parent) {
-			$breadcrumbs .= '<span class="crumb">' . get_the_title($parent) . '</span>';
-		}
-		$breadcrumbs .= '</span>';
 		
-		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->post_title . '</a><br />' . $breadcrumbs . '</td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
+		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->post_title . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
 	echo '<script>$("#reviewed tfoot th").each(function(){var e=$(this).text();$(this).html(\'<input type="text" placeholder="Search \'+e+\'" />\')});var table=$("#reviewed").DataTable({"pageLength": 50, "order": [1, \'asc\']});table.columns().every(function(){var e=this;$("input",this.footer()).on("keyup change",function(){e.search()!==this.value&&e.search(this.value).draw()})});</script>';
