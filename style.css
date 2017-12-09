@@ -1088,6 +1088,13 @@ table#reviewed .needs_review {
   color: red;
 }
 
+table#reviewed tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+
 /*  Page-level hero image with title
  ---------------------------------------*/
 .hero-headline-wrap {

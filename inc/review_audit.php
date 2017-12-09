@@ -11,7 +11,11 @@ function reviewedOnAudit() {
 	ob_start();
 	echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.css"/>';
     echo '<script type="text/javascript" src="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.js"></script>';
-	echo '<table id="reviewed"><thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></thead><tbody>';
+	echo '<table id="reviewed">';
+    echo '<thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></thead>';
+    echo '<tfoot><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></tfoot>';
+    echo '<tbody>';
+    
 	// args
 	$args = array(
 		'post_type' => 'page',
@@ -50,7 +54,8 @@ function reviewedOnAudit() {
 		echo '<tr><td><a href="' . esc_url(get_permalink($listitem->ID)) . '">' . $listitem->post_title . '</a></td><td>' . $date . '</td><td>' . $reviewer . '</td><td>' . $contacts .'</td><td>' . $serviceoffering . '</td></tr>';
 	}
 	echo '</tbody></table>';
-	echo '<script>$(document).ready(function() { $("#reviewed").DataTable({"pageLength": 100});} );</script>';
+	echo '<script>$("#reviewed tfoot th").each(function(){var e=$(this).text();$(this).html(\'<input type="text" placeholder="Search \'+e+\'" />\')});var table=$("#reviewed").DataTable({"
+pageLength": 100});table.columns().every(function(){var e=this;$("input",this.footer()).on("keyup change",function(){e.search()!==this.value&&e.search(this.value).draw()})});</script>';
 	return ob_get_clean();
 }
 add_shortcode('reviewedOn', 'reviewedOnAudit');
