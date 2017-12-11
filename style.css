@@ -1080,26 +1080,18 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 /*  Content Audit
  ---------------------------------------*/
 
-.tablesorter .needs_review {
+table#reviewed {
+  font-size: 14px;
+}
+
+table#reviewed .needs_review {
   color: red;
 }
 
-.tablesorter .never_reviewed {
-  font-size: 0.8em;
-}
-
-.tablesorter .headerSortUp:after {
-  content: "\f078";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  padding: 0 3px;
-}
-
-.tablesorter .headerSortDown:after {
-  content: "\f077";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  padding: 0 3px;
+table#reviewed tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
 }
 
 
