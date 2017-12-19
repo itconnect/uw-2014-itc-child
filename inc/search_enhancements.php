@@ -89,17 +89,22 @@ add_action('init', 'add_taxonomies_to_pages');
 add_action('pre_get_posts', 'tags_support_query');
 
 // Removes posts that require login for non-logged-in users and logged in users who are not uwit users
+// Also checks if posts are set to publish before saying they can be shown
 add_filter('relevanssi_post_ok', 'auth_reqd_search_filter', 11, 2);
 function auth_reqd_search_filter($post_ok, $post_id) {
 	$current_user = wp_get_current_user();
-	if (is_user_logged_in() && (in_array('uwit',$current_user->roles) || in_array('administrator',$current_user->roles))) {
-		$post_ok = true;
+	$post_status = relevanssi_get_post_status($post_id);
+	if ($post_status == 'publish') {
+		if (is_user_logged_in() && (in_array('uwit',$current_user->roles) || in_array('administrator',$current_user->roles))) {
+			$post_ok = true;
+		} else {
+			$isProtected = get_post_meta($post_id,'_srl-yesno');
+			if ($isProtected[0] == 'Yes') {
+				$post_ok = false;
+			}
+		}
 	} else {
-		$isProtected = get_post_meta($post_id,'_srl-yesno');
-
-	    if ($isProtected[0] == 'Yes') {
-	        $post_ok = false;
-	    } 
+		$post_ok = false;
 	}
 	return $post_ok;
 }
