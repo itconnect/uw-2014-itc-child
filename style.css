@@ -865,7 +865,8 @@ body.itconnect.tag ul.uw-sidebar-menu {
 
 @media only screen and (max-width: 767px) {
     .itconnect div.container.uw-body {
-    padding: 0 0 0 5px;
+      padding: 0 0 0 5px;
+    }
 }
 
 
