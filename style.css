@@ -632,6 +632,18 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
   border-right: none;
 }
 
+
+/*  Page subtitle
+ --------------------------------------*/
+.itconnect .page-subtitle {
+  margin-top: 0px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #4b2e83;
+  font-family: "Encode Sans Compressed", sans-serif;
+}
+
+
 /*  Search
  ------------------------------------------------------------------------*/
 .itconnect div.search.results_wrap h3 {
