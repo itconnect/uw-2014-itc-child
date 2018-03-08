@@ -144,14 +144,17 @@ nav.thinstrip-links {
   background: url(/wordpress/wp-content/themes/uw-2014-itc-child/img/carrot.png);
   background-repeat: no-repeat;
   background-position: top left;
-  height: 17px;
+  height: 13px;
   right:40px;
   top:15px;
-  width: 17px;
+  width: 9px;
+  -webkit-transition: -webkit-transform .1s ease-in-out;
+  transition: transform .1s ease-in-out;
 }
 
 .itconnect .dawgdrops-item a.dropdown-toggle:hover:before {
-  
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .itconnect .dawgdrops-item a:after {
@@ -173,6 +176,18 @@ nav.thinstrip-links {
     left: 50%;
     margin-left: -40px;
     }
+
+
+/* Hero Image */
+.itconnect .uw-hero-image:before, .no-uw-hero-image:before,
+.itconnect .uw-hero-image:after, .no-uw-hero-image:after {
+  height: 35px;
+}
+
+.itconnect .uw-hero-image, 
+.itconnect .no-uw-hero-image {
+  height: 172px;
+}
 
 /**** Service Management Style ****/
 
@@ -243,27 +258,31 @@ iframe { margin: 0; }
 
 /* Banner text */
 
-.uw-body .uw-site-title {
+.itconnect .uw-body .uw-site-title {
   position: absolute;
   top: -180px;
   left: 11px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 50px;
+  font-size: 47px;
   line-height: 55px;
-  font-weight: 900;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
+}
+
+.itconnect .uw-body div.uw-site-title {
+  margin-top: 12px;
 }
 
 .uw-body .uw-site-tagline {
   position: absolute;
-  top: -105px;
+  top: -116px;
   left: 11px;
   color: #fff;
   font-family: "Encode Sans Compressed", sans-serif;
-  font-size: 22px;
-  line-height: 35px;
-  font-weight: 900;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
   text-shadow: 1px 1px 2px rgba(0,0,0,.5);
   -webkit-font-smoothing: antialiased;
 }
@@ -326,10 +345,11 @@ iframe { margin: 0; }
 
 .uw-content .udub-slant {
   position: absolute;
-  top: -120px;
+  top: -104px;
   overflow: hidden;
   display: block;
-  margin: 30px 0 25px -5px;
+  margin: 0 0 0 -2px;
+  width: 200px;
 } 
 
 .uw-content .hero-height2 .udub-slant span {
@@ -350,9 +370,9 @@ iframe { margin: 0; }
   transform: skew(-25deg, 0);
   display: block;
   background-color: #b7a57a;
-  height: 10px;
-  width: 210px;
-  margin: 0 0 0 0;
+  height: 9px;
+  width: 180px;
+  margin: 0 0 0 -5px;
 }
 
 /* DL with float left dt */
@@ -980,12 +1000,19 @@ span.itc-popup:hover {
   text-decoration: underline;
 }
 
-/*  Homepage Icons
+/*  Homepage 
  ---------------------------------------*/
+
+.itconnect.home #main_content > h1:first-of-type {
+  display: none;
+}
+
+
+ /* Icons */
 
 .icons-box {
   background: #fff; 
-  margin-top: -35px; 
+  margin-top: -30px; 
   margin-bottom: 50px; 
   -webkit-box-shadow: 0 0 4px rgba(164, 164, 164, 0.5); 
   box-shadow: 0 0 4px rgba(164, 164, 164, 0.5);
