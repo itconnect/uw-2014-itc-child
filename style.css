@@ -64,6 +64,105 @@
 /*** Header and Footer Styles ***/
 
 
+/* Thinstrip */
+
+nav.thinstrip-links {
+  margin: 5px 10px 0 0;
+}
+
+.thinstrip-itc {
+  background: #4b2e83;
+  color: #ffffff;
+  font-family: "Encode Sans Compressed", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+.thinstrip-itc label {
+  float: left;
+  font-weight: 400;
+  margin: 0;
+}
+
+.thinstrip-itc .align-right {
+  float: right;
+}
+
+.thinstrip-itc .itc-thin-links {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.thinstrip-itc .itc-thin-links li {
+  float: left;
+  padding: 0;
+  position: relative;
+  margin: 0 22px 0 0;
+}
+
+.thinstrip-itc .itc-thin-links li a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.thinstrip-itc .itc-thin-links li a:hover,
+.thinstrip-itc .itc-thin-links li a:focus {
+  color: #b7a57a;
+  text-decoration: underline;
+}
+
+.thinstrip-itc .itc-thin-links li:after {
+  position: absolute;
+  right: -16px;
+  height: 17px;
+  width: 12px;
+  top: 3px;
+  content: "";
+  background: url(/wordpress/wp-content/themes/uw-2014-itc-child/img/slash.png);
+  background-repeat:  no-repeat;
+}
+
+.thinstrip-itc .itc-thin-links li:last-of-type:after {
+ display: none;
+}
+
+
+/* Dropdawgs Nav */
+
+.itconnect .dawgdrops-item.dawgdrops-item a {
+  font-weight: 700;
+  padding-right: 60px;
+  text-transform: none;
+  padding-bottom: 19px;
+}
+
+.itconnect .dawgdrops-item a.dropdown-toggle:before {
+  background: url(/wordpress/wp-content/themes/uw-2014-itc-child/img/carrot.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  height: 17px;
+  right:40px;
+  top:15px;
+  width: 17px;
+}
+
+.itconnect .dawgdrops-item a.dropdown-toggle:hover:before {
+  
+}
+
+.itconnect .dawgdrops-item a:after {
+  right: 2px;
+}
+
+.itconnect .dawgdrops-inner {
+  padding: 14px 0 0px 0;
+}
+
+
 .uw-footer nav::before {
     content: "";
     position: absolute;

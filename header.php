@@ -38,7 +38,7 @@
     <div id="uw-container-inner">
 
 
-    <?php get_template_part('thinstrip'); ?>
+    <?php get_template_part('thinstrip_itc'); ?>
 
     <?php require( get_template_directory() . '/inc/template-functions.php' );
           uw_dropdowns(); ?>
