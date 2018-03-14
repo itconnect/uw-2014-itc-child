@@ -67,7 +67,7 @@
 /* Thinstrip */
 
 nav.thinstrip-links {
-  margin: 5px 10px 0 0;
+  margin: 5px 12px 0 0;
 }
 
 .thinstrip-itc {
@@ -135,7 +135,7 @@ nav.thinstrip-links {
 
 .itconnect .dawgdrops-item.dawgdrops-item a {
   font-weight: 700;
-  padding-right: 60px;
+  padding-right: 55px;
   text-transform: none;
   padding-bottom: 19px;
 }
@@ -145,7 +145,7 @@ nav.thinstrip-links {
   background-repeat: no-repeat;
   background-position: top left;
   height: 13px;
-  right:40px;
+  right:36px;
   top:15px;
   width: 9px;
   -webkit-transition: -webkit-transform .1s ease-in-out;
@@ -188,6 +188,31 @@ nav.thinstrip-links {
 .itconnect .no-uw-hero-image {
   height: 172px;
 }
+
+
+/* Hero search box */
+
+.hero-search {
+  width: 250px;
+  position: absolute;
+  top: -140px;
+  right: 16px;
+}
+
+.hero-search-submit {
+  background: url(/wordpress/wp-content/themes/uw-2014-itc-child/img/search-icon.png);
+  border: 0;
+  display: inline-block;
+  height: 24px;
+  padding: 0;
+  position: absolute;
+  right: 13px;
+  top: 15px;
+  width: 24px;
+}
+
+
+
 
 /**** Service Management Style ****/
 
@@ -370,8 +395,8 @@ iframe { margin: 0; }
   transform: skew(-25deg, 0);
   display: block;
   background-color: #b7a57a;
-  height: 9px;
-  width: 180px;
+  height: 8px;
+  width: 160px;
   margin: 0 0 0 -5px;
 }
 

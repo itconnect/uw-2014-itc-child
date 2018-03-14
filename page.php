@@ -13,6 +13,16 @@
         echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
       ?> 
 
+      <div class="hero-search">
+        <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+          <div>
+            <label class="screen-reader-text" for="s">Search IT Connect:</label>
+            <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
+            <button type="submit" class="hero-search-submit"></button>
+          </div>
+        </form>
+      </div>
+
       <?php get_template_part( 'menu', 'mobile' ); ?>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
