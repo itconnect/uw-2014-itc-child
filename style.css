@@ -672,7 +672,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
   display: none;
 }
 
-body.category .results_wrap a.more.
+body.category .results_wrap a.more,
 body.archive .results_wrap a.more {
   display:none;
 }
