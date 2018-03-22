@@ -58,6 +58,34 @@ add_filter( 'quick_edit_dropdown_pages_args', 'itconnect_show_all_parents' );
 
 
 /**
+ * Overrides the dawgdrops nav menu call
+ */
+function uw_dropdowns()
+{
+
+echo '<nav id="dawgdrops" aria-label="Main menu"><div class="dawgdrops-inner container" role="application">';
+
+echo  wp_nav_menu( array(
+        'theme_location'  => UW_Dropdowns::LOCATION,
+        'container'       => false,
+        'depth'           => 3,
+        //'container_class' => 'dawgdrops-inner container',
+        'menu_class'      => 'dawgdrops-nav',
+        'fallback_cb'     => '',
+        'walker'          => new ITC_Dropdowns_Walker_Menu()
+      ) );
+
+echo '</div></nav>';
+}
+
+
+/**
+ * Replaces the dawgdrops nav walker to add additional levels
+ */
+require_once('ITC_Dropdowns_Walker_Menu.php');
+
+
+/**
 * Enhancements for the Relevanassi search plugin
 */
 require_once('inc/search_enhancements.php');
