@@ -1,5 +1,12 @@
 (function(){
 	ITConnect = {
+		megamenu: {
+			alignDropdowns: function(){
+				$('.dawgdrops-item-itc').one('mouseenter', function(e){
+					$(this).find('.mega-wrap').css({'height': ($(this).find('.mega-container').height() + 30) + 'px'});
+				});
+			}
+		},
 		popup: {
 			create: function(){
 				$('.itc-popup').each(function(){
@@ -145,6 +152,7 @@
 			}
 		},
 		init: function(){
+			this.megamenu.alignDropdowns();
 			this.popup.create();
 			this.search.switchDefault();
 			this.search.checkboxes();

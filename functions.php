@@ -5,6 +5,7 @@
 
 function itc_child_enqueue() {
 	wp_enqueue_style( 'parent-theme-css', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery-3.3.1.min.js');
 	wp_enqueue_script('childscripts', get_stylesheet_directory_uri() . '/js/itconnect.js');
 }
 add_action( 'wp_enqueue_scripts', 'itc_child_enqueue' );

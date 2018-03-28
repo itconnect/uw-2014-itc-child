@@ -11,7 +11,7 @@ class ITC_Dropdowns_Walker_Menu extends Walker_Nav_Menu
 public function start_lvl( &$output, $depth = 0, $args = array() ) {
     //$output .= '<ul class="submenu-' . $depth . '">';
     if ($depth == 0) {
-      $output .= '<ul role="group" id="menu-' . $this->CURRENT . '" aria-labelledby="menu-' . $this->CURRENT . '" aria-expanded="false" class="mega-container">';
+      $output .= '<div class="mega-wrap"><ul role="group" id="menu-' . $this->CURRENT . '" aria-labelledby="menu-' . $this->CURRENT . '" aria-expanded="false" class="mega-container">';
     } else {
       $output .= '<ul class="section-container">';
     }
@@ -19,8 +19,13 @@ public function start_lvl( &$output, $depth = 0, $args = array() ) {
 }
 
 public function end_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "$indent</ul>\n";
+    if ($depth == 0) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul></div>\n";
+    } else {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
+    }
 }
 
 public function display_element ($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
