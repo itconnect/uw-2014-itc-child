@@ -1045,6 +1045,10 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .page-bottom a.report-link {
   cursor: pointer;
 }
+.itconnect .page-bottom #report-form {
+  display: none;
+  margin-top: 10px;
+}
 
 /* Tags */ 
 .itconnect div.tags {
