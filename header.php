@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
         <?php if (is_search()) { ?>
         <meta name="robots" content="noindex,follow"/>
@@ -38,7 +39,28 @@
     <div id="uw-container-inner">
 
 
-    <?php get_template_part('thinstrip'); ?>
+    <?php get_template_part('thinstrip_itc'); ?>
 
     <?php require( get_template_directory() . '/inc/template-functions.php' );
-          uw_dropdowns(); ?>
+         uw_dropdowns(); 
+
+    /*wp_nav_menu( array(
+        'theme_location'  => 'white-bar',
+        'depth'           => 3,
+        'container'       => false,
+        'menu_class'      => 'dawgdrops-nav',
+        'fallback_cb'     => '',
+    ) );*/
+
+    /*wp_nav_menu( array(
+        'theme_location'    => 'white-bar',
+        'depth'             => 3,
+        'container'         => 'div',
+        'container_class'   => 'collapse navbar-collapse',
+        'container_id'      => 'bs-example-navbar-collapse-1',
+        'menu_class'        => 'nav navbar-nav',
+        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+        'walker'            => new wp_bootstrap_navwalker())
+     );*/
+
+    ?>

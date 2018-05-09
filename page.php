@@ -7,20 +7,39 @@
 
   <div class="row">
 
-    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="hero-container">
 
-      <?php uw_site_title(); 
-        echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
-      ?> 
+      <?php uw_site_title(); ?> 
+      <span class='udub-slant'><span></span></span>
+      <h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>
+      
+      <div class="hero-search">
+        <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+          <div>
+            <label class="screen-reader-text" for="s">Search IT Connect:</label>
+            <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
+            <button type="submit" class="hero-search-submit"></button>
+          </div>
+        </form>
+      </div>
 
-      <?php get_template_part( 'menu', 'mobile' ); ?>
+    </div>
 
-      <?php get_template_part( 'breadcrumbs' ); ?>
+    <?php get_template_part( 'menu', 'mobile' ); ?>
 
+    <?php get_template_part( 'breadcrumbs' ); ?>
+
+    <div id="sidebar">
+      <?php 
+        if(!isset($sidebar[0]) || $sidebar[0]!="on"){
+          get_sidebar();
+        }
+      ?>
+    </div>
+
+    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content" role='main'>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
-
-      
 
         <?php
           // Start the Loop.
@@ -49,14 +68,6 @@
       </div>
 
     </div>
-
-  
-          <div id="sidebar"><?php 
-      if(!isset($sidebar[0]) || $sidebar[0]!="on"){
-        get_sidebar();
-      }
-    ?></div>
-
 
   </div>
 
