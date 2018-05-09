@@ -179,7 +179,7 @@
 			this.search.checkboxes();
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
-			this.report.create();
+			//this.report.create();
 		}
 	}
 
