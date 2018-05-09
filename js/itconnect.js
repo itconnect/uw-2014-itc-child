@@ -157,7 +157,7 @@
 					$('.report-link').each(function(){
 						$(this).click(function(event){
 							jQuery.ajax({
-								url : '/wordpress/wp-admin/admin-ajax.php',
+								url : '/wp-admin/admin-ajax.php',
 								type : 'post',
 								data : {
 									action : 'process_shortcode_on_report_click_action',

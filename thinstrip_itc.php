@@ -1,6 +1,6 @@
 <header class="thinstrip-itc">
 	<div class="container">
-		<img src="/wordpress/wp-content/themes/uw-2014-itc-child/img/uwit-logo.png" class="uw-logo" alt="University of Washington Information Technology" />
+		<img src="/wp-content/themes/uw-2014-itc-child/img/uwit-logo.png" class="uw-logo" alt="University of Washington Information Technology" />
 		<div class="align-right">
 			<nav class="thinstrip-links">
 				<label for="personas-links">Technology for: </label>
