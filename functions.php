@@ -82,14 +82,14 @@ echo '</div></nav>';
 /** 
   * Calls shortcoad to add form to report broken links when report link clicked
   */
-add_action( 'wp_ajax_process_shortcode_on_report_click_action', 'process_shortcode_on_report_click_ajax');
-add_action( 'wp_ajax_nopriv_process_shortcode_on_tab_click_action', 'process_shortcode_on_report_click_ajax');
+//add_action( 'wp_ajax_process_shortcode_on_report_click_action', 'process_shortcode_on_report_click_ajax');
+//add_action( 'wp_ajax_nopriv_process_shortcode_on_tab_click_action', 'process_shortcode_on_report_click_ajax');
 
-function process_shortcode_on_report_click_ajax() {
-    echo do_shortcode('[contact-form-7 id="286" title="Report a problem"]');
+//function process_shortcode_on_report_click_ajax() {
+//    echo do_shortcode('[contact-form-7 id="286" title="Report a problem"]');
     //die();
-    wp_die();
-}
+//    wp_die();
+//}
 
 
 /**
