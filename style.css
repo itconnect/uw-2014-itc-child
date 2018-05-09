@@ -1021,12 +1021,34 @@ body.itconnect.tag ul.uw-sidebar-menu {
   display: none;
 }
 
-/*  Page tags
+/*  Page bottom
  ------------------------------------------------------------------------*/
-.itconnect div.tags {
+.itconnect div.page-bottom {
   border-top: 1px solid #e7e7e7;
   margin-top: 50px;
   padding-top: 15px;
+}
+
+/* Updated date */
+.itconnect .page-bottom .itc-updated-date {
+  width: 250px;
+  float: right;
+  text-align: right;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Report problem link */
+.itconnect .page-bottom .report-link-container {
+  font-size: 14px;
+}
+.itconnect .page-bottom a.report-link {
+  cursor: pointer;
+}
+
+/* Tags */ 
+.itconnect div.tags {
+  padding-bottom: 10px;
 }
 
 .itconnect div.tags span {

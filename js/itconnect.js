@@ -151,6 +151,27 @@
 				});
 			}
 		},
+		report: {
+			create: function(){
+				jQuery(document).ready(function($) {
+					$('.report-link').each(function(){
+						$(this).click(function(event){
+							jQuery.ajax({
+								url : '/wordpress/wp-admin/admin-ajax.php',
+								type : 'post',
+								data : {
+									action : 'process_shortcode_on_report_click_action',
+								},
+								success : function( response ) {
+									jQuery('#report-form').html( response );
+									wpcf7.initForm( jQuery('.wpcf7-form') );
+								}
+							});
+						})
+					});	
+				});
+			}
+		},
 		init: function(){
 			this.megamenu.alignDropdowns();
 			this.popup.create();
@@ -158,6 +179,7 @@
 			this.search.checkboxes();
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
+			this.report.create();
 		}
 	}
 
