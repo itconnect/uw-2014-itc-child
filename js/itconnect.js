@@ -5,6 +5,19 @@
 				$('.dawgdrops-item-itc').one('mouseenter', function(e){
 					$(this).find('.mega-wrap').css({'height': ($(this).find('.mega-container').height() + 30) + 'px'});
 				});
+				$('.dawgdrops-item-itc').on('mouseenter', function(e){
+					$this = $(this).find('.mega-wrap');
+					$rightOverflow = $this.offset().left - $this.width();
+					if ($this.offset().left < 0 ) {
+						$this.css({'left':'0'});
+					}			
+					if ($rightOverflow > 0) {
+						$movedLeftPosition = $this.css('left').replace(/[^-\d\.]/g, '') - $rightOverflow;
+						$movedLeftPosition = $movedLeftPosition + 'px';
+						$this.css({'left': $movedLeftPosition });
+					}
+				});
+
 			}
 		},
 		popup: {
