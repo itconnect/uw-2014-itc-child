@@ -57,6 +57,8 @@ add_filter( 'page_attributes_dropdown_pages_args', 'itconnect_show_all_parents' 
 add_filter( 'quick_edit_dropdown_pages_args', 'itconnect_show_all_parents' );
 
 
+
+
 /**
 * Enhancements for the Relevanassi search plugin
 */
@@ -73,5 +75,10 @@ require_once('inc/uw_breadcrumbs_override.php');
 * Creates shortcode for listing out pages by last edit
 */
 require_once('inc/review_audit.php');
+
+/**
+* Creates shortcode for listing out pages by last edit
+*/
+require_once('inc/news_post_types.php');
 
 ?>
