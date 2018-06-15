@@ -42,8 +42,8 @@ function servicenews_post_type () {
   $labels = array(
     'name'               => _x( 'Service News', 'post type general name' ),
     'singular_name'      => _x( 'Service News', 'post type singular name' ),
-    'add_new'            => _x( 'Add New Service News', 'service news' ),
-    'add_new_item'       => __( 'Add New Service News' ),
+    'add_new'            => _x( 'Add Service News', 'service news' ),
+    'add_new_item'       => __( 'Add Service News' ),
     'edit_item'          => __( 'Edit Service News' ),
     'new_item'           => __( 'New Service News' ),
     'all_items'          => __( 'All Service News' ),
