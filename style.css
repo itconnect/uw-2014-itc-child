@@ -249,6 +249,32 @@ nav.thinstrip-links {
 }
 
 
+@media only screen and (max-width: 1199px) {
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(1) .mega-wrap {
+    left: 1px;
+  }
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(2) .mega-wrap {
+    left: 1px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(1) .mega-wrap {
+    left: -455px;
+  }
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(2) .mega-wrap {
+    left: -385px;
+  }
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(3) .mega-wrap {
+    left: -110px;
+  }
+  .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(4) .mega-wrap {
+    left: 1px;
+  }
+}
+
+
+
 .itconnect #dawgdrops .dawgdrops-item-itc .mega-container > li {
   margin: 0 0 2px 0;
 }
