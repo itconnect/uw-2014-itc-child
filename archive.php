@@ -6,14 +6,30 @@
 
   <div class="row">
 
-    <div <?php uw_content_class(); ?> role='main'>
+      <div class="hero-container">
 
-      <?php uw_site_title(); ?>
+        <?php uw_site_title(); ?>
 
-      <?php get_template_part( 'menu', 'mobile' ); ?><span class="udub-slant"><span></span></span><h3 class="uw-site-tagline" >Information technology tools and resources at the UW</h3>
+        <span class='udub-slant'><span></span></span>
+        <h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>
+        
+        <div class="hero-search">
+          <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+            <div>
+              <label class="screen-reader-text" for="s">Search IT Connect:</label>
+              <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
+              <button type="submit" class="hero-search-submit"></button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <?php get_template_part( 'menu', 'mobile' ); ?>
 
 
       <?php get_template_part( 'breadcrumbs' ); ?>
+  <div <?php uw_content_class(); ?> role='main'>
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
