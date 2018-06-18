@@ -71,6 +71,10 @@
 
   </div>
 
+  <div id="mobile-sidebar-menu"><div class="uw-sidebar">
+    <?php uw_sidebar_menu(); ?>
+  </div></div>
+
 </div>
 
 <?php get_footer(); ?>

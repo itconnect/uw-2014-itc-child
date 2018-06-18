@@ -485,6 +485,11 @@ nav.thinstrip-links {
   background-color: white;
 }
 
+/* Hides lower sidebar menu on larger screens */
+#mobile-sidebar-menu #desktop-relative {
+  display: none;
+}
+
 ul.uw-sidebar-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:after, 
 ul.uw-mobile-menu li.pagenav ul li.current_page_item.current_page_ancestor > a:after, 
 ul.uw-sidebar-menu > div ul li.current_page_item.current_page_ancestor > a:after, 
@@ -1270,19 +1275,28 @@ body.itconnect.tag ul.uw-sidebar-menu {
 /*  Sidebar navigation on mobile devices  */
 @media only screen and (max-width: 767px) {
     #sidebar #desktop-relative {
-        display: block;
+      display: none;
     }
-    #sidebar .uw-sidebar {
+
+    #mobile-sidebar-menu #desktop-relative {
+      display: block;
+      margin-top:30px;
+    }
+    #mobile-sidebar-menu .uw-sidebar {
       padding: 0;
     }
-    #sidebar .uw-sidebar .uw-sidebar-menu {
+    #mobile-sidebar-menu .uw-sidebar .uw-sidebar-menu {
       margin: 0;
     }
-    #sidebar .uw-sidebar .uw-sidebar-menu .current_page_parent a {
+
+    #mobile-sidebar-menu .uw-sidebar .uw-sidebar-menu .current_page_parent a {
       padding: 18px 19px 18px 38px;
     }
-    #sidebar .uw-sidebar ul.children li a,
-    #sidebar .uw-sidebar ul.children span {
+
+    #mobile-sidebar-menu .uw-sidebar ul.children li a,
+    #mobile-sidebar-menu .uw-sidebar ul.children span,
+    #mobile-sidebar-menu .uw-sidebar ul.children li a,
+    #mobile-sidebar-menu .uw-sidebar ul.children span {
       padding: 18px 25px;
     }
 
