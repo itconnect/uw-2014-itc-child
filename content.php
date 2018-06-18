@@ -15,10 +15,6 @@ if ((is_single() || is_home()) && get_option('show_byline_on_posts')) :
 </div>
 <?php
 endif;
-  if ( ! is_home() && ! is_search() && ! is_archive() ) :
-    uw_mobile_menu();
-  endif;
-
 ?>
 
 <?php

@@ -1406,6 +1406,15 @@ body.itconnect.tag ul.uw-sidebar-menu {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .itconnect .homepage-news {
+    margin: 0 12px;
+  }
+  .itconnect.home #main_content div.helpbox {
+    margin: 0 8% 45px 8%;
+  }
+}
+
 
 /*  ITC Popups
  --------------------------------------*/
@@ -1597,6 +1606,16 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 /* changinge site title and hero for icon placement */ 
 .hero-height2 .container #hashtag.mask {
   min-height: 55px;
+}
+
+/* Need Help? box */
+.itconnect.home #main_content div.helpbox {
+  padding: 40px;
+  margin: 0 0 50px 45px;
+}
+
+.uw-body-copy .helpbox .widgettitle:after { 
+  background: #e8e3d3; 
 }
 
 /* Slideshow */
