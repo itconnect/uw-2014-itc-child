@@ -1744,6 +1744,8 @@ body.error404.itconnect .woof {
     margin: 0;
   }
 
+  .itconnect 
+
 
   /*  Header changes for mobile devices  */
   nav.thinstrip-links{
@@ -1824,7 +1826,7 @@ body.error404.itconnect .woof {
   }
 
   .itconnect .uw-breadcrumbs {
-    padding-right: 70px;
+    padding: 8px 70px 14px 5px
   }
 
   /* Global elements on mobile */
