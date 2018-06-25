@@ -10,7 +10,7 @@
 					<li><a href="/staff" title="Staff">Staff</a></li>
 				</ul>
 				<ul class="itc-thin-links">
-					<li><a href="#" title="About IT Connect">About IT Connect</a></li>
+					<li><a href="/it-connect-home/about/" title="About IT Connect">About IT Connect</a></li>
 					<li><a href="/resources/sitemap" title="Faculty">Sitemap</a></li>
 				</ul>
 			</nav>
