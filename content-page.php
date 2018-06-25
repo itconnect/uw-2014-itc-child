@@ -14,7 +14,8 @@ the_content();
  *
  */
 echo '<div class="page-bottom">';
-the_modified_date('F j, Y', '<div class="itc-updated-date">Last updated ', '</div>');
+// Surpressing last updated date. Planned to be implimented in ~2019
+// the_modified_date('F j, Y', '<div class="itc-updated-date">Last updated ', '</div>');
 the_tags('<div class="tags"><span>Tags: </span>','','</div>'); 
 echo '<div class="report-link-container">See a problem on this page? <a class="report-link" href="javascript:void(0);">Let us know</a>.<div id="report-form">';
 echo do_shortcode('[contact-form-7 id="42260" title="Report a problem"]');
