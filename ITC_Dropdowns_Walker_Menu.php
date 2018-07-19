@@ -42,7 +42,7 @@ public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 
 
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-    $classes     = $depth == 0 ? array( 'dawgdrops-item dawgdrops-item-itc', $item->classes[0] ) : array();
+    $classes     = $depth == 0 ? array( 'dawgdrops-item-itc', $item->classes[0] ) : array();
     $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 
     $li_classnames = ! empty($classes) ? 'class="'. $class_names .'"' : '';
