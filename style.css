@@ -1423,11 +1423,14 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   margin: 56px auto 16px auto
 }
 
-.homepage_icons a.hp_icon,
-.homepage_icons a.hp_icon:focus,
-.homepage_icons a.hp_icon:hover {
+.homepage_icons a.hp_icon {
   border-bottom: none;
   text-decoration: none;
+}
+
+.homepage_icons a.hp_icon:focus,
+.homepage_icons a.hp_icon:hover {
+  text-decoration: underline;
 }
 
 .homepage_icons a.hp_icon .cls-1,
