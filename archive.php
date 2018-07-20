@@ -18,7 +18,7 @@
             <div>
               <label class="screen-reader-text" for="s">Search IT Connect:</label>
               <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
-              <button type="submit" class="hero-search-submit"></button>
+              <button type="submit" aria-label="Submit search" class="hero-search-submit"></button>
             </div>
           </form>
         </div>

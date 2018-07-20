@@ -5,6 +5,135 @@
 				$('.dawgdrops-item-itc').one('mouseenter', function(e){
 					$(this).find('.mega-wrap').css({'height': ($(this).find('.mega-container').height() + 30) + 'px'});
 				});
+			},
+			megalinks: [],
+			place: 0,
+			addLinks: function(container){
+				$this = container;
+				$this.find('a').each(function(){
+					ITConnect.megamenu.megalinks.push($(this));
+				});
+			},
+			clearLinks: function(){
+				ITConnect.megamenu.megalinks = [];
+				ITConnect.megamenu.place = 0;
+			},
+			cycle: function(direction){
+				if (direction == 'next') {
+					ITConnect.megamenu.place++;
+					if (ITConnect.megamenu.place >= ITConnect.megamenu.megalinks.length) {
+						ITConnect.megamenu.place = 0;
+					}
+					return ITConnect.megamenu.megalinks[ITConnect.megamenu.place];
+				} else if (direction == 'prev') {
+					ITConnect.megamenu.place--;
+					if (ITConnect.megamenu.place < 0) {
+						ITConnect.megamenu.place = ITConnect.megamenu.megalinks.length - 1;
+					}
+					return ITConnect.megamenu.megalinks[ITConnect.megamenu.place];
+				}
+				//code to change to count locatoin
+			},
+			accessibility: function(){
+				// Aria for mouse events
+				$('.dropdown-toggle').hover(
+					function(){
+						$(this).attr('aria-expanded', 'true');
+					}, function(){
+						$(this).attr('aria-expanded', 'false');
+					}
+				);
+
+				// Keyboard controls expand dropdowns
+				$('.dawgdrops-item-itc > a').keydown(function(e) {
+					$this = $(this);
+					$mega = $this.siblings('.mega-wrap');
+					switch (e.which){
+						case 40: //down
+						case 13: //enter
+							$(e.currentTarget).attr('aria-expanded', 'true');
+							$mega.css({'display':'block'});
+							$mega.find('> ul').attr('aria-expanded','true');
+							$mega.find('ul.mega-container > li').first().children('a').focus();
+							ITConnect.megamenu.addLinks($mega);
+						 	return false;
+							break;
+						
+						case 37: //left
+							$(e.currentTarget).parent().prev().children('a').first().focus()
+							return false;
+							break;
+
+
+						case 39: //right
+							$(e.currentTarget).parent().next().children('a').first().focus()
+							return false;
+							break;
+
+						case 32: //spacebar
+							window.location.href = $(e.currentTarget).attr('href')
+							return false;
+							break;
+					}
+				});
+
+				// Keyboard controls navigate submenus
+				$('.mega-container a').keydown(function(e) {
+					$this = $(this);
+					$mega = $this.closest('.mega-wrap');
+
+					switch ( e.which ) {
+						case 9: //tab
+							$mega.css({'display':''});
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							ITConnect.megamenu.clearLinks();
+							break;
+
+						case 39: //right
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').next().children('a').focus();
+							ITConnect.megamenu.clearLinks();
+							return false;
+							break;
+
+						case 37: //left
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').prev().children('a').focus();
+							ITConnect.megamenu.clearLinks();
+							return false;
+							break;
+
+						case 40: //down
+							$nextLink = ITConnect.megamenu.cycle('next'); 
+							$nextLink.focus();
+							return false
+							break;
+
+						case 38: //up
+							$nextLink = ITConnect.megamenu.cycle('prev'); 
+							$nextLink.focus();
+							return false
+							break;
+
+						case 32: //spacebar
+						case 13: //enter
+							window.location.href = $(e.currentTarget).attr('href')
+							return false;
+
+						case 27: //esc
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').children('a').focus();
+							return false;
+							break;
+					}
+				});
 			}
 		},
 		popup: {
@@ -162,6 +291,7 @@
 		},
 		init: function(){
 			this.megamenu.alignDropdowns();
+			this.megamenu.accessibility();
 			this.popup.create();
 			this.search.switchDefault();
 			this.search.checkboxes();

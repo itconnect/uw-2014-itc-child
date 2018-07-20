@@ -1,8 +1,8 @@
-<header class="thinstrip-itc">
+<header aria-role="banner" class="thinstrip-itc">
 	<div class="container">
 		<img src="/wp-content/themes/uw-2014-itc-child/img/uwit-logo.png" class="uw-logo" alt="University of Washington Information Technology" />
 		<div class="align-right">
-			<nav class="thinstrip-links">
+			<div class="thinstrip-links">
 				<label for="personas-links">Technology for: </label>
 				<ul class="itc-thin-links" id="persona-links">
 					<li><a href="/students" title="Students">Students</a></li>
@@ -13,7 +13,7 @@
 					<li><a href="/it-connect-home/about/" title="About IT Connect">About IT Connect</a></li>
 					<li><a href="/resources/sitemap" title="Faculty">Sitemap</a></li>
 				</ul>
-			</nav>
+			</div>
 		</div>
 	</div>
 </header>

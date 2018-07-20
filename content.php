@@ -5,7 +5,7 @@ if (is_single() || is_home()){
     the_date('F j, Y', '<p class="date">', '</p>');
 }
 ?>
-<h3><?php the_title() ?></h3>
+<h1 class="news-heading"><?php the_title() ?></h1>
 <?php
 if ((is_single() || is_home()) && get_option('show_byline_on_posts')) :
 ?>

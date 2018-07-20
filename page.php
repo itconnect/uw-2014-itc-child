@@ -9,16 +9,24 @@
 
     <div class="hero-container">
 
-      <?php uw_site_title(); ?> 
+      <?php
+      if ( is_front_page() ) :
+      ?>
+       <a href="/"><h1 class="uw-site-title">IT Connect</h1></a>
+      <?php
+      else:
+        uw_site_title();
+      endif;
+      ?>
       <span class='udub-slant'><span></span></span>
-      <h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>
+      <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
       
       <div class="hero-search">
         <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
           <div>
             <label class="screen-reader-text" for="s">Search IT Connect:</label>
             <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
-            <button type="submit" class="hero-search-submit"></button>
+            <button type="submit" aria-label="Submit search" class="hero-search-submit"></button>
           </div>
         </form>
       </div>

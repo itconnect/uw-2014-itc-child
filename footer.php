@@ -1,7 +1,7 @@
         <div role="contentinfo" class="uw-footer">
             <p style="margin: 40px 0 40px 0;"><a href="http://uw.edu/uwit/">
               <img src='<?php echo get_stylesheet_directory_uri(); ?>/img/InfoTech_UW_sml375_reversed.png' class="footer-logo-link" alt="UW Information Technology logo"></a></p>
-        <nav role="navigation" aria-label="IT Resources" style="margin-bottom: 0;">
+        <div role="navigation" aria-label="IT Resources" style="margin-bottom: 0;">
             <ul class="footer-links" style="margin-top: 10px;">
               <li><a href="https://uw.service-now.com/uwc.do?sysparm_direct=true#/myrequests">MyRequests</a></li>
               <li><a href="https://itconnect.uw.edu/servicestatus/" >Service Status</a></li>
@@ -20,8 +20,8 @@
               <li><a class="twitter" href="http://twitter.com/UWITNews">Twitter</a></li>
               <li><a class="youtube" href="http://www.youtube.com/user/uwinfotech">YouTube</a></li>
             </ul>
-       </nav>
-        <nav role="navigation" aria-label="footer links" style="margin-top: -20px; " >
+       </div>
+        <div role="navigation" aria-label="footer links" style="margin-top: -20px; " >
             <ul class="footer-links">
               <li><a href="http://www.uw.edu/accessibility">Accessibility</a></li>
               <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
@@ -29,7 +29,7 @@
               <li><a href="http://www.washington.edu/online/privacy/">Privacy</a></li>
               <li><a href="http://www.washington.edu/online/terms/">Terms</a></li>
            </ul>
-       </nav>
+       </div>
 
         <p>&copy; <?php echo date("Y"); ?> University of Washington  |  Seattle, WA</p>
 
