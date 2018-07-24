@@ -18,6 +18,11 @@
 				ITConnect.megamenu.megalinks = [];
 				ITConnect.megamenu.place = 0;
 			},
+			closeMenus: function(){
+				$('.mega-wrap').each(function(){
+					$(this).css({'display':''});
+				});
+			},
 			cycle: function(direction){
 				if (direction == 'next') {
 					ITConnect.megamenu.place++;
@@ -51,6 +56,7 @@
 					switch (e.which){
 						case 40: //down
 						case 13: //enter
+							ITConnect.megamenu.closeMenus(); // Close any other open menus
 							$(e.currentTarget).attr('aria-expanded', 'true');
 							$mega.css({'display':'block'});
 							$mega.find('> ul').attr('aria-expanded','true');
