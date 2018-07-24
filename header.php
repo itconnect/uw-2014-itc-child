@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" class="no-js">
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> <?php wp_title(' | ',TRUE,'right'); bloginfo('name'); ?> </title>
         <meta charset="utf-8">
         <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-        <?php if (is_search()) { ?>
-        <meta name="robots" content="noindex,follow"/>
-        <?php } ?>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -22,17 +16,20 @@
             <link rel='stylesheet' href='<?php bloginfo("template_directory"); ?>/assets/ie/css/ie.css' type='text/css' media='all' />
         <![endif]-->
 
+        <?php
+        echo get_post_meta( get_the_ID() , 'javascript' , 'true' );
+        echo get_post_meta( get_the_ID() , 'css' , 'true' );
+        ?>
+
     </head>
     <!--[if lt IE 9]> <body <?php body_class('lt-ie9'); ?>> <![endif]-->
     <!--[if gt IE 8]><!-->
     <body <?php body_class(); ?> >
     <!--<![endif]-->
 
-    <a role="main" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
-
     <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
-
-    <!-- <a id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a> -->
+   
+   <a role="banner" aria-label="main_content" id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
 
     <div id="uw-container">
 
@@ -42,25 +39,4 @@
     <?php get_template_part('thinstrip_itc'); ?>
 
     <?php require( get_template_directory() . '/inc/template-functions.php' );
-         uw_dropdowns(); 
-
-    /*wp_nav_menu( array(
-        'theme_location'  => 'white-bar',
-        'depth'           => 3,
-        'container'       => false,
-        'menu_class'      => 'dawgdrops-nav',
-        'fallback_cb'     => '',
-    ) );*/
-
-    /*wp_nav_menu( array(
-        'theme_location'    => 'white-bar',
-        'depth'             => 3,
-        'container'         => 'div',
-        'container_class'   => 'collapse navbar-collapse',
-        'container_id'      => 'bs-example-navbar-collapse-1',
-        'menu_class'        => 'nav navbar-nav',
-        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-        'walker'            => new wp_bootstrap_navwalker())
-     );*/
-
-    ?>
+          uw_dropdowns(); ?>
