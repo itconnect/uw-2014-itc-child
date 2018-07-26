@@ -184,10 +184,11 @@
 				var services = ITConnect.search.getAllUrlParams().services;
 				var news = ITConnect.search.getAllUrlParams().news;
 				console.log('Type: ' + typeof pages);
+				console.log(((pages == 'true') ? true : false));
 				console.log('Pages: ' + pages + '; Services: ' + services + '; News: ' + news);
-				$('#searchbox #pages').prop('checked', (news == 'true') ? true : false);
-				$('#searchbox #news').prop('checked', (news == 'true') ? true : false);
-				$('#searchbox #services').prop('checked', (news == 'true') ? true : false);
+				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
+				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
+				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));
 				
 			},
 			getAllUrlParams: function(url) {
