@@ -180,26 +180,62 @@
 			},
 			checkboxes: function(){
 				// Retains the state of the checkboxes when the page is reloaded
-				var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
-					$checkboxes = $('#searchbox :checkbox'),
-					time_now  = (new Date()).getTime();
-
-				// Delete checkbox state if it was set more than an hour ago
-				if (localStorage.getItem('checkboxTime') && time_now > (localStorage.getItem('checkboxTime') + 3600000)) {
-					localStorage.removeItem('checkboxValues');
-				}
-
-				// Set local storage  item when checkboxes are changed, and load storage on back load
-				$checkboxes.on('change', function(){
-					$checkboxes.each(function(){
-						checkboxValues[this.id] = this.checked;
-					});
-					localStorage.setItem('checkboxValues', JSON.stringify(checkboxValues));
-				});
-				$.each(checkboxValues, function(key, value) {
-					$('#' + key).prop('checked', value);
-				});
-			}
+				var pages = ITConnect.search.getAllUrlParams().pages;
+				var services = ITConnect.search.getAllUrlParams().services;
+				var news = ITConnect.search.getAllUrlParams().news;
+				console.log('Pages: ' + pages + '; Services: ' + services + '; News: ' + news);
+				
+			},
+			getAllUrlParams: function(url) {
+			  // get query string from url (optional) or window
+			  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+			  // we'll store the parameters here
+			  var obj = {};
+			  // if query string exists
+			  if (queryString) {
+			    // stuff after # is not part of query string, so get rid of it
+			    queryString = queryString.split('#')[0];
+			    // split our query string into its component parts
+			    var arr = queryString.split('&');
+			    for (var i=0; i<arr.length; i++) {
+			      // separate the keys and the values
+			      var a = arr[i].split('=');
+			      // in case params look like: list[]=thing1&list[]=thing2
+			      var paramNum = undefined;
+			      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+			        paramNum = v.slice(1,-1);
+			        return '';
+			      });
+			      // set parameter value (use 'true' if empty)
+			      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+			      // (optional) keep case consistent
+			      paramName = paramName.toLowerCase();
+			      paramValue = paramValue.toLowerCase();
+			      // if parameter name already exists
+			      if (obj[paramName]) {
+			        // convert value to array (if still string)
+			        if (typeof obj[paramName] === 'string') {
+			          obj[paramName] = [obj[paramName]];
+			        }
+			        // if no array index number specified...
+			        if (typeof paramNum === 'undefined') {
+			          // put the value on the end of the array
+			          obj[paramName].push(paramValue);
+			        }
+			        // if array index number specified...
+			        else {
+			          // put the value at that index number
+			          obj[paramName][paramNum] = paramValue;
+			        }
+			      }
+			      // if param name doesn't exist yet, set it
+			      else {
+			        obj[paramName] = paramValue;
+			      }
+			    }
+			  }
+			  return obj;
+			}		
 		},
 		sitemap: {
 			makeInteractive: function() {
