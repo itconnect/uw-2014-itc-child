@@ -180,19 +180,12 @@
 			},
 			checkboxes: function(){
 				// Retains the state of the checkboxes when the page is reloaded
-				var types = ['pages','news','services'];
-				for (var i=0; i<types.length; i++) {
-					var active = types[i];
-					$('#searchbox #' + active).prop('checked', ((ITConnect.search.getAllUrlParams().active) ? true : false));
-				}
-/*
 				var pages = ITConnect.search.getAllUrlParams().pages;
 				var services = ITConnect.search.getAllUrlParams().services;
 				var news = ITConnect.search.getAllUrlParams().news;
 				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
 				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
-				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));
-*/				
+				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));		
 			},
 			getAllUrlParams: function(url) {
 			  // get query string from url (optional) or window
