@@ -365,7 +365,7 @@ div.thinstrip-links {
 
 .itconnect .uw-hero-image, 
 .itconnect .no-uw-hero-image {
-  height: 160px;
+  height: 150px;
 }
 
 
@@ -1308,10 +1308,6 @@ span.itc-popup:hover {
 
 .itconnect.home .page-bottom {
   display: none;
-}
-
-.itconnect.home .hero-container { 
-  top: -158px;
 }
 
 .homepage-sidebar {
