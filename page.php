@@ -3,7 +3,7 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uw-body" role='main'>
 
   <div class="row">
 
@@ -37,15 +37,15 @@
 
     <?php get_template_part( 'breadcrumbs' ); ?>
 
-    <div id="sidebar">
+    <aside id="sidebar" role="complementary">
       <?php 
         if(!isset($sidebar[0]) || $sidebar[0]!="on"){
           get_sidebar();
         }
       ?>
-    </div>
+    </aside>
 
-    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content" role='main'>
+    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content">
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
