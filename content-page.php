@@ -4,6 +4,6 @@
 
 the_content();
 
-the_tags('<div class="tags"><span>Tags: </span>','','</div>'); 
+get_template_part( 'content', 'pagebottom' );
 
 ?>

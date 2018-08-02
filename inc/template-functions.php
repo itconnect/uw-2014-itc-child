@@ -60,7 +60,7 @@ if ( ! function_exists('uw_sidebar_menu') ) :
 
   function uw_sidebar_menu()
   {
-    echo sprintf( '<nav id="desktop-relative" aria-describedby="mobile menu that is not visible in the desktop version">%s</nav>', uw_list_pages() ) ;
+    echo sprintf( '<nav id="desktop-relative" aria-label="sidebar navigation">%s</nav>', uw_list_pages() ) ;
   }
 
 endif;

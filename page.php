@@ -3,24 +3,51 @@
 
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uw-body" role='main'>
 
   <div class="row">
 
-    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
+    <div class="hero-container">
 
-      <?php uw_site_title(); 
-        echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
-      ?> 
+      <?php
+      if ( is_front_page() ) :
+      ?>
+       <a href="/"><h1 class="uw-site-title">IT Connect</h1></a>
+      <?php
+      else:
+        uw_site_title();
+      endif;
+      ?>
+      <span class='udub-slant'><span></span></span>
+      <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
+      
+      <div class="hero-search">
+        <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+          <div>
+            <label class="screen-reader-text" for="s">Search IT Connect:</label>
+            <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
+            <button type="submit" aria-label="Submit search" class="hero-search-submit"></button>
+          </div>
+        </form>
+      </div>
 
-      <?php get_template_part( 'menu', 'mobile' ); ?>
+    </div>
 
-      <?php get_template_part( 'breadcrumbs' ); ?>
+    <?php get_template_part( 'menu', 'mobile' ); ?>
 
+    <?php get_template_part( 'breadcrumbs' ); ?>
+
+    <aside id="sidebar" role="complementary">
+      <?php 
+        if(!isset($sidebar[0]) || $sidebar[0]!="on"){
+          get_sidebar();
+        }
+      ?>
+    </aside>
+
+    <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content">
 
       <div id='main_content' class="uw-body-copy" tabindex="-1">
-
-      
 
         <?php
           // Start the Loop.
@@ -50,15 +77,11 @@
 
     </div>
 
-  
-          <div id="sidebar"><?php 
-      if(!isset($sidebar[0]) || $sidebar[0]!="on"){
-        get_sidebar();
-      }
-    ?></div>
-
-
   </div>
+
+  <div id="mobile-sidebar-menu"><div class="uw-sidebar">
+    <?php uw_sidebar_menu(); ?>
+  </div></div>
 
 </div>
 

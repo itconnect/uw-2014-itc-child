@@ -1,5 +1,147 @@
 (function(){
 	ITConnect = {
+		megamenu: {
+			alignDropdowns: function(){
+				$('.dawgdrops-item-itc').one('mouseenter', function(e){
+					$(this).find('.mega-wrap').css({'height': ($(this).find('.mega-container').height() + 30) + 'px'});
+				});
+			},
+			megalinks: [],
+			place: 0,
+			addLinks: function(container){
+				$this = container;
+				$this.find('a').each(function(){
+					ITConnect.megamenu.megalinks.push($(this));
+				});
+			},
+			clearLinks: function(){
+				ITConnect.megamenu.megalinks = [];
+				ITConnect.megamenu.place = 0;
+			},
+			closeMenus: function(){
+				$('.mega-wrap').each(function(){
+					$(this).css({'display':''});
+				});
+			},
+			cycle: function(direction){
+				if (direction == 'next') {
+					ITConnect.megamenu.place++;
+					if (ITConnect.megamenu.place >= ITConnect.megamenu.megalinks.length) {
+						ITConnect.megamenu.place = 0;
+					}
+					return ITConnect.megamenu.megalinks[ITConnect.megamenu.place];
+				} else if (direction == 'prev') {
+					ITConnect.megamenu.place--;
+					if (ITConnect.megamenu.place < 0) {
+						ITConnect.megamenu.place = ITConnect.megamenu.megalinks.length - 1;
+					}
+					return ITConnect.megamenu.megalinks[ITConnect.megamenu.place];
+				}
+				//code to change to count locatoin
+			},
+			accessibility: function(){
+				// Aria for mouse events
+				$('.dropdown-toggle').hover(
+					function(){
+						$(this).attr('aria-expanded', 'true');
+					}, function(){
+						$(this).attr('aria-expanded', 'false');
+					}
+				);
+
+				// Keyboard controls expand dropdowns
+				$('.dawgdrops-item-itc > a').keydown(function(e) {
+					$this = $(this);
+					$mega = $this.siblings('.mega-wrap');
+					switch (e.which){
+						case 40: //down
+						case 13: //enter
+							ITConnect.megamenu.closeMenus(); // Close any other open menus
+							$(e.currentTarget).attr('aria-expanded', 'true');
+							$mega.css({'display':'block'});
+							$mega.find('> ul').attr('aria-expanded','true');
+							$mega.find('ul.mega-container > li').first().children('a').focus();
+							ITConnect.megamenu.addLinks($mega);
+						 	return false;
+							break;
+						
+						case 37: //left
+							$(e.currentTarget).parent().prev().children('a').first().focus()
+							return false;
+							break;
+
+
+						case 39: //right
+							$(e.currentTarget).parent().next().children('a').first().focus()
+							return false;
+							break;
+
+						case 32: //spacebar
+							window.location.href = $(e.currentTarget).attr('href')
+							return false;
+							break;
+					}
+				});
+
+				// Keyboard controls navigate submenus
+				$('.mega-container a').keydown(function(e) {
+					$this = $(this);
+					$mega = $this.closest('.mega-wrap');
+
+					switch ( e.which ) {
+						case 9: //tab
+							$mega.css({'display':''});
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							ITConnect.megamenu.clearLinks();
+							break;
+
+						case 39: //right
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').next().children('a').focus();
+							ITConnect.megamenu.clearLinks();
+							return false;
+							break;
+
+						case 37: //left
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').prev().children('a').focus();
+							ITConnect.megamenu.clearLinks();
+							return false;
+							break;
+
+						case 40: //down
+							$nextLink = ITConnect.megamenu.cycle('next'); 
+							$nextLink.focus();
+							return false
+							break;
+
+						case 38: //up
+							$nextLink = ITConnect.megamenu.cycle('prev'); 
+							$nextLink.focus();
+							return false
+							break;
+
+						case 32: //spacebar
+						case 13: //enter
+							window.location.href = $(e.currentTarget).attr('href')
+							return false;
+
+						case 27: //esc
+							$mega.css({'display':''});
+							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							$this.closest('.dawgdrops-item-itc').children('a').focus();
+							return false;
+							break;
+					}
+				});
+			}
+		},
 		popup: {
 			create: function(){
 				$('.itc-popup').each(function(){
@@ -38,26 +180,63 @@
 			},
 			checkboxes: function(){
 				// Retains the state of the checkboxes when the page is reloaded
-				var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
-					$checkboxes = $('#searchbox :checkbox'),
-					time_now  = (new Date()).getTime();
-
-				// Delete checkbox state if it was set more than an hour ago
-				if (localStorage.getItem('checkboxTime') && time_now > (localStorage.getItem('checkboxTime') + 3600000)) {
-					localStorage.removeItem('checkboxValues');
-				}
-
-				// Set local storage  item when checkboxes are changed, and load storage on back load
-				$checkboxes.on('change', function(){
-					$checkboxes.each(function(){
-						checkboxValues[this.id] = this.checked;
-					});
-					localStorage.setItem('checkboxValues', JSON.stringify(checkboxValues));
-				});
-				$.each(checkboxValues, function(key, value) {
-					$('#' + key).prop('checked', value);
-				});
-			}
+				var pages = ITConnect.search.getAllUrlParams().pages;
+				var services = ITConnect.search.getAllUrlParams().services;
+				var news = ITConnect.search.getAllUrlParams().news;
+				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
+				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
+				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));		
+			},
+			getAllUrlParams: function(url) {
+			  // get query string from url (optional) or window
+			  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+			  // we'll store the parameters here
+			  var obj = {};
+			  // if query string exists
+			  if (queryString) {
+			    // stuff after # is not part of query string, so get rid of it
+			    queryString = queryString.split('#')[0];
+			    // split our query string into its component parts
+			    var arr = queryString.split('&');
+			    for (var i=0; i<arr.length; i++) {
+			      // separate the keys and the values
+			      var a = arr[i].split('=');
+			      // in case params look like: list[]=thing1&list[]=thing2
+			      var paramNum = undefined;
+			      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+			        paramNum = v.slice(1,-1);
+			        return '';
+			      });
+			      // set parameter value (use 'true' if empty)
+			      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+			      // (optional) keep case consistent
+			      paramName = paramName.toLowerCase();
+			      paramValue = paramValue.toLowerCase();
+			      // if parameter name already exists
+			      if (obj[paramName]) {
+			        // convert value to array (if still string)
+			        if (typeof obj[paramName] === 'string') {
+			          obj[paramName] = [obj[paramName]];
+			        }
+			        // if no array index number specified...
+			        if (typeof paramNum === 'undefined') {
+			          // put the value on the end of the array
+			          obj[paramName].push(paramValue);
+			        }
+			        // if array index number specified...
+			        else {
+			          // put the value at that index number
+			          obj[paramName][paramNum] = paramValue;
+			        }
+			      }
+			      // if param name doesn't exist yet, set it
+			      else {
+			        obj[paramName] = paramValue;
+			      }
+			    }
+			  }
+			  return obj;
+			}		
 		},
 		sitemap: {
 			makeInteractive: function() {
@@ -144,12 +323,24 @@
 				});
 			}
 		},
+		report: {
+			show: function(){
+				$('.report-link').each(function(){
+					$(this).click(function(event){
+						$('#report-form').slideToggle();
+					})
+				});	
+			}
+		},
 		init: function(){
+			this.megamenu.alignDropdowns();
+			this.megamenu.accessibility();
 			this.popup.create();
 			this.search.switchDefault();
 			this.search.checkboxes();
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
+			this.report.show();
 		}
 	}
 
