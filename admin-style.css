@@ -36,3 +36,9 @@
 .wp-admin .acf_postbox .inside .field {
   padding: 0 15px 0 0;
 }
+
+/*  Pages table column widths for added columns
+ --------------------------------------*/
+ .manage-column.column-service_offering {
+  width: 20%;
+ }
