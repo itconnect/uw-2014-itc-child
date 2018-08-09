@@ -37,10 +37,10 @@ function check_some_other_plugin() {
 
                switch( $column_name ) {
                   case 'service_offering':
-                     ?><fieldset class="inline-edit-col-right" style="width: 100%; dispaly: block; margin-top: 5px">
+                     ?><fieldset class="inline-edit-col-right" style="width: 100%; dispaly: block; margin-top: 2px">
                         <div class="inline-edit-group" style="padding-left: 5px;">
                            <label>
-                              <span class="title">Service</span><br />
+                              <span class="title">Service</span>
                               <input type="text" name="service_offering" value="" />
                            </label>
                         </div>
