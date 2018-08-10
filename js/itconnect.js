@@ -90,9 +90,18 @@
 
 					switch ( e.which ) {
 						case 9: //tab
+							event.preventDefault();
 							$mega.css({'display':''});
-							$this.closest('.mega-container').attr('aria-expanded', 'false');
 							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
+							$this.closest('.mega-container').attr('aria-expanded', 'false');
+							if ( $this.closest('.dawgdrops-item-itc').is('.dawgdrops-item-itc:last-of-type') ) {
+								// if this is the last, go to the first li
+								$parent = $this.closest('.dawgdrops-nav');
+								$parent.children('li:first-child').children('a').focus();
+							} else {
+								// otherwise go to the next li
+								$this.closest('.dawgdrops-item-itc').next().children('a').focus();
+							}
 							ITConnect.megamenu.clearLinks();
 							break;
 
@@ -100,7 +109,14 @@
 							$mega.css({'display':''});
 							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
 							$this.closest('.mega-container').attr('aria-expanded', 'false');
-							$this.closest('.dawgdrops-item-itc').next().children('a').focus();
+							if ( $this.closest('.dawgdrops-item-itc').is('.dawgdrops-item-itc:last-of-type') ) {
+								// if this is the last, go to the first li
+								$parent = $this.closest('.dawgdrops-nav');
+								$parent.children('li:first-child').children('a').focus();
+							} else {
+								// otherwise go to the next li
+								$this.closest('.dawgdrops-item-itc').next().children('a').focus();
+							}
 							ITConnect.megamenu.clearLinks();
 							return false;
 							break;
@@ -109,7 +125,14 @@
 							$mega.css({'display':''});
 							$this.closest('.dawgdrops-item-itc').children('a.dropdown-toggle').attr('aria-expanded', 'false');
 							$this.closest('.mega-container').attr('aria-expanded', 'false');
-							$this.closest('.dawgdrops-item-itc').prev().children('a').focus();
+							if ( $this.closest('.dawgdrops-item-itc').is('.dawgdrops-item-itc:first-of-type') ) {
+								// if this is the first, go to the last li
+								$parent = $this.closest('.dawgdrops-nav');
+								$parent.children('li:last-child').children('a').focus();
+							} else {
+								// otherwise go to the previous li
+								$this.closest('.dawgdrops-item-itc').prev().children('a').focus();
+							}
 							ITConnect.megamenu.clearLinks();
 							return false;
 							break;
