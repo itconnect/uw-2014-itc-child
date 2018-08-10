@@ -420,6 +420,10 @@ div.thinstrip-links {
   right: 0px;
 }
 
+.hero-search #searchform #s {
+  padding-right: 40px;
+}
+
 .hero-search-submit {
   background: url('/wp-content/themes/uw-2014-itc-child/img/search-icon.png');
   border: 0;
@@ -596,7 +600,9 @@ ul.uw-sidebar-menu > div ul li.current_page_parent > a:before {
 }
 
 
-
+#sidebar #searchform #s {
+  padding-right: 65px; 
+}
 
 /**** Service Management Style ****/
 
