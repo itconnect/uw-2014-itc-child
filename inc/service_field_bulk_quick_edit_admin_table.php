@@ -17,7 +17,6 @@ function modify_pages_table_display_actions() {
           // Remove the Comments column
           unset($columns['comments']);
 
-
           // Remove page type
           unset($columns['post_type']);
 
