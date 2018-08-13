@@ -11,8 +11,12 @@ function modify_pages_table_display_actions() {
           if (!isset($columns['service_offering']))
                       $columns['service_offering'] = "Service";
 
-          // Remove the Comments and Sidebar columns
+          // Remove the Sidebar column
           unset($columns['simple-page-sidebar']);
+
+          // Remove the Comments column
+          unset($columns['comments']);
+
 
           // Remove page type
           unset($columns['post_type']);
