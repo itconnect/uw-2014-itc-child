@@ -8,9 +8,25 @@
 
     <div <?php uw_content_class(); ?> role="main">
 
-      <?php uw_site_title(); 
-        echo "<span class='udub-slant'><span></span></span><h3 class='uw-site-tagline' >Information technology tools and resources at the UW</h3>";
-      ?> 
+      <div class="hero-container">
+
+        <?php
+          uw_site_title();
+        ?>
+        <span class='udub-slant'><span></span></span>
+        <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
+
+        <div class="hero-search">
+          <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+            <div>
+              <label class="screen-reader-text" for="s">Search IT Connect:</label>
+              <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
+              <button type="submit" aria-label="Submit search" class="hero-search-submit"></button>
+            </div>
+          </form>
+        </div>
+
+      </div>
 
       <?php get_template_part( 'breadcrumbs' ); ?>
 
