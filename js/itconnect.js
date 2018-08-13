@@ -62,6 +62,7 @@
 							$mega.find('> ul').attr('aria-expanded','true');
 							$mega.find('ul.mega-container > li').first().children('a').focus();
 							ITConnect.megamenu.addLinks($mega);
+							$mega.css({'height': ($mega.find('.mega-container').height() + 30) + 'px'});
 						 	return false;
 							break;
 						
