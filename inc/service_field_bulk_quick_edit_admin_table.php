@@ -3,13 +3,19 @@
 * Adds service field to the page list in admin table, makes service field bulk and quick editable
 */
 
-function check_some_other_plugin() {
+function modify_pages_table_display_actions() {
   if ( is_plugin_active('advanced-custom-fields/acf.php') ) {
       // Add the custom columns header "service" to the page psot type:
       add_filter( 'manage_page_posts_columns', 'set_custom_edit_page_columns' );
       function set_custom_edit_page_columns($columns) {
           if (!isset($columns['service_offering']))
                       $columns['service_offering'] = "Service";
+
+          // Remove the Comments and Sidebar columns
+          unset($columns['simple-page-sidebar']);
+
+          // Remove page type
+          unset($columns['post_type']);
 
           return $columns;
       }
@@ -96,6 +102,6 @@ function check_some_other_plugin() {
       }
   } // wrap
 } // wrap
-add_action( 'admin_init', 'check_some_other_plugin' );
+add_action( 'admin_init', 'modify_pages_table_display_actions' );
 
 //https://wpdreamer.com/2012/03/manage-wordpress-posts-using-bulk-edit-and-quick-edit/
