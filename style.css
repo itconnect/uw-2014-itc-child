@@ -224,7 +224,7 @@ div.thinstrip-links {
   border-top: 8px solid #4b2e83;
   position: absolute;
   width: 600px;
-  height: 415px;
+  height: 315px;
   background: #ffffff;
   top: 41px;
   left:19px;
@@ -1887,7 +1887,7 @@ body.error404.itconnect .woof {
 
 @media only screen and (max-width: 990px) {
   .itconnect .uw-logo {
-    height: 25px;
+    width: 215px;
     margin-top: 5px;
   }
 
