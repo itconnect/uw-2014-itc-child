@@ -209,7 +209,12 @@
 				var news = ITConnect.search.getAllUrlParams().news;
 				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
 				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
-				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));		
+				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));
+				if (!pages && !services && !news){
+					$('#searchbox #pages').prop('checked', true);
+					$('#searchbox #news').prop('checked', true);
+					$('#searchbox #services').prop('checked', true);
+				}
 			},
 			getAllUrlParams: function(url) {
 			  // get query string from url (optional) or window
