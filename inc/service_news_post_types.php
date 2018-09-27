@@ -104,13 +104,7 @@ function create_svcnewscats_taxonomies() {
 add_action( 'init', 'create_svcnewscats_taxonomies', 0 );
 
 
-/*
- * 
- * THIS SECTION IS GOING TO NEED WORK TO GET PROPER
- *
- */
 add_shortcode( 'service_news', 'service_news_blogroll' );
-
 function service_news_blogroll($atts){
     /* 
      * Expects:
@@ -119,7 +113,7 @@ function service_news_blogroll($atts){
      * Optional:
      * format: string "full" "compact" or "mini". Sets the format style for the output (default: full)
      * posts_per_page: number. The number of posts to show before pagination (default: 10)
-     * number_of_posts: number. Limits the number of posts shown, overrides posts_per_page
+     * pagination: string "off". Surpresses display of pagination
      * show_date: string "off". Surpresses display of date
      * readmore: string "off". Surpresses display of the read more link.
      */
@@ -147,9 +141,10 @@ function service_news_blogroll($atts){
     if ($format=="compact"){ $wordlength = 15; } else { $wordlength = 42; }
 
     // Set the number of posts to grab per page
-    // Note: if number of posts is set, it overwrites posts per page
-    if (isset($atts['posts_per_page'])) {$numPosts = $atts['posts_per_page'];} else {$numPosts = 10;}
-    if (isset($atts['number_of_posts'])) {$numPosts = $atts['number_of_posts'];}
+    if (isset($atts['posts_per_page'])) {$numPosts = $atts['posts_per_page'];} else {$numPosts = 10; $limited='on';}
+
+    // Determine if pagniation should be shown
+    if (isset($atts['pagination']) && $atts['pagination'] == 'off' ) { $pagination = 'off';} else { $pagination = 'on';}
 
     // Determine if date should be shown
     $show_date = 'on';
@@ -209,10 +204,12 @@ function service_news_blogroll($atts){
 
         endwhile;
 
-        $output .= '<div class="pagination-wrap ' . $format . '">';
-        $output .= '<span class="prev-posts-links">' . get_previous_posts_link('Previous page').'</span>';
-        $output .= '<span class="next-posts-links">' . get_next_posts_link('Next page', $total_page) .'</span>';
-        $output .= '</div>';
+        if ($pagination == "on") {
+            $output .= '<div class="pagination-wrap ' . $format . '">';
+            $output .= '<span class="prev-posts-links">' . get_previous_posts_link('Previous page').'</span>';
+            $output .= '<span class="next-posts-links">' . get_next_posts_link('Next page', $total_page) .'</span>';
+            $output .= '</div>';
+        }
 
         $output .= '</div>'; // Service News div
 
