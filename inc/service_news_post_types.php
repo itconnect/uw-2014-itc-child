@@ -210,8 +210,8 @@ function service_news_blogroll($atts){
         endwhile;
 
         $output .= '<div class="pagination-wrap ' . $format . '">';
-        $output .= '<span class="next-posts-links">' . get_next_posts_link('Next page', $total_page) .'</span>';
         $output .= '<span class="prev-posts-links">' . get_previous_posts_link('Previous page').'</span>';
+        $output .= '<span class="next-posts-links">' . get_next_posts_link('Next page', $total_page) .'</span>';
         $output .= '</div>';
 
         $output .= '</div>'; // Service News div
