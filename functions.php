@@ -110,4 +110,10 @@ require_once('inc/review_audit.php');
 
 require_once('inc/service_field_bulk_quick_edit_admin_table.php');
 
+
+/**
+* Creates shortcode for listing out pages by last edit
+*/
+require_once('inc/service_news_post_types.php');
+
 ?>
