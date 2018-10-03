@@ -173,7 +173,7 @@ function service_news_blogroll($atts){
 
     if($service_news_posts->have_posts()) :
 
-        $output .= '<div class="service-news">';
+        $output .= '<div class="service-news ' . $format . '">';
 
         while($service_news_posts->have_posts()) : $service_news_posts->the_post();
 

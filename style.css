@@ -1709,6 +1709,10 @@ body.error404.itconnect .woof {
 
 /*  Service News content type
  ---------------------------------------*/
+.service-news.full {
+  margin: 20px 0 10px 0;
+}
+
 .service-news .postrow p {
   margin: 0;
 }
