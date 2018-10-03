@@ -1713,7 +1713,8 @@ body.error404.itconnect .woof {
   margin: 20px 0 10px 0;
 }
 
-.service-news.full {
+.service-news.mini,
+.servoce-news.compact {
   margin: 0 0 10px 0;
 }
 
