@@ -100,7 +100,7 @@ function itcn_change_post_object() {
     $labels->add_new_item = 'Add IT Connect News';
     $labels->edit_item = 'Edit IT Connect News';
     $labels->new_item = 'News';
-    $labels->view_item = 'View IT Connect News';
+    $labels->view_item = 'View ITCN article';
     $labels->search_items = 'Search News';
     $labels->not_found = 'No IT Connect News found';
     $labels->not_found_in_trash = 'No News found in Trash';
