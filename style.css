@@ -1713,6 +1713,10 @@ body.error404.itconnect .woof {
   margin: 20px 0 10px 0;
 }
 
+.service-news.full {
+  margin: 0 0 10px 0;
+}
+
 .service-news .postrow p {
   margin: 0;
 }
