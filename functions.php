@@ -79,6 +79,40 @@ echo  wp_nav_menu( array(
 echo '</div></nav>';
 }
 
+/**
+ * Rename posts to IT Connect News.
+ */
+
+function itcn_change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'IT Connect News';
+    $submenu['edit.php'][5][0] = 'News';
+    $submenu['edit.php'][10][0] = 'Add News';
+    $submenu['edit.php'][16][0] = 'News Tags';
+}
+function itcn_change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'IT Connect News';
+    $labels->singular_name = 'IT Connect News';
+    $labels->add_new = 'Add News';
+    $labels->add_new_item = 'Add IT Connect News';
+    $labels->edit_item = 'Edit IT Connect News';
+    $labels->new_item = 'News';
+    $labels->view_item = 'View ITCN article';
+    $labels->search_items = 'Search News';
+    $labels->not_found = 'No IT Connect News found';
+    $labels->not_found_in_trash = 'No News found in Trash';
+    $labels->all_items = 'All IT Connect News';
+    $labels->menu_name = 'IT Connect News';
+    $labels->name_admin_bar = 'IT Connect News';
+}
+ 
+add_action( 'admin_menu', 'itcn_change_post_label' );
+add_action( 'init', 'itcn_change_post_object' );
+
+
 
 /**
  * Replaces the dawgdrops nav walker to add additional levels
@@ -109,5 +143,11 @@ require_once('inc/review_audit.php');
 */
 
 require_once('inc/service_field_bulk_quick_edit_admin_table.php');
+
+
+/**
+* Creates shortcode for listing out pages by last edit
+*/
+require_once('inc/service_news_post_types.php');
 
 ?>
