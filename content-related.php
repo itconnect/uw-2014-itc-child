@@ -1,9 +1,15 @@
 <?php
 
-echo '<div class="related-content">';
+if (get_field('display_related_information')){
 
-echo '<b>Related Information</b>';
+	$out .= '<div class="related-content">';
 
-echo '</div>';
+	$out .= '<b>Related Information</b>';
+
+	$out .= '</div>';
+
+	echo $out;
+
+}
 
 ?>
