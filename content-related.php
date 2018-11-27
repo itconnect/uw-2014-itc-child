@@ -27,15 +27,45 @@ if ( get_field('display_related_information') && (get_field('related_information
 	}
 
 	// Service Catalog Subgroup
+	if( have_rows('service_catalog') ) {
 
+		$out .= '<ul class="links">';
 
+		while( have_rows('service_catalog') ): the_row(); 
+
+			// vars
+			$link = get_sub_field('service_catalog_link');
+
+				if ($link) {
+					$out .= '<li class="link"><a href="' . $link['url']  . '">' . $link['title'] . '</a></li>';
+				}
+
+		endwhile;
+
+		$out .= '</ul>';
+
+	}
 
 	// Request Forms Subgroup
+	if( have_rows('request_forms') ) {
 
+		$out .= '<ul class="links">';
 
+		while( have_rows('request_forms') ): the_row(); 
 
+			// vars
+			$link = get_sub_field('request_forms_link');
+
+				if ($link) {
+					$out .= '<li class="link"><a href="' . $link['url']  . '">' . $link['title'] . '</a></li>';
+				}
+
+		endwhile;
+
+		$out .= '</ul>';
+
+	}
 	 
-
 	$out .= '</div>';
 
 	echo $out;
