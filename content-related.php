@@ -1,14 +1,16 @@
 
 
 <?php
+//Check if the display toggle is checked and if any of the related content type actually have rows before going any further
+if ( get_field('display_related_information') && (have_rows('related_information') || have_rows('service_catalog') || have_rows('request_forms')) ){
 
-if ( get_field('display_related_information') && (get_field('related_information') || get_field('service_catalog') || get_field('request_forms')) ){
-
-	$out .= '<div class="related-content">';
+	$out .= '<aside class="related-content" aria-label="related content">';
+	$out .= '<h3>Related Content</h3>'
 
 	// Related Info Subgroup
 	if( have_rows('related_information') ) {
 
+		$out .= '<span class="section-title">Related Information</span>';
 		$out .= '<ul class="links">';
 
 		while( have_rows('related_information') ): the_row(); 
@@ -29,6 +31,7 @@ if ( get_field('display_related_information') && (get_field('related_information
 	// Service Catalog Subgroup
 	if( have_rows('service_catalog') ) {
 
+		$out .= '<span class="section-title">UW-IT Service Catalog</span>';
 		$out .= '<ul class="links">';
 
 		while( have_rows('service_catalog') ): the_row(); 
@@ -49,6 +52,7 @@ if ( get_field('display_related_information') && (get_field('related_information
 	// Request Forms Subgroup
 	if( have_rows('request_forms') ) {
 
+	$out .= '<span class="section-title">Forms & Support</span>';
 		$out .= '<ul class="links">';
 
 		while( have_rows('request_forms') ): the_row(); 
