@@ -1801,14 +1801,15 @@ aside.related-content span.section-title {
 }
 
 aside.related-content ul.links {
-  margin: 2px 0 15px 0;
+  margin: 2px 0 22px 0;
   padding-left: 10px;
 }
 
 aside.related-content li.link {
   border: none;
   margin: 0;
-  padding: 2px 0;
+  padding: 0;
+  position:relative;
 }
 
 aside.related-content li.link:before {
