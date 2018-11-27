@@ -5,7 +5,6 @@
 if ( get_field('display_related_information') && (have_rows('related_information') || have_rows('service_catalog') || have_rows('request_forms')) ){
 
 	$out .= '<aside class="related-content" aria-label="related content">';
-	$out .= '<h3>Related Content</h3>'
 
 	// Related Info Subgroup
 	if( have_rows('related_information') ) {
@@ -52,7 +51,7 @@ if ( get_field('display_related_information') && (have_rows('related_information
 	// Request Forms Subgroup
 	if( have_rows('request_forms') ) {
 
-	$out .= '<span class="section-title">Forms & Support</span>';
+		$out .= '<span class="section-title">Forms & Support</span>';
 		$out .= '<ul class="links">';
 
 		while( have_rows('request_forms') ): the_row(); 
