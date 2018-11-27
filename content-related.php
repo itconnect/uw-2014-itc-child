@@ -7,7 +7,7 @@ if ( get_field('display_related_information') && (get_field('related_information
 	$out .= '<div class="related-content">';
 
 	// Related Info Subgroup
-	if( have_rows('related_information') ): 
+	if( have_rows('related_information') ) {
 
 		$out .= '<ul class="links">';
 
@@ -24,7 +24,7 @@ if ( get_field('display_related_information') && (get_field('related_information
 
 		$out .= '</ul>';
 
-	endif; 
+	}
 
 	// Service Catalog Subgroup
 
@@ -34,7 +34,7 @@ if ( get_field('display_related_information') && (get_field('related_information
 
 
 
-	}
+	 
 
 	$out .= '</div>';
 
