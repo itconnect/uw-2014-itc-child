@@ -2,9 +2,9 @@
 
 <?php 
 
-the_content();
-
 get_template_part( 'content', 'related' );
+
+the_content();
 
 get_template_part( 'content', 'pagebottom' );
 
