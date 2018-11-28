@@ -78,7 +78,7 @@ if ( get_field('display_related_information') && (have_rows('related_information
 				if ($link) {
 					$req .= '<li class="link"><a href="' . $link['url']  . '">' . $link['title'] . '</a></li>';
 					$hasContent = true;
-					$hasReqContent = true
+					$hasReqContent = true;
 				}
 
 		endwhile;
