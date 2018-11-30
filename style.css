@@ -1633,13 +1633,13 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 }
 
 @media only screen and (max-width: 767px) {
-  .intech div.brick {
+  .itconnect div.brick {
     width: 100%;
   }
-  .intech div.brick .brick-inner {
+  .itconnect div.brick .brick-inner {
     margin: 15px 0;
   }
-  .intech div.brick-row {
+  .itconnect div.brick-row {
     margin: 0;
   }
 }
