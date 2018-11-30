@@ -1533,44 +1533,115 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 
 
 /* Personas */
-.personas {
-  display: block;
-  margin-top:50px;
+.bricks {
+  margin:30px 0 0 0;
 }
 
-.personas::after {
-  content: ' ';
-  display: block;
-  visibility: hidden;
-  height: 0;
+.brick-row {
+  margin-bottom: 25px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.brick-row:after {
   clear:both;
+  content:'';
+  display:block;
+  height:1px;
+  visibility:hidden;
 }
 
-.persona {
-  background: #F0EDE3;
-  width: 352px;
-  margin: 0 28px 25px 0;
+.brick {
   float: left;
-  height: 400px;
-  -webkit-box-shadow: 0 0 4px rgba(164, 164, 164, 0.7);
-  box-shadow: 0 0 4px rgba(164, 164, 164, 0.7);
 }
 
-.persona h3 {
-  color: #4b2e83;
-  font-size: 30px;
+.brick .brick-inner {
+  background-color:#ECE9E2;
+  margin:0 15px 0 15px;
+  min-height: 220px;
+  border-top: 1px solid #ececec;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.persona img {
-  width: 352px;
+.brick.one-third {
+  width:33.32%;
 }
 
-.persona .text {
-  padding: 0 17px;
+.brick.two-third {
+  width:66.64%;
 }
 
-div.personas a:last-child div.persona{
-  margin-right: 0; 
+.brick.half {
+  width:49.98%;
+}
+
+.brick .brick-img {
+  background:url('/wp-content/themes/uw-2014-intech-child/img/default-landing-image.jpg');
+  width:100%;
+  height:180px;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brick .brick-body .prefix {
+  color: #444444;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.brick a.h3, .brick h3 {
+  color: #4b2e83; 
+  font-weight:900; 
+  font-size:21px; 
+  padding: 0 0 10px 0;
+    margin: 0;
+}
+
+.brick p {
+  margin: 0;
+}
+
+.brick .brick-body {
+  padding:25px;
+}
+
+.brick a.uw-btn.btn-sm {
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 800; border-radius: 0;
+
+  -webkit-border-radius: 0;
+  color: #ffffff;
+  background: #4b2e83;
+  text-transform: none;
+  margin: 12px 0 0 0;
+}
+
+.brick a.uw-btn.btn-sm:before {
+  border-left: 1px solid #ffffff;
+  width: 33px;
+  right: -33px;
+}
+
+.brick a.uw-btn.btn-sm:after {
+  width: 50px;
+  height: 33px;
+  margin-top: -20px;
+  right: -43px;
+}
+
+@media only screen and (max-width: 767px) {
+  .intech div.brick {
+    width: 100%;
+  }
+  .intech div.brick .brick-inner {
+    margin: 15px 0;
+  }
+  .intech div.brick-row {
+    margin: 0;
+  }
 }
 
 
