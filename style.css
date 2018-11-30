@@ -1786,6 +1786,53 @@ body.error404.itconnect .woof {
     margin: 5px 15px 15px 0;
 }
 
+/*  Service News content type
+ ---------------------------------------*/
+
+aside.related-content {
+    width: 300px;
+    float: right;
+    margin: 8px 0 25px 25px;
+    padding: 25px 25px 0px 30px;
+    background: #ECE9E2;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle white box alternative
+aside.related-content {
+  width: 300px;
+  float: right;
+  margin: 10px 0 25px 25px;
+  border-left: 2px solid #d9d9d9;
+  padding: 10px 0 0 25px;
+}
+*/
+
+aside.related-content span.section-title {
+  font-weight: bold;
+}
+
+aside.related-content ul.links {
+  margin: 2px 0 22px 0;
+  padding-left: 10px;
+}
+
+aside.related-content li.link {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position:relative;
+}
+
+aside.related-content li.link:before {
+  content: '-';
+  display: inline-block;
+  position: absolute;
+  left: -10px;
+  top: 0;
+} 
+
+
 
 /*  Mobile specific 
  --------------------------------------*/
