@@ -1635,6 +1635,8 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 @media only screen and (max-width: 767px) {
   .itconnect div.brick {
     width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
   .itconnect div.brick .brick-inner {
     margin: 15px 0;
