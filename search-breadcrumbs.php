@@ -11,7 +11,7 @@ if ($post->post_type == 'page') {
 } else if ($post->post_type == 'post') {
 	$html .= '<span class="crumb">News</span>';
 } else if ($post->post_type == 'service') {
-    $html .= '<span class="crumb">Serivce Catalog</span>';
+    $html .= '<span class="crumb">Service Catalog</span>';
 }
 $html .= '</div>';
 echo $html;
