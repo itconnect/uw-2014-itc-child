@@ -1,3 +1,4 @@
+
 <?php
 /**
 * Enqueues child theme stylesheet and javascript, loading first the parent theme stylesheet
@@ -149,5 +150,11 @@ require_once('inc/service_field_bulk_quick_edit_admin_table.php');
 * Creates shortcode for listing out pages by last edit
 */
 require_once('inc/service_news_post_types.php');
+
+
+/**
+* Creates shortcode for IT Connect slideshow
+*/
+require_once('inc/itc_slideshow.php');
 
 ?>
