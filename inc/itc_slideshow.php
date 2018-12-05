@@ -24,7 +24,7 @@ function itc_slideshow($atts, $content=null){
 			$out .= '<div class="slide">';
 			
 			$out .= '<a	href="' . $link . '">';
-			$out .= '<img class="alignnone size-full" src="' . $img["url"] . '" alt="' . $img["alt"] . '" width="' . $img["width"] . '" height="' . $img["height"] . '" />';
+			$out .= '<img src="' . $img["url"] . '" alt="' . $img["alt"] . '" width="' . $img["width"] . '" height="' . $img["height"] . '" />';
 			$out .= '</a>';
 			$out .= '<div>';
 			$out .= '<h3><a	href="' . $link . '">' . $headline . '</a></h3>';
