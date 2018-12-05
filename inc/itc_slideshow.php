@@ -43,3 +43,4 @@ function itc_slideshow($atts, $content=null){
 	return ob_get_clean();
 }
 add_shortcode('itc_slideshow','itc_slideshow');
+
