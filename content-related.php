@@ -4,7 +4,7 @@
  * 
  */
 //Checks if ACF funciton exists before executing code that relies on plugin
-if (function_exists('have_rows') {
+if (function_exists('have_rows')) {
 	//Check if the display toggle is checked and if any of the related content type actually have rows before going any further
 	if ( get_field('display_related_information') && (have_rows('related_information') || have_rows('service_catalog') || have_rows('request_forms')) ){
 		
