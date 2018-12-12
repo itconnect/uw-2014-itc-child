@@ -150,4 +150,10 @@ require_once('inc/service_field_bulk_quick_edit_admin_table.php');
 */
 require_once('inc/service_news_post_types.php');
 
+
+/**
+* Creates shortcode for IT Connect slideshow
+*/
+require_once('inc/itc_slideshow.php');
+
 ?>
