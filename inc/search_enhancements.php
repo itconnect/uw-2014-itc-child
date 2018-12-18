@@ -116,9 +116,7 @@ function auth_reqd_search_filter($post_ok, $post_id) {
 // Allows users to filter results by post type on the search results page
 add_filter('relevanssi_hits_filter', 'filter_results_by_type');
 function filter_results_by_type($hits) {
-	if(empty($_GET)) {
-		return $hits;
-	} else {
+	if (!empty($_GET)) {
 		$valid = array();
 		$filtered = array();
 
@@ -147,6 +145,21 @@ function filter_results_by_type($hits) {
 		}
 		// Merge back to $hits in the desired order
 		$hits[0] = $filtered;
-		return $hits;
+		unset($filtered);
+		$filtered = array();
+		
 	}
+
+	// Filter out hits that have the "Hidden from search" checkbox checked
+	if (!empty($hits)) {
+		foreach ($hits[0] as $hit) {
+			$searchopts = get_post_meta($hit->ID, 'search_prominence', true);
+			if (!in_array('search_hidden', $searchopts)) {
+				array_push($filtered, $hit);
+			}
+			$hits[0] = $filtered;
+		}
+	}
+
+	return $hits;
 }
