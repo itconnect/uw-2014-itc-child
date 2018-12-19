@@ -9,16 +9,15 @@
 // Increases weight of featured and top level pages
 function custom_field_weights($match) {
 
-	$featured = get_post_meta($match->doc, 'featured', true);
-	$top_level = get_post_meta($match->doc, 'top_level', true);
+	$search_prominence = get_post_meta($match->doc, 'search_prominence', true);
 
-	if ('1' == $featured && '1' == $top_level) {
+	if($search_prominence && (in_array('search_featured', $search_prominence) && in_array('search_top_level', $search_prominence))) {
 		$match->weight = $match->weight * 6;
-	} else if ('1' == $featured) {
+	} else if ($search_prominence && in_array('search_top_level', $search_prominence)) {
+		$match->weight = $match->weight * 5;
+	} else if ($search_prominence && in_array('search_featured', $search_prominence)) {
 		$match->weight = $match->weight * 2;
-	} /*else {
-		$match->weight = $match->weight / 2;
-	}*/
+	}
 	
 	return $match;
 }
@@ -63,8 +62,13 @@ add_filter('relevanssi_match', 'news_date_weights');
 
 // Customize the search result excerpts with a custom filed.
 function excerpt_function($content, $post, $query) {
-    $search_blurb = get_post_meta($post->ID, 'search_blurb', true);
-    $content = $search_blurb;
+    $text = get_post_meta($post->ID, 'custom_search_result_snippet', true);
+	if ($text != '') {
+		$text = strip_shortcodes($text);
+		$text = apply_filters('the_content', $text);
+		$text = str_replace(']]&gt;', ']]&gt;', $text);
+	}
+    $content = $text;
 	return $content;
 }
 
@@ -112,9 +116,7 @@ function auth_reqd_search_filter($post_ok, $post_id) {
 // Allows users to filter results by post type on the search results page
 add_filter('relevanssi_hits_filter', 'filter_results_by_type');
 function filter_results_by_type($hits) {
-	if(empty($_GET)) {
-		return $hits;
-	} else {
+	if (!empty($_GET)) {
 		$valid = array();
 		$filtered = array();
 
@@ -143,6 +145,21 @@ function filter_results_by_type($hits) {
 		}
 		// Merge back to $hits in the desired order
 		$hits[0] = $filtered;
-		return $hits;
+		unset($filtered);
+		$filtered = array();
+		
 	}
+
+	// Filter out hits that have the "Hidden from search" checkbox checked
+	if (!empty($hits)) {
+		foreach ($hits[0] as $hit) {
+			$searchopts = get_post_meta($hit->ID, 'search_prominence', true);
+			if (!in_array('search_hidden', $searchopts)) {
+				array_push($filtered, $hit);
+			}
+			$hits[0] = $filtered;
+		}
+	}
+
+	return $hits;
 }
