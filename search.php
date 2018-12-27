@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <?php get_template_part( 'header', 'image' ); ?>
 
 <div class="container uw-body" role="main">
@@ -23,7 +22,7 @@
 
     </div>
 
-    <div <?php uw_content_class(); ?> role='main'>
+    <div <?php uw_content_class(); ?>>
 
       <?php get_template_part('menu', 'mobile'); ?>
 
