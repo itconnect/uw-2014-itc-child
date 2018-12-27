@@ -1,10 +1,27 @@
 <?php get_header(); ?>
 
+
 <?php get_template_part( 'header', 'image' ); ?>
 
-<div class="container uw-body">
+<div class="container uw-body" role="main">
 
   <div class="row">
+
+    <div class="hero-container">
+
+      <?php
+      if ( is_front_page() ) :
+      ?>
+       <a href="/"><h1 class="uw-site-title">IT Connect</h1></a>
+      <?php
+      else:
+        uw_site_title();
+      endif;
+      ?>
+      <span class='udub-slant'><span></span></span>
+      <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
+
+    </div>
 
     <div <?php uw_content_class(); ?> role='main'>
 
