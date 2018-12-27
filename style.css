@@ -965,7 +965,7 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
 
 
 /*  Page Subtitle */
-.itconnect span.subtitle {
+.itconnect div.subtitle {
   margin-top: -15px;
   margin-bottom: -15px;
   font-size: 21px;
