@@ -210,7 +210,7 @@ div.thinstrip-links {
 }
 
 
-.itconnect .dawgdrops-item-itc > a:hover:before {
+.itconnect .dawgdrops-item-itc:hover > a:before {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
