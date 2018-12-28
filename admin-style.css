@@ -1,2 +1,5 @@
-/*  Silence is golden
+/*  Pages table column widths for added columns
  --------------------------------------*/
+ .manage-column.column-service_offering {
+  width: 20%;
+ } 
