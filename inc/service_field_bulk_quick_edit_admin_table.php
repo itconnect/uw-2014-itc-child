@@ -4,7 +4,7 @@
 */
 
 function modify_pages_table_display_actions() {
-  if ( is_plugin_active('advanced-custom-fields/acf.php') ) {
+  if ( is_plugin_active('advanced-custom-fields-pro/acf.php') ) {
       // Add the custom columns header "service" to the page psot type:
       add_filter( 'manage_page_posts_columns', 'set_custom_edit_page_columns' );
       function set_custom_edit_page_columns($columns) {
