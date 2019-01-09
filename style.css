@@ -1495,6 +1495,10 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   margin-top: 0;
 }
 
+.home .uw-slideshow .slide a {
+  display: block;
+}
+
 
 /* Alert */
 .itc_alert {
