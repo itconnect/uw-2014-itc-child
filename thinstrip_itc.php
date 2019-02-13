@@ -1,4 +1,4 @@
-<header role="banner" class="thinstrip-itc">
+<header role="banner" class="thinstrip-itc uw-thinstrip">
 	<div class="container">
 		<img src="/wp-content/themes/uw-2014-itc-child/img/uwit-logo-lrg-web.png" width="300" class="uw-logo" alt="University of Washington Information Technology" />
 		<div class="align-right">

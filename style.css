@@ -73,12 +73,13 @@ div.thinstrip-links {
   margin: 5px 0 0 0;
 }
 
-.thinstrip-itc {
+.itconnect .thinstrip-itc {
   background: #4b2e83;
   color: #ffffff;
   font-family: "Encode Sans Compressed", sans-serif;
   font-size: 15px;
   font-weight: 400;
+  height: auto;
   padding-top: 8px;
   padding-bottom: 3px;
 }
