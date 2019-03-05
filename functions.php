@@ -112,7 +112,11 @@ function itcn_change_post_object() {
 add_action( 'admin_menu', 'itcn_change_post_label' );
 add_action( 'init', 'itcn_change_post_object' );
 
-
+/**
+ * Workaround for A-Z index, which no longer supports a listing of all pages on site, just relative pages.
+ * Soluion from plugin author: https://wordpress.org/support/topic/only-showing-relative-pages/#post-11278091
+ */
+add_filter( 'a-z-listing-sections', '__return_empty_array' );
 
 /**
  * Replaces the dawgdrops nav walker to add additional levels
