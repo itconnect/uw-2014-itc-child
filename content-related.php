@@ -94,7 +94,7 @@ if (function_exists('have_rows')) {
 
 		}
 		 
-		$out .= '</div>';
+		$out .= '</aside>';
 
 		if ($hasContent) {
 			echo $out;
