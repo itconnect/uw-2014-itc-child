@@ -37,12 +37,16 @@
             <input type="submit" id="searchsubmit" value="Search">
             <fieldset class="filters">
               <legend>Include the following types of content:</legend>
+              
               <input type="checkbox" id="pages" name="pages" value="true" checked>
               <label for="pages">Guides, tools, and resources</label>
+              
               <input type="checkbox" id="news" name="news" value="true" checked>
               <label for="news">IT Connect News</label>
-              <input type="checkbox" id="servicenews" name="servicenews" value="true" checked>
-              <label for="servicenews">Service News</label>
+              
+              <input type="checkbox" id="svcnws" name="svcnws" value="true" checked>
+              <label for="svcnws">Service News</label>
+              
               <input type="checkbox" id="services" name="services" value="true" checked>
               <label for="services">UW-IT Service Catalog</label>
             </fieldset>

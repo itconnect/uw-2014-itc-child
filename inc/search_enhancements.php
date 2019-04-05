@@ -125,7 +125,7 @@ function filter_results_by_type($hits) {
 			$valid['page']=TRUE;
 		} else if (isset($_GET['news'])){
 			$valid['post']=TRUE;
-		} else if (isset($_GET['servicenews'])){
+		} else if (isset($_GET['svcnws'])){
 			$valid['servicenews']=TRUE;
 		} else if (isset($_GET['services'])){
 			$valid['service']=TRUE;

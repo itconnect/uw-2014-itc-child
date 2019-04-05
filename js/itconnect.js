@@ -207,17 +207,17 @@
 				// Retains the state of the checkboxes when the page is reloaded
 				var pages = ITConnect.search.getAllUrlParams().pages;
 				var services = ITConnect.search.getAllUrlParams().services;
-				var servicenews = ITConnect.search.getAllUrlParams().servicenews;
+				var servicenews = ITConnect.search.getAllUrlParams().svcnws;
 				var news = ITConnect.search.getAllUrlParams().news;
 				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
 				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
-				$('#searchbox #servicenews').prop('checked', ((servicenews == 'true') ? true : false));
+				$('#searchbox #svcnws').prop('checked', ((servicenews == 'true') ? true : false));
 				$('#searchbox #services').prop('checked', ((services == 'true') ? true : false));
 				if (!pages && !services && !news && !servicenews){
 					$('#searchbox #pages').prop('checked', true);
 					$('#searchbox #news').prop('checked', true);
 					$('#searchbox #services').prop('checked', true);
-					$('#searchbox #servicenews').prop('checked', true);
+					$('#searchbox #svcnws').prop('checked', true);
 				}
 			},
 			getAllUrlParams: function(url) {
