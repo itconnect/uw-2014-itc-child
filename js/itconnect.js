@@ -207,6 +207,7 @@
 				// Retains the state of the checkboxes when the page is reloaded
 				var pages = ITConnect.search.getAllUrlParams().pages;
 				var services = ITConnect.search.getAllUrlParams().services;
+				var servicenews = ITConnect.search.getAllUrlParams().servicenews;
 				var news = ITConnect.search.getAllUrlParams().news;
 				$('#searchbox #pages').prop('checked', ((pages == 'true') ? true : false));
 				$('#searchbox #news').prop('checked', ((news == 'true') ? true : false));
