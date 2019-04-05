@@ -40,7 +40,9 @@
               <input type="checkbox" id="pages" name="pages" value="true" checked>
               <label for="pages">Guides, tools, and resources</label>
               <input type="checkbox" id="news" name="news" value="true" checked>
-              <label for="news">News</label>
+              <label for="news">IT Connect News</label>
+              <input type="checkbox" id="servicenews" name="servicenews" value="true" checked>
+              <label for="servicenews">Service News</label>
               <input type="checkbox" id="services" name="services" value="true" checked>
               <label for="services">UW-IT Service Catalog</label>
             </fieldset>

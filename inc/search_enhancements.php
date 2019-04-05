@@ -125,6 +125,8 @@ function filter_results_by_type($hits) {
 			$valid['page']=TRUE;
 		} else if (isset($_GET['news'])){
 			$valid['post']=TRUE;
+		} else if (isset($_GET['servicenews'])){
+			$valid['servicenews']=TRUE;
 		} else if (isset($_GET['services'])){
 			$valid['service']=TRUE;
 		}
@@ -132,6 +134,7 @@ function filter_results_by_type($hits) {
 		if(empty($valid)) {
 			$valid['page']=TRUE;
 			$valid['post']=TRUE;
+			$valid['servicenews']=TRUE;
 			$valid['service']=TRUE;
 		}
 
