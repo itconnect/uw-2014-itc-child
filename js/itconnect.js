@@ -368,7 +368,7 @@
 			this.megamenu.alignDropdowns();
 			this.megamenu.accessibility();
 			this.popup.create();
-			this.search.switchDefault();
+			//this.search.switchDefault();
 			this.search.checkboxes();
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
