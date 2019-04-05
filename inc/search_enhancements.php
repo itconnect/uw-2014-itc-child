@@ -123,11 +123,17 @@ function filter_results_by_type($hits) {
 		// Check terms in $_GET and create an array of valid post types for this query
 		if (isset($_GET['pages'])){
 			$valid['page']=TRUE;
-		} else if (isset($_GET['news'])){
+		} 
+
+		if (isset($_GET['news'])){
 			$valid['post']=TRUE;
-		} else if (isset($_GET['svcnws'])){
+		} 
+
+		if (isset($_GET['svcnws'])){
 			$valid['servicenews']=TRUE;
-		} else if (isset($_GET['services'])){
+		} 
+
+		if (isset($_GET['services'])){
 			$valid['service']=TRUE;
 		}
 
