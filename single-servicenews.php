@@ -38,11 +38,21 @@
     <?php get_template_part( 'breadcrumbs' ); ?>
 
     <aside id="sidebar" role="complementary">
-      <?php 
-        if(!isset($sidebar[0]) || $sidebar[0]!="on"){
-          get_sidebar();
-        }
-      ?>
+        <?php
+
+          $taxonomy = 'portfolio_categories';
+          $terms = get_terms($taxonomy); // Get all terms of a taxonomy
+
+          if ( $terms && !is_wp_error( $terms ) ) :
+          ?>
+              <ul>
+                  <?php foreach ( $terms as $term ) { ?>
+                      <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
+                  <?php } ?>
+              </ul>
+          <?php endif;?>
+
+        ?>
     </aside>
 
     <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content">
