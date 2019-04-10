@@ -52,12 +52,12 @@
             </ul>
           </ul>
         </nav>
-      
-        <b>Service News by Category</b>
-        <?php
-            wp_list_categories(array('taxonomy'=>'svcnewscats'));
-        ?>
-      </div>
+        <div class="svcnewscats-list">
+          <h2>Service News by Category</h2>
+          <?php
+              wp_list_categories(array('taxonomy'=>'svcnewscats','depth'=>'2','title_li'=>''));
+          ?>
+        </div>
     </aside>
 
     <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content">
