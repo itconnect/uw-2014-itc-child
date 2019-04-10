@@ -38,22 +38,26 @@
     <?php get_template_part( 'breadcrumbs' ); ?>
 
     <aside id="sidebar" role="complementary">
+      <div class="col-md-3 uw-sidebar">
+        <nav id="desktop-relative" aria-label="relative content">
+          <ul class="uw-sidebar-menu first-level"><li class="pagenav"><a href="https://ovp.s.uw.edu" title="Home" class="homelink">Home</a>
+            <ul>
+              <li class="page_item page_item_has_children current_page_ancestor current_page_parent"><a href="http://itconnect.uw.edu">IT Connect</a>
+                <ul class="children">
+                  <li class="page_item page_item_has_children current_page_item"><span><?php the_title(); ?></span></li>
+                  <li class="page_item page_item_has_children child-page-existance-tester"><a href="/service-news/">Service News</a></li>
+                  <li class="page_item child-page-existance-tester"><a href="/news/">IT Connect News</a></li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+        </nav>
+      
+        <b>Service News by Category</b>
         <?php
-
-          $taxonomy = 'svcnewscats';
-          $terms = get_terms($taxonomy); // Get all terms of a taxonomy
-
-          if ($terms && !is_wp_error($terms)) {
-            echo '<ul>';
-            foreach ( $terms as $term ) { 
-              $parent = $term->parent;
-              if ($parent=='0'){
-                echo '<li><a href="' . get_term_link($term->slug, $taxonomy) . '">' . $term->name . '</a></li>';
-              }
-            }
-            echo '</ul>';
-          }
+            wp_list_categories(array('taxonomy'=>'svcnewscats'));
         ?>
+      </div>
     </aside>
 
     <div class="col-md-<?php echo ((!isset($sidebar[0]) || $sidebar[0]!="on") ? "9" : "12" ) ?> uw-content">
