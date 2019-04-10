@@ -40,13 +40,16 @@
     <aside id="sidebar" role="complementary">
         <?php
 
-          $taxonomy = 'portfolio_categories';
+          $taxonomy = 'servicenews';
           $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 
           if ($terms && !is_wp_error($terms)) {
             echo '<ul>';
             foreach ( $terms as $term ) { 
-              echo '<li><a href="' . get_term_link($term->slug, $taxonomy) . '">' . $term->name . '</a></li>';
+              $parent = $term->parent;
+              if ($parent=='0'){
+                echo '<li><a href="' . get_term_link($term->slug, $taxonomy) . '">' . $term->name . '</a></li>';
+              }
             }
             echo '</ul>';
           }
