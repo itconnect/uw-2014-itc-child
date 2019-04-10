@@ -40,7 +40,7 @@
     <aside id="sidebar" role="complementary">
         <?php
 
-          $taxonomy = 'servicenews';
+          $taxonomy = 'svcnewscats';
           $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 
           if ($terms && !is_wp_error($terms)) {
