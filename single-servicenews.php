@@ -75,7 +75,7 @@
 
             echo '<div class="page-bottom">';
 
-            echo '<div class="tags"><span>Tags: </span>';
+            echo '<div class="tags"><span>Categories: </span>';
 
             foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
               echo '<a href="/svcnewscats/' . $cat->name . '">' . $cat->name . '</a>';
