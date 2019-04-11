@@ -1888,7 +1888,7 @@ body.error404.itconnect .woof {
   position:relative;
 }
 
-.svcnewscats-list > a {
+.svcnewscats-list > li > a {
   font-weight: bold;
 }
 

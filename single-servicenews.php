@@ -76,7 +76,9 @@
              */
             get_template_part( 'content', 'page' );
 
-
+            foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
+              echo $cat->name;
+            }
 
 
             // If comments are open or we have at least one comment, load up the comment template.
