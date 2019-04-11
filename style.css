@@ -1879,6 +1879,22 @@ body.error404.itconnect .woof {
   font-size: 21px;
 }
 
+.svcnewscats-list ul.children li {
+  position: relative;
+}
+
+.svcnewscats-list ul.children li:before {
+  content: '-';
+  display: block;
+  position: absolute;
+  left:0
+  top:0;
+  width: 17px;
+  height: 17px;
+}
+
+
+
 
 /*  Service News content type
  ---------------------------------------*/
