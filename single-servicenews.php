@@ -52,8 +52,9 @@
             </ul>
           </ul>
         </nav>
-        <div class="svcnewscats-list">
+        <div class="svcnewscats-wrap">
           <h2>Service News by Category</h2>
+          <ul class="svcnewscats-list"
           <?php
               wp_list_categories(array('taxonomy'=>'svcnewscats','depth'=>'2','title_li'=>''));
           ?>
