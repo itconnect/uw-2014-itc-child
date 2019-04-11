@@ -69,22 +69,24 @@
           // Start the Loop.
           while ( have_posts() ) : the_post();
 
-            /*
-             * Include the post format-specific template for the content. If you want to
-             * use this in a child theme, then include a file called called content-___.php
-             * (where ___ is the post format) and that will be used instead.
-             */
-            get_template_part( 'content', 'page' );
+            echo '<h1>' . the_title() . '</h1>';
+
+            the_content();
+
+            echo '<div class="page-bottom">';
+
+            echo '<div class="tags"><span>Tags: </span>';
 
             foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
-              echo $cat->name;
+              echo '<a href="/svcnewscats/' . $cat->name . '">' . $cat->name . '</a>';
             }
 
+            echo '</div>';
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) {
-              comments_template();
-            }
+            echo '<div class="report-link-container">See a problem on this page? <a class="report-link" href="javascript:void(0);">Let us know</a>.<div id="report-form">';
+            echo do_shortcode('[contact-form-7 id="42260" title="Report a problem"]');
+            echo '</div></div>';
+            echo '</div>';
 
           endwhile;
         ?>
