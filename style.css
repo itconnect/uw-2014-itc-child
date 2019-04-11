@@ -1880,12 +1880,16 @@ body.error404.itconnect .woof {
 }
 
 .svcnewscats-list ul.children {
-  position: relative;
   margin-bottom:10px;
 }
 
 .svcnewscats-list ul.children li {
   padding-left: 10px;
+  position:relative;
+}
+
+.svcnewscats-list > a {
+  font-weight: bold;
 }
 
 .svcnewscats-list ul.children li:before {
