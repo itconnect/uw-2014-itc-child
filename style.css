@@ -1879,18 +1879,23 @@ body.error404.itconnect .woof {
   font-size: 21px;
 }
 
-.svcnewscats-list ul.children li {
+.svcnewscats-list ul.children {
   position: relative;
+  margin-bottom:10px;
+}
+
+.svcnewscats-list ul.children li {
+  padding-left: 10px;
 }
 
 .svcnewscats-list ul.children li:before {
   content: '-';
   display: block;
   position: absolute;
-  left:0
+  left:0;
   top:0;
-  width: 17px;
-  height: 17px;
+  width: 10px;
+  height: 10px;
 }
 
 
