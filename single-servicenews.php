@@ -51,7 +51,7 @@
                     echo '<a href="' . $permalink . '">' . $title . '</a>';
                 } elseif (has_term('','svcnewscats')) {
                     $count = 0;
-                    foreach (get_the_terms(get_the_ID(), 'teamnewscats') as $cat) {
+                    foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
                         if ($cat->parent == "0" && $count == 0){
                             echo '<a href="' . get_category_link($cat->term_id) . '">' . $cat->name . ' News</a>';
                             $count=1;
@@ -65,7 +65,7 @@
                   <li class="page_item page_item_has_children current_page_item"><span><?php the_title(); ?></span></li>
                   <?php
                     if (isset($_GET['origin'])) {
-                      foreach (get_the_terms(get_the_ID(), 'teamnewscats') as $cat) {
+                      foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
                         if ($cat->parent == "0"){
                             echo '<li class="page_item"><a href="' . get_category_link($cat->term_id) . '">' . $cat->name . ' News</a></li>';
                         }
