@@ -42,11 +42,37 @@
         <nav id="desktop-relative" aria-label="relative content">
           <ul class="uw-sidebar-menu first-level"><li class="pagenav"><a href="https://ovp.s.uw.edu" title="Home" class="homelink">Home</a>
             <ul>
-              <li class="page_item page_item_has_children current_page_ancestor current_page_parent"><a href="http://itconnect.uw.edu">IT Connect</a>
+              <li class="page_item page_item_has_children current_page_ancestor current_page_parent">
+                <?php 
+                if (isset($_GET['origin'])) {
+                    $origin = $_GET['origin'];
+                    $title = get_the_title($origin);
+                    $permalink = get_the_permalink($origin);
+                    echo '<a href="' . $permalink . '">' . $title . '</a>';
+                } elseif (has_term('','svcnewscats')) {
+                    $count = 0;
+                    foreach (get_the_terms(get_the_ID(), 'teamnewscats') as $cat) {
+                        if ($cat->parent == "0" && $count == 0){
+                            echo '<a href="' . get_category_link($cat->term_id) . '">' . $cat->name . ' News</a>';
+                            $count=1;
+                        }
+                    }
+                } else {
+                    echo '<a href="/service-news/">Service News</a>';
+                }
+                ?>
                 <ul class="children">
                   <li class="page_item page_item_has_children current_page_item"><span><?php the_title(); ?></span></li>
-                  <li class="page_item page_item_has_children child-page-existance-tester"><a href="/service-news/">Service News</a></li>
-                  <li class="page_item child-page-existance-tester"><a href="/news/">IT Connect News</a></li>
+                  <?php
+                    if (isset($_GET['origin'])) {
+                      foreach (get_the_terms(get_the_ID(), 'teamnewscats') as $cat) {
+                        if ($cat->parent == "0"){
+                            echo '<li class="page_item"><a href="' . get_category_link($cat->term_id) . '">' . $cat->name . ' News</a></li>';
+                        }
+                      }
+                    }
+                  ?>
+                  <li class="page_item page_item_has_children child-page-existance-tester"><a href="/service-news/">All Service News</a></li>
                 </ul>
               </li>
             </ul>

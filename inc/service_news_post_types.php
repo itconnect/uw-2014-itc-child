@@ -85,6 +85,8 @@ function service_news_blogroll($atts){
      */
 
     global $paged;
+    global $post;
+    $current_id = $post->ID;
 
     // Check if there is a category for the news, and reject if absent
     if (isset($atts['news_category'])) {
@@ -154,7 +156,11 @@ function service_news_blogroll($atts){
 
             $output .= '<div id="postrow-' . $post->ID . '" class="postrow ' . $format . '">';
 
-            $output .= '<h3 class="posttitle"><a class="postlink" href="' . $link . '">' . $title . '</a></h3>';
+            $output .= '<h3 class="posttitle"><a class="postlink" href="' . $link;
+            if ($current_id) {
+                $output .= '?origin=' . $current_id; 
+            }
+            $output .='">' . $title . '</a></h3>';
 
             if ($show_date != 'off'){ $output .= '<span class="date">' . get_the_date( 'M. d, Y' ) . '</span>'; }
 
