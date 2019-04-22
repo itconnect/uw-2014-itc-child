@@ -35,7 +35,36 @@
 
     <?php get_template_part( 'menu', 'mobile' ); ?>
 
-    <?php get_template_part( 'breadcrumbs' ); ?>
+    <nav class="uw-breadcrumbs" role="navigation" aria-label="breadcrumbs">
+      <ul>
+        <li>
+          <a href="http://uw.edu" title="University of Washington">Home</a>
+        </li>
+        <li>
+          <a href="https://itconnect.uw.edu/" title="IT Connect">IT Connect</a>
+        </li>
+        <li>
+          <a href="/service-news/" title="Service News">Service News</a>
+        </li>
+        <?php 
+          if (has_term('','svcnewscats')) {
+            $count = 0;
+            foreach (get_the_terms(get_the_ID(), 'svcnewscats') as $cat) {
+              if ($cat->parent == "0" && $count == 0){
+                echo '<li><a href="' . get_category_link($cat->term_id) . '">' . $cat->name . '</a></li>';
+                $count=1;
+              }
+            }
+          }
+          if (isset($_GET['origin'])) {
+            $origin = $_GET['origin'];
+            $title = get_the_title($origin);
+            $permalink = get_the_permalink($origin);
+            echo '<li><a href="' . $permalink . '">' . $title . '</a></li>';
+          }
+        ?>
+        <li class="current"><span><?php the_title() ?></span></li></ul>
+        </nav>
 
     <aside id="sidebar" role="complementary">
       <div class="col-md-3 uw-sidebar">
