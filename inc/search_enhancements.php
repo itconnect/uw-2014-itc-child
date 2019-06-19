@@ -33,7 +33,7 @@ function rlv_exact_boost($results) {
 		if (stristr($post->post_title, $query) != false) $results[$post_id] = $weight * 100;
 
 		// Boost exact matches in post content
-		if (stristr($post->post_content, $query) != false) $results[$post_id] = $weight * 100;
+		if (stristr($post->post_content, $query) != false) $results[$post_id] = $weight * 15;
 	}
 	return $results;
 }
