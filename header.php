@@ -12,7 +12,7 @@
         } else {
             if (get_field('custom_search_result_snippet')){
                 ?>
-                    <meta name="description" content="<?php the_filed('custom_search_result_snippet'); ?>">
+                    <meta name="description" content="<?php the_field('custom_search_result_snippet'); ?>">
                 <?php
             } else {
                 ?>
