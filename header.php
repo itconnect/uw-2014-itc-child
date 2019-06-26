@@ -3,7 +3,24 @@
     <head>
         <title> <?php wp_title(' | ',TRUE,'right'); bloginfo('name'); ?> </title>
         <meta charset="utf-8">
-        <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
+        <?php
+        /*<meta name="description" content="<?php bloginfo('description', 'display'); ?>">*/
+        if (is_front_page()) {
+            ?>
+                <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
+            <?php
+        } else {
+            if (get_field('custom_search_result_snippet')){
+                ?>
+                    <meta name="description" content="<?php the_filed('custom_search_result_snippet'); ?>">
+                <?php
+            } else {
+                ?>
+                <meta name="description" content="<?php bloginfo('description', 'display'); ?>">
+            <?php 
+            }
+        }
+        ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Google Tag Manager -->
