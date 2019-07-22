@@ -160,4 +160,9 @@ require_once('inc/service_news_post_types.php');
 */
 require_once('inc/itc_slideshow.php');
 
+/**
+* Adds configurations via hooks for URE Pro
+*/
+require_once('inc/ure_config.php');
+
 ?>
