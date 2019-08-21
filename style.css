@@ -84,7 +84,7 @@ div.thinstrip-links {
   padding-bottom: 3px;
 }
 
-.thinstrip-itc label {
+.thinstrip-itc span {
   float: left;
   font-weight: 400;
   margin: 0;
@@ -1220,7 +1220,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .sitemap-controls a.control.exp:after {
   font: normal normal normal 12px/1 FontAwesome;
   display: inline-block;
-  -webkit-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45degF);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
