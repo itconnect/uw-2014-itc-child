@@ -442,6 +442,15 @@ div.thinstrip-links {
     visibility: hidden;
 }
 
+#searchform-hero {
+    position: relative;
+    clear: both;
+    outline: 1px solid #ADADAD;
+    font-family: "Encode Sans Compressed", sans-serif;
+    font-size: 20px;
+    color: #7A7A7A;
+}
+
 .hero-search-submit {
   background: url('/wp-content/themes/uw-2014-itc-child/img/search-icon.png');
   border: 0;
