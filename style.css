@@ -435,6 +435,13 @@ div.thinstrip-links {
     background-color: #F5F5F5;
 }
 
+#searchform-hero label {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    visibility: hidden;
+}
+
 .hero-search-submit {
   background: url('/wp-content/themes/uw-2014-itc-child/img/search-icon.png');
   border: 0;
