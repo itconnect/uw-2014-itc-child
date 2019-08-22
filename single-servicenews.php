@@ -22,7 +22,7 @@
       <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
       
       <div class="hero-search">
-        <form role="search" method="get" id="searchform" class="searchform" action="https://itconnect.uw.edu/">
+        <form role="search" method="get" id="searchform-hero" class="searchform" action="https://itconnect.uw.edu/">
           <div>
             <label class="screen-reader-text" for="s">Search IT Connect:</label>
             <input type="text" value="" name="s" id="s" placeholder="Search IT Connect:" autocomplete="off">
