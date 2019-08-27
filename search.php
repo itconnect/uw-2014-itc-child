@@ -46,13 +46,12 @@
               
               <input type="checkbox" id="svcnws" name="svcnws" value="true" checked>
               <label for="svcnws">Service News</label>
-              
-              <input type="checkbox" id="services" name="services" value="true" checked>
-              <label for="services">UW-IT Service Catalog</label>
             </fieldset>
+            <div style="font-size: 14px;">Also see UW-IT's full list of services in the <a href="https://uw.service-now.com/sp?id=sc_home">UW-IT Service Catalog</a>.</div>
+
           </div>
         </form>
-
+       
         <?php
           if ( have_posts() ) :
             while ( have_posts() ) : the_post();
