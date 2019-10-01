@@ -12,4 +12,12 @@ echo do_shortcode('[contact-form-7 id="42260" title="Report a problem"]');
 echo '</div></div>';
 echo '</div>';
 
+if(get_field('page_css_styles')) {
+	echo '<!-- Start page level CSS -->';
+	echo '<style>';
+	echo get_field('page_css_styles');
+	echo '</style>';
+	echo '<!-- End page level css -->';
+}
+
 ?>
