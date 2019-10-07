@@ -98,7 +98,7 @@ function create_svcnewstags_taxonomies() {
         'rewrite'           => array( 'slug' => 'service news tags' ),
     );
 
-    register_taxonomy( 'svcnewscats', array( 'servicenews' ), $args );
+    register_taxonomy( 'svcnewstags', array( 'servicenews' ), $args );
 }
 add_action( 'init', 'create_svcnewstags_taxonomies', 0 );
 
