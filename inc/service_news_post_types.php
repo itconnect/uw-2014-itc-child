@@ -69,6 +69,39 @@ function create_svcnewscats_taxonomies() {
 }
 add_action( 'init', 'create_svcnewscats_taxonomies', 0 );
 
+function create_svcnewstags_taxonomies() {
+    // Add new taxonomy, make it non-hierarchical (like tags)
+    $tagslabels = array(
+        'name'              => _x( 'Service News Tags', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Service News Tag', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search Service News Tags', 'textdomain' ),
+        'all_items'         => __( 'All Service News Tags', 'textdomain' ),
+        'parent_item'       => null,
+        'parent_item_colon' => null,
+        'edit_item'         => __( 'Edit Tag', 'textdomain' ),
+        'update_item'       => __( 'Update Tag', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Tag', 'textdomain' ),
+        'new_item_name'     => __( 'New Tag Name', 'textdomain' ),
+        'separate_items_with_commas' => __( 'Separate tags with commas' ),
+        'add_or_remove_items' => __( 'Add or remove tags' ),
+        'choose_from_most_used' => __( 'Choose from the most used tags' ),
+        'menu_name'         => __( 'Tags', 'textdomain' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $tagslabels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'service news tags' ),
+    );
+
+    register_taxonomy( 'svcnewscats', array( 'servicenews' ), $args );
+}
+add_action( 'init', 'create_svcnewstags_taxonomies', 0 );
+
 
 add_shortcode( 'service_news', 'service_news_blogroll' );
 function service_news_blogroll($atts){
