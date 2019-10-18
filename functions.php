@@ -168,7 +168,7 @@ require_once('inc/ure_config.php');
 /**
 * Creates shortcode that lists EDW load data
 */
-require_once('inc/ure_configedw-data-load.php');
+require_once('inc/edw-data-load.php');
 
 
 ?>
