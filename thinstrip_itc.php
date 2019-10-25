@@ -3,8 +3,8 @@
 		<img src="/wp-content/themes/uw-2014-itc-child/img/uwit-logo-lrg-web.png" width="300" class="uw-logo" alt="University of Washington Information Technology" />
 		<div class="align-right">
 			<div class="thinstrip-links">
-				<label for="personas-links">Technology for: </label>
-				<ul class="itc-thin-links" id="persona-links">
+				<span id="personas-links-label">Technology for: </span>
+				<ul class="itc-thin-links" id="persona-links" labelledby="personas-links-label">
 					<li><a href="/students" title="Students">Students</a></li>
 					<li><a href="/faculty" title="Faculty">Faculty</a></li>
 					<li><a href="/staff" title="Staff">Staff</a></li>

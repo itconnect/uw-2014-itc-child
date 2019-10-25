@@ -56,8 +56,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCGKD3T"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <div id="uwsearcharea" aria-hidden="true" class="uw-search-bar-container"></div>
    
    <a id="main-content" href="#main_content" class='screen-reader-shortcut'>Skip to main content</a>
 

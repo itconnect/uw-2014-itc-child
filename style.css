@@ -84,7 +84,7 @@ div.thinstrip-links {
   padding-bottom: 3px;
 }
 
-.thinstrip-itc label {
+.thinstrip-itc span {
   float: left;
   font-weight: 400;
   margin: 0;
@@ -421,8 +421,34 @@ div.thinstrip-links {
   right: 0px;
 }
 
-.hero-search #searchform #s {
+.hero-search #searchform-hero #s {
   padding-right: 40px;
+}
+
+#searchform-hero #s {
+    width: 100%;
+    padding: 14px 0 13px 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    background-color: #F5F5F5;
+}
+
+#searchform-hero label {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    visibility: hidden;
+}
+
+#searchform-hero {
+    position: relative;
+    clear: both;
+    outline: 1px solid #ADADAD;
+    font-family: "Encode Sans Compressed", sans-serif;
+    font-size: 20px;
+    color: #7A7A7A;
 }
 
 .hero-search-submit {
