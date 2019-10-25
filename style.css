@@ -1246,7 +1246,7 @@ body.itconnect.tag ul.uw-sidebar-menu {
 .itconnect .sitemap-controls a.control.exp:after {
   font: normal normal normal 12px/1 FontAwesome;
   display: inline-block;
-  -webkit-transform: rotate(-45degF);
+  -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
