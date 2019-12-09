@@ -8,6 +8,7 @@
 					<li><a href="/students" title="Students">Students</a></li>
 					<li><a href="/faculty" title="Faculty">Faculty</a></li>
 					<li><a href="/staff" title="Staff">Staff</a></li>
+					<li><a href="/visitors" title="Visitors">Visitors</a></li>
 				</ul>
 				<ul class="itc-thin-links">
 					<li><a href="/it-connect-home/about/" title="About IT Connect">About IT Connect</a></li>
