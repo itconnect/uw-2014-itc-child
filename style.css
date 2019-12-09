@@ -284,6 +284,9 @@ div.thinstrip-links {
   .itconnect #dawgdrops .dawgdrops-item-itc:nth-last-child(4) .mega-wrap {
     left: 1px;
   }
+  .itconnect #personas-links-label {
+    display: none;
+  }
 }
 
 .itconnect #dawgdrops .dawgdrops-item-itc .mega-container > li {
