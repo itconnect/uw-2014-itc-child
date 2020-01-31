@@ -913,6 +913,35 @@ div.hero-content {
   -webkit-font-smoothing: antialiased;
 }
 
+
+ /*  Important box
+ --------------------------------------*/
+.important-box {
+  background-color: #ECE9E2;
+  margin: 25px;
+  padding: 15px 15px 15px 0;
+  border-top: 1px solid #ececec;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: table;
+}
+
+.important-box:before {
+  display: table-cell;
+  width: 80px;
+  color: #4b2e83;
+  content: "\f06a";
+  font: normal normal 14px/1 FontAwesome;
+  font-size: 55px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
  /*  Page Table of Contents
  --------------------------------------*/
 .uw-body ul.ptoc {
