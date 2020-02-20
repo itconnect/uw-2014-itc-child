@@ -24,20 +24,26 @@ function content_review_notice(){
             
             // Create benchmark times
             $now = new DateTime;
+            $YearAndHalfAgo = new DateTime('-18 Months');
             $OneYearAgo = new DateTime('-1 year');
             $TenMonthsAgo = new DateTime('-10 months');
 
             if ($reviewedDate < $TenMonthsAgo && $reviewedDate > $OneYearAgo)  {
-                // Between 10 and 12 months since review                                                      
-                $message = 'Between 10 and 12 months since review';                                                     
+                // Between 10 and 12 months since review
+                $message = 'Between 10 and 12 months since review';
             } else if ($reviewedDate <= $OneYearAgo) {
-                // A year or more since review                                                                                   
-                $class = 'notice notice-warning';                                                                                          
-                $message = ' <b>More than 1 year since this page was reviewed</b>.';                                                       
-            } else {                                                                                                                       
-             // It's been less than 10 months since this content was reviewed so we do not want to show a messages                      
-             return;                                                                                                                    
-            }                                                                                                                              
+                // A year or more since review
+                $class = 'notice notice-warning';
+                $message = ' <b>More than 1 year since this page was reviewed</b>.';
+            } else {
+             // It's been less than 10 months since this content was reviewed so we do not want to show a messages
+                return;
+            }
+
+            // If it has been more than a year and half, change notice color to error (red)
+            if ($reviewedDate < $YearAndHalfAgo) {
+                $class = 'notice notice-error';
+            }
             
             printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ),$message );
 
