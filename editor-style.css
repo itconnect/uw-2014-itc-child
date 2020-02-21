@@ -122,28 +122,3 @@ div.uw-body-copy ol.procedure li ul li, article div.entry-content ol.procedure l
     min-height: 6em;
 }
 
-
-
-
-/*  Review Messaging
- --------------------------------------*/
-.review-reminder span.review-header {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.review-reminder span.review-by-date,
-.review-reminder span.last-reviewed-date {
-  font-weight: bold;
-}
-
-.review-reminder ul {
-  list-style: disc;
-  padding: 0 0 0 20px;
-}
-
-.review-reminder ul li {
-  margin-bottom: 3px;
-}

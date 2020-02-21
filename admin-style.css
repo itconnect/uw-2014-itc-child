@@ -3,3 +3,28 @@
  .manage-column.column-service_offering {
   width: 20%;
  } 
+
+ 
+
+/*  Review Messaging
+ --------------------------------------*/
+.review-reminder span.review-header {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.review-reminder span.review-by-date,
+.review-reminder span.last-reviewed-date {
+  font-weight: bold;
+}
+
+.review-reminder ul {
+  list-style: disc;
+  padding: 0 0 0 20px;
+}
+
+.review-reminder ul li {
+  margin-bottom: 3px;
+}
