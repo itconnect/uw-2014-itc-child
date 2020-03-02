@@ -143,6 +143,12 @@ require_once('inc/review_audit.php');
 
 
 /**
+* Adds reminders to the edit screen for content review
+*/
+require_once('inc/review_reminders.php');
+
+
+/**
 * Adds service field to the page list in admin table, makes service field bulk and quick editable
 */
 

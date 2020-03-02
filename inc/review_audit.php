@@ -12,8 +12,8 @@ function reviewedOnAudit() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.css"/>';
     echo '<script type="text/javascript" src="' . get_stylesheet_directory_uri() . '/js/DataTables/datatables.min.js"></script>';
 	echo '<table id="reviewed">';
-    echo '<thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></thead>';
-    echo '<tfoot><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Service Offering</th></tr></tfoot>';
+    echo '<thead><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Owner (Service, Team, etc.)</th></tr></thead>';
+    echo '<tfoot><tr><th>Page Title</th><th>Last Reviewed Date</th><th>Reviewed By</th><th>Contacts/SMEs</th><th>Owner (Service, Team, etc.)</th></tr></tfoot>';
     echo '<tbody>';
 
 	// args
