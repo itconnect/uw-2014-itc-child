@@ -442,7 +442,9 @@ div.thinstrip-links {
     position: absolute;
     top: 10px;
     left: 18px;
-    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
 #searchform-hero {
@@ -772,6 +774,20 @@ iframe { margin: 0; }
   margin-bottom: 14.5px;
   line-height: 1.3;
 }
+
+.itconnect .uw-content a,
+.itconnect .uw-body a {
+  text-decoration: underline;
+}
+
+.itconnect .hero-search #searchform-hero #s:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  margin-top: -1px;
+  margin-left: -1px;
+  width: 101%;
+}
+
 
 
 /* DL with float left dt */
