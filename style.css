@@ -1998,6 +1998,7 @@ aside.related-content {
 
 aside.related-content span.section-title {
   font-weight: bold;
+  font-size: 16px;
 }
 
 aside.related-content ul.links {
@@ -2007,13 +2008,14 @@ aside.related-content ul.links {
 
 aside.related-content li.link {
   border: none;
-  margin: 0;
+  margin: 0 0 5px 0;
   padding: 0;
   position:relative;
+  font-size: 15px;
 }
 
 aside.related-content li.link:before {
-  content: '-';
+  content: '•';
   display: inline-block;
   position: absolute;
   left: -10px;
