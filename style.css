@@ -2015,7 +2015,7 @@ aside.related-content li.link {
 }
 
 aside.related-content li.link:before {
-  content: '&bull;';
+  content: '•';
   display: inline-block;
   position: absolute;
   left: -10px;
