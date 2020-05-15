@@ -377,9 +377,9 @@
 							$thebutton.attr('aria-expanded','true');
 							$thebutton.attr('aria-selected','true');
 							$thediv.attr('aria-hidden','false');
-
+							$theoffset = $(hash).offset().top;
 							$([document.documentElement, document.body]).animate({
-								scrollTop: $thebutton.offset().top
+							    scrollTop: $theoffset - 50
 							}, 200);
 						}
 					}
