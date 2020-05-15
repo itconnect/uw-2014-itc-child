@@ -380,7 +380,7 @@
 							$theoffset = $(hash).offset().top;
 							$([document.documentElement, document.body]).animate({
 							    scrollTop: $theoffset - 50
-							}, 200);
+							}, 5);
 						}
 					}
 				});
