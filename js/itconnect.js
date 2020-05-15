@@ -365,6 +365,27 @@
 				});	
 			}
 		},
+		accordion: {
+			autoOpen: function(){
+				// If hash is present and an id of that value is in an accordion, it opens automatically
+				$( document ).ready(function() {
+				var hash = window.location.hash;
+					if(hash.length > 0) {
+						if ($(hash).parents('.js-accordion__panel').length){
+							$thediv = $(hash).parents('.js-accordion__panel');
+							$thebutton = $('#' + $thediv.attr('aria-labelledby'));
+							$thebutton.attr('aria-expanded','true');
+							$thebutton.attr('aria-selected','true');
+							$thediv.attr('aria-hidden','false');
+							$theoffset = $(hash).offset().top;
+							$([document.documentElement, document.body]).animate({
+							    scrollTop: $theoffset - 50
+							}, 5);
+						}
+					}
+				});
+			}
+		},
 		init: function(){
 			this.megamenu.alignDropdowns();
 			this.megamenu.accessibility();
@@ -374,6 +395,7 @@
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
 			this.report.show();
+			this.accordion.autoOpen();
 		}
 	}
 
