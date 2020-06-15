@@ -371,17 +371,17 @@
 				$( document ).ready(function() {
 				var hash = window.location.hash;
 					if(hash.length > 0) {
-						ITConnect.accordion.openAccordion();
+						ITConnect.accordion.openAccordion(hash);
 					}
 				});
 				// If a link to a different section on the same page is clicked, and that a is in accordion, it opens automatically
 				$('a[href*=\\#]').on('click', function (event) {
 					if(this.pathname === window.location.pathname){
-						ITConnect.accordion.openAccordion();
+						ITConnect.accordion.openAccordion(this.hash);
 					}
 				});
 			},
-			openAccordion: function() {
+			openAccordion: function(hash) {
 				if ($(hash).parents('.js-accordion__panel').length){
 					$thediv = $(hash).parents('.js-accordion__panel');
 					$thebutton = $('#' + $thediv.attr('aria-labelledby'));
