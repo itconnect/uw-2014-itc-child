@@ -371,13 +371,13 @@
 				$( document ).ready(function() {
 				var hash = window.location.hash;
 					if(hash.length > 0) {
-						this.accordion.openAccordion();
+						ITConnect.accordion.openAccordion();
 					}
 				});
 				// If a link to a different section on the same page is clicked, and that a is in accordion, it opens automatically
 				$('a[href*=\\#]').on('click', function (event) {
 					if(this.pathname === window.location.pathname){
-						this.accordion.openAccordion();
+						ITConnect.accordion.openAccordion();
 					}
 				});
 			},
