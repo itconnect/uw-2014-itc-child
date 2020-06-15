@@ -6,7 +6,7 @@
 function itc_child_enqueue() {
 	wp_enqueue_style( 'parent-theme-css', get_template_directory_uri() . '/style.css', '', '2.01' );
 	//wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery-3.3.1.min.js');
-	wp_enqueue_script('childscripts', get_stylesheet_directory_uri() . '/js/itconnect.js', '', '2.01');
+	wp_enqueue_script('childscripts', get_stylesheet_directory_uri() . '/js/itconnect.js', '', '2.02');
 }
 add_action( 'wp_enqueue_scripts', 'itc_child_enqueue' );
 
