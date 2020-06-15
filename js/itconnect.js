@@ -371,20 +371,30 @@
 				$( document ).ready(function() {
 				var hash = window.location.hash;
 					if(hash.length > 0) {
-						if ($(hash).parents('.js-accordion__panel').length){
-							$thediv = $(hash).parents('.js-accordion__panel');
-							$thebutton = $('#' + $thediv.attr('aria-labelledby'));
-							$thebutton.attr('aria-expanded','true');
-							$thebutton.attr('aria-selected','true');
-							$thediv.attr('aria-hidden','false');
-							$theoffset = $(hash).offset().top;
-							$([document.documentElement, document.body]).animate({
-							    scrollTop: $theoffset - 50
-							}, 5);
-						}
+						this.accordion.openAccordion();
 					}
 				});
+				// If a link to a different section on the same page is clicked, and that a is in accordion, it opens automatically
+				$('a[href*=\\#]').on('click', function (event) {
+					if(this.pathname === window.location.pathname){
+						this.accordion.openAccordion();
+					}
+				});
+			},
+			openAccordion: function() {
+				if ($(hash).parents('.js-accordion__panel').length){
+					$thediv = $(hash).parents('.js-accordion__panel');
+					$thebutton = $('#' + $thediv.attr('aria-labelledby'));
+					$thebutton.attr('aria-expanded','true');
+					$thebutton.attr('aria-selected','true');
+					$thediv.attr('aria-hidden','false');
+					$theoffset = $(hash).offset().top;
+					$([document.documentElement, document.body]).animate({
+					    scrollTop: $theoffset - 50
+					}, 5);
+				}
 			}
+
 		},
 		init: function(){
 			this.megamenu.alignDropdowns();
