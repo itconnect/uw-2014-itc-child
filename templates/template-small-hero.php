@@ -33,7 +33,7 @@
     <div class="hero-content col-md-<?php echo (($sidebar[0]!="on") ? "8" : "12" ) ?> uw-content" role='main'>
 
       <?php uw_site_title(); 
-        echo "<h3 class='uw-site-tagline' style='margin-top: 0' >Information technology tools and resources at the UW</h3>";
+        echo "<h3 class='uw-site-tagline' style='margin-top: 0' >Your connection to information technology at UW</h3>";
         ?>
 
       <?php get_template_part( 'menu', 'mobile' ); ?>

@@ -14,7 +14,7 @@
           uw_site_title();
         ?>
         <span class='udub-slant'><span></span></span>
-        <div class='uw-site-tagline' >Information technology tools and resources at the UW</div>
+        <div class='uw-site-tagline'>Your connection to information technology at UW</div>
 
         <div class="hero-search">
           <form role="search" method="get" id="searchform-hero" class="searchform" action="/">
