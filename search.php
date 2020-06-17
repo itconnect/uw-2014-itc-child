@@ -18,7 +18,7 @@
       endif;
       ?>
       <span class='udub-slant'><span></span></span>
-      <div class='uw-site-tagline' >Your connection to information technology at UW</div>
+      <div class='uw-site-tagline' >Your connection to information technology at the UW</div>
 
     </div>
 
