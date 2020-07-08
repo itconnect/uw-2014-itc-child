@@ -25,7 +25,7 @@
             <ul class="footer-links">
               <li><a href="http://www.uw.edu/accessibility">Accessibility</a></li>
               <li><a href="http://www.washington.edu/safety">Campus Safety</a></li>
-              <li><a href="http://myuw.washington.edu/">My UW</a></li>
+              <li><a href="https://my.uw.edu/">My UW</a></li>
               <li><a href="http://www.washington.edu/online/privacy/">Privacy</a></li>
               <li><a href="http://www.washington.edu/online/terms/">Terms</a></li>
            </ul>
