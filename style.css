@@ -2024,6 +2024,14 @@ aside.related-content li.link:before {
 
 
 
+/*  Multiple options choice box
+ ---------------------------------------*/
+
+.multiple-options-box{
+  padding: 0 20px 0 20px;
+}
+
+
 /*  Mobile specific 
  --------------------------------------*/
 
