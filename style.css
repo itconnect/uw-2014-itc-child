@@ -1489,9 +1489,9 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
   transition: all .1s ease-in-out;
 }
 
-.homepage_icons a.hp_icon.icon_email svg,
-.homepage_icons a.hp_icon.icon_email img.svg {
-  margin: 61px auto 16px auto
+.homepage_icons a.hp_icon.icon_comm svg,
+.homepage_icons a.hp_icon.icon_comm img.svg {
+  margin: 47px auto 16px auto
 }
 
 .homepage_icons a.hp_icon.icon_software svg,
