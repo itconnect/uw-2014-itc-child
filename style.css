@@ -1491,7 +1491,7 @@ ul.homepage_icons li#icon4.homepage_icon_section:after {
 
 .homepage_icons a.hp_icon.icon_comm svg,
 .homepage_icons a.hp_icon.icon_comm img.svg {
-  margin: 47px auto 16px auto
+  margin: 53px auto 10px auto;
 }
 
 .homepage_icons a.hp_icon.icon_software svg,
