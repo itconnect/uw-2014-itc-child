@@ -62,16 +62,26 @@ add_filter('relevanssi_match', 'news_date_weights');
 
 // Customize the search result excerpts with a custom filed.
 function excerpt_function($content, $post, $query) {
-    $text = get_post_meta($post->ID, 'custom_search_result_snippet', true);
+	$text = get_post_meta($post->ID, 'custom_search_result_snippet', true);
 	if ($text != '') {
 		$text = strip_shortcodes($text);
 		$text = apply_filters('the_content', $text);
 		$text = str_replace(']]&gt;', ']]&gt;', $text);
-	}
-    $content = $text;
+		$content = $text;
+	} else {
+		$post_content = apply_filters('the_content', get_post_field('post_content', $post->ID));
+		// Checks the string length, if under 300 chars...
+		if (strlen($post_content) < 300){
+			// Outputs the whole post content
+			$content =  $post_content . '...';
+		}else{
+			// Output only 300 chars, but don't cut halfway through a word
+			$post_trimmed = substr($post_content, 0, strpos($post_content, ' ', 300));
+			$content =  $post_trimmed . '...';
+		}
+	}	
 	return $content;
 }
-
 add_filter('relevanssi_excerpt_content', 'excerpt_function', 10, 3);
 // Removes ellipsis
 add_filter('relevanssi_ellipsis', '');
