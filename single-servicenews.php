@@ -126,6 +126,8 @@
 
             echo '<h1>' . get_the_title() . '</h1>';
 
+            echo '<div class="svcnews-date">' . get_the_date() . '</div>';
+
             the_content();
 
             echo '<div class="page-bottom">';
