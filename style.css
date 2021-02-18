@@ -1971,7 +1971,10 @@ body.error404.itconnect .woof {
   height: 10px;
 }
 
-
+.svcnews-date {
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
 
 
 /*  Service News content type
