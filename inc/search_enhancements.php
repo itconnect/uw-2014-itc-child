@@ -9,14 +9,24 @@
 // Increases weight of featured and top level pages
 function custom_field_weights($match) {
 
-	$search_prominence = get_post_meta($match->doc, 'search_prominence', true);
+	$search_weight = get_post_meta($match->doc, 'search_weight', true);
 
-	if($search_prominence && (in_array('search_featured', $search_prominence) && in_array('search_top_level', $search_prominence))) {
-		$match->weight = $match->weight * 6;
-	} else if ($search_prominence && in_array('search_top_level', $search_prominence)) {
-		$match->weight = $match->weight * 5;
-	} else if ($search_prominence && in_array('search_featured', $search_prominence)) {
-		$match->weight = $match->weight * 2;
+	switch ($search_weight) {
+		case "search_weight_default":
+			$match->weight = $match->weight * 1;
+			break;
+		case "search_weight_increased":
+			$match->weight = $match->weight * 2;
+			break;
+		case "earch_weight_entry":
+			$match->weight = $match->weight * 5;
+			break;
+		case "search_weight_top_level":
+			$match->weight = $match->weight * 7;
+			break;
+		default:
+			$match->weight = $match->weight * 1;
+		// case "search_weight_hidden" is managed by relevanssi_hits_filter below
 	}
 	
 	return $match;
@@ -172,8 +182,8 @@ function filter_results_by_type($hits) {
 	// Filter out hits that have the "Hidden from search" checkbox checked
 	if (!empty($hits)) {
 		foreach ($hits[0] as $hit) {
-			$searchopts = get_post_meta($hit->ID, 'search_prominence', true);
-			if (!in_array('search_hidden', $searchopts)) {
+			$searchopts = get_post_meta($hit->ID, 'search_weight', true);
+			if ($searchopts !== "search_weight_hidden") {
 				array_push($filtered, $hit);
 			}
 			$hits[0] = $filtered;
