@@ -16,13 +16,13 @@ function custom_field_weights($match) {
 			$match->weight = $match->weight * 1;
 			break;
 		case "search_weight_increased":
-			$match->weight = $match->weight * 2;
+			$match->weight = $match->weight * 3;
 			break;
 		case "earch_weight_entry":
-			$match->weight = $match->weight * 5;
+			$match->weight = $match->weight * 6;
 			break;
 		case "search_weight_top_level":
-			$match->weight = $match->weight * 7;
+			$match->weight = $match->weight * 12;
 			break;
 		default:
 			$match->weight = $match->weight * 1;
@@ -43,7 +43,12 @@ function rlv_exact_boost($results) {
 		if (stristr($post->post_title, $query) != false) $results[$post_id] = $weight * 100;
 
 		// Boost exact matches in post content
-		if (stristr($post->post_content, $query) != false) $results[$post_id] = $weight * 15;
+		/* 
+		   Removed the below line because, in theory, all hits should have an exact match for the term. This would
+		   only work if there were multiple words in a string that got an exact match. 
+		   Possible ehnachement for later so leaving code here....
+		*/
+		//if (stristr($post->post_content, $query) != false) $results[$post_id] = $weight * 15;
 	}
 	return $results;
 }
