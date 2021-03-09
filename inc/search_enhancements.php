@@ -16,13 +16,7 @@ function custom_field_weights($match) {
 			$match->weight = $match->weight * 1;
 			break;
 		case "search_weight_increased":
-			$match->weight = $match->weight * 3;
-			break;
-		case "earch_weight_entry":
-			$match->weight = $match->weight * 6;
-			break;
-		case "search_weight_top_level":
-			$match->weight = $match->weight * 12;
+			$match->weight = $match->weight * 8;
 			break;
 		default:
 			$match->weight = $match->weight * 1;
