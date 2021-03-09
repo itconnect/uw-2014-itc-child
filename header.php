@@ -23,8 +23,16 @@
         ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php 
+            /*
+            Tell search engines not to index page if it is:
+                1) The WordPress search results page
+                2) Hide from search is selected in search weight field
+            */
             if (is_search()) {
                 ?><meta name="robots" content="noindex"><?php
+            }
+            if (get_post_meta(get_the_ID(),'search_weight','true') == 'search_weight_hidden'){
+                echo '<meta name="robots" content="noindex">';
             }
         ?>
 
