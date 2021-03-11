@@ -1178,6 +1178,10 @@ body.itconnect.tag ul.uw-sidebar-menu {
   display: none;
 }
 
+.itconnect .uw-body .uw-body-copy h1.archive-title {
+  margin-top: 15px;
+}
+
 /*  Page bottom
  ------------------------------------------------------------------------*/
 .itconnect div.page-bottom {
