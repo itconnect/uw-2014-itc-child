@@ -36,7 +36,7 @@
         <?php
 
           if (is_tag() || is_category() || is_tax()) {
-            echo '<h1>' . get_the_archive_title() . '</h1>';
+            echo '<h1 class="archive-title">' . get_the_archive_title() . '</h1>';
           }
 
 
