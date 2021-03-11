@@ -34,6 +34,12 @@
       <div id='main_content' class="uw-body-copy" tabindex="-1">
 
         <?php
+
+          if (is_tag() || is_category() || is_tax()) {
+            echo '<h2>' . get_the_archive_title() . '</h2>';
+          }
+
+
           // Start the Loop.
           while ( have_posts() ) : the_post();
 
