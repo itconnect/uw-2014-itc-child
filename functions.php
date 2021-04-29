@@ -42,10 +42,15 @@ function itconnect_body_classes($classes) {
 add_filter('upload_mimes', 'itconnect_allowed_mimetypes', 1, 1);
 
 function itconnect_allowed_mimetypes($mime_types) {
-    $mime_types['dwg'] = 'image/vnd.dwg'; // Adding DWG 
+    $mime_types['dwg'] = 'image/vnd.dwg';
+    $mime_types['dwg'] = 'application/acad';
+    $mime_types['dwg'] = 'application/autocad';
+    $mime_types['dwg'] = 'application/autocaddwg';
+    $mime_types['dwg'] = 'application/dwg';
+    $mime_types['dwg'] = 'drawing/dwg';
+    $mime_types['dwg'] = 'image/dwg';
     return $mime_types;
 }
-
 
 /**
  * Show all parents, regardless of post status.
