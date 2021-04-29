@@ -29,6 +29,8 @@ function servicenews_post_type () {
     'rewrite' => array('slug' => 'service-news'),
     'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
     'has_archive'   => true,
+    'capability_type' => 'servicenews',
+    'map_meta_cap' => true,
     'taxonomies'  => array( 'svcnewscats' ),
   );
   register_post_type( 'servicenews', $args ); 
