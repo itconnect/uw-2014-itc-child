@@ -65,7 +65,12 @@ function create_svcnewscats_taxonomies() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'svcnewscats' ),
-        'capabilities' => array('assign_terms'=>'edit_svcnewscats')
+        'capabilities' => array(
+            'manage_terms'  => 'manage_svcnewscats',
+            'edit_terms'    => 'edit_svcnewscats',
+            'delete_terms'  => 'delete_svcnewscats',
+            'assign_terms'  => 'assign_svcnewscats'
+        )
     );
 
     register_taxonomy( 'svcnewscats', array( 'servicenews' ), $args );
