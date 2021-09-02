@@ -13,5 +13,6 @@ echo '</div></div>';
 echo '</div>';
 
 get_template_part( 'content', 'pagecss' );
+get_template_part( 'content', 'pagejs' );
 
 ?>
