@@ -357,11 +357,14 @@
 			}
 		},
 		report: {
-			show: function(){
+			buildLinks: function(){
 				$('.report-link').each(function(){
-					$(this).click(function(event){
-						$('#report-form').slideToggle();
-					})
+					var pageURL = window.location.pathname;
+					var href = $(this).attr('href');
+					if (href) {
+						href += (href.match(/\?/) ? '&' : '?') + 'previous-link=' + pageURL;
+						$(this).attr('href', href);
+					}
 				});	
 			}
 		},
@@ -404,7 +407,7 @@
 			this.search.checkboxes();
 			this.sitemap.makeInteractive();
 			this.svg.makeInline();
-			this.report.show();
+			this.report.buildLinks();
 			this.accordion.autoOpen();
 		}
 	}

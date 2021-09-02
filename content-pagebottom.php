@@ -8,7 +8,7 @@ if (get_field('reviewed_on')) {
 }
 the_tags('<div class="tags"><span>Tags: </span>','','</div>'); 
 echo '<div class="report-link-container">See a problem on this page? <a class="report-link" href="javascript:void(0);">Let us know</a>.<div id="report-form">';
-echo do_shortcode('[contact-form-7 id="42260" title="Report a problem"]');
+//echo do_shortcode('[contact-form-7 id="42260" title="Report a problem"]');
 echo '</div></div>';
 echo '</div>';
 
